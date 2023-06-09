@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AnonymousRoutingModule } from './anonymous-routing.module';
+import { AnonymousComponent } from './anonymous-component';
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AnonymousComponent
+  ],
   imports: [
     CommonModule,
     AnonymousRoutingModule

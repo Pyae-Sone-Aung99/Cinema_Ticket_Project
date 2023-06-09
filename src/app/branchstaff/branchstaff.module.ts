@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BranchstaffRoutingModule } from './branchstaff-routing.module';
+import { BranchstaffComponent } from './branchstaff-component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BranchstaffComponent
+  ],
   imports: [
     CommonModule,
     BranchstaffRoutingModule
