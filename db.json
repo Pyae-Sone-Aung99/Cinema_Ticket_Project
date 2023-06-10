@@ -1,0 +1,28 @@
+{
+  "companymanager": [
+    {
+      "companyName": "Mingalar",
+      "username": "mingalar",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "companyName": "JCGV",
+      "username": "jcgv",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "companyName": "Paradiso",
+      "username": "paradiso",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "companyName": "Nawady ",
+      "username": "nawady",
+      "password": "123",
+      "id": 4
+    }
+  ]
+}
