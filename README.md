@@ -1,3 +1,10 @@
+
+Route list -> For Front-End -> http://localhost:4200/anonymous
+              For admin panel -> http://localhost:4200/superadmin
+                              -> http://localhost:4200/companymanager
+                              -> http://localhost:4200/branchmanager
+                              -> http://localhost:4200/branchstaff
+
 # Cinematicket
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
