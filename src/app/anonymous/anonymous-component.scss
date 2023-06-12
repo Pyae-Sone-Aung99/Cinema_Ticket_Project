@@ -1,0 +1,44 @@
+#root{
+  font-family: 'Bai Jamjuree', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+.navbar .navbar-brand
+{
+    color: #E50914;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link
+{
+    color: #E50914;
+}
+
+.nav-item a{
+  cursor: pointer;
+}
+
+.social-icons a{
+  width: 50px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-base);
+  border-radius: 100px;
+  font-size: 24px;
+}
+
+
+footer a{
+    text-decoration: none;
+    color: #b6cbce;
+    transition: all 0.4s ease; /* all = Default value. All properties will get a transition effect */
+}
+
+footer a:hover{
+    color: crimson;
+}

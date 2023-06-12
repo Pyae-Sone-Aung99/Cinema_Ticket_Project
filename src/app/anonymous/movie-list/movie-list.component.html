@@ -1,0 +1,90 @@
+  <!-- Carousel start  -->
+  <div class="contain-fluid">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000" >
+          <!-- *ngFor="let item of nowShowingData;let i=index"
+          [ngClass]="{active:i===1}" -->
+          <img src="../../../assets/images/wanda-banner.jpg" class="d-block w-100" alt="Poster ">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Spider Man Noway Home</h2>
+            <p>Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man</p>
+          </div>
+        </div>
+        <div class="carousel-item active" data-bs-interval="2000" >
+          <!-- *ngFor="let item of nowShowingData;let i=index"
+          [ngClass]="{active:i===1}" -->
+          <img src="../../../assets/images/black-banner.png" class="d-block w-100" alt="Poster ">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Spider Man Noway Home</h2>
+            <p>Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man</p>
+          </div>
+        </div>
+        <div class="carousel-item active" data-bs-interval="2000" >
+          <!-- *ngFor="let item of nowShowingData;let i=index"
+          [ngClass]="{active:i===1}" -->
+          <img src="../../../assets/images/hp.jpg" class="d-block w-100" alt="Poster ">
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Spider Man Noway Home</h2>
+            <p>Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Carousel end  -->
+
+<div class="container-fluid mt-3 p-4">
+
+  <!-- Now Showing Start -->
+
+  <!--  <ng-container> is a structural directive that provides a way to group elements and apply structural directives
+    such as *ngIf, *ngFor, and *ngSwitchCase without adding an additional element to the DOM. -->
+  <div class="row mb-5" id="nowshowing">
+    <div class="d-flex justify-content-between">
+      <h5 class="text-white ms-3">Now Showing</h5>
+      <input type="text" class="float-end border-0 text-white" style="background-color: black;" placeholder="Search Movie Name">
+    </div>
+    <div class="nowShowingPoster  p-2">
+      <ng-container *ngFor="let item of nowShowingData">
+        <div class="card ">
+          <div class="card-body">
+            <img class="nowShowingimg forLargeImg" src="{{item.poster}}" alt="now showing" (click)="movieDetail(item.id)">
+            <p class="mt-3">Title : {{item.title}} </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <!-- Now Showing End -->
+
+  <!-- Upcoming Start -->
+
+  <div class="row" id="upcoming">
+    <div class="d-flex justify-content-between">
+      <h5 class="text-white ms-3">Up Coming</h5>
+      <input type="text" class="float-end border-0 text-white" style="background-color: black;" placeholder="Search Movie Name">
+    </div>
+    <div class="nowShowingPoster  p-2">
+      <ng-container *ngFor="let item of nowShowingData">
+        <div class="card ">
+          <div class="card-body">
+            <img class="nowShowingimg forLargeImg" src="{{item.poster}}" alt="now showing" [routerLink]="['/movieDetail',item.id]">
+            <p class="mt-3">Title : {{item.title}} </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Upcoming End -->
+
+</div>

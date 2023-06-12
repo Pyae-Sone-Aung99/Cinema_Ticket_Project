@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row p-5" id="contact">
+    <div class="col-lg-2">
+      <img src="{{movieDetails.poster}}">
+    </div>
+    <div class="col-lg-10 mt-5 p-4">
+      <h1 class="mt-2 mb-2"> {{movieDetails.title}} </h1>
+      <p class="mt-3 mb-3"> {{movieDetails.plot}} </p>
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <p class="mt-3 mb-3"> {{movieDetails.type}} </p>
+      <a class="btn btn-md" href=" {{movieDetails.trailer}} " target="_blank">watch trailer</a>
+
+
+    </div>
+
+  </div>
+  <div class="row mb-3" id="cinema" *ngFor="let item of movieDetails.cinema">
+    <div class="col offset-2 d-flex">
+      <div class="col">
+        <div class="Icon-bg p-4 rounded-4 Icon-shadow" >
+          <h3 class="mb-4 text-uppercase fw-bold"> {{item.name}} </h3>
+          <div class="d-flex">
+            <p class="me-5 fs-5">Cinema Name : {{item.location}} </p>
+            <a class="m-auto text-decoration-none " routerLink="selectSeat"> {{item.date}} {{item.time}} </a>
+          </div>
+          <p> Hall : <span class="fs-6 text-danger">{{item.theater}}</span> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-dark float-end" routerLink="/anonymous/movielist">Back</a>
+    </div>
+  </div>
+</div>

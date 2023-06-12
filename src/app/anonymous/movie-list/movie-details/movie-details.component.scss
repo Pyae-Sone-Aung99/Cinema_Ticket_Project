@@ -1,0 +1,56 @@
+img{
+  width: 100%;
+  height: auto;
+}
+
+h1
+{
+  color: #ffffff;
+  font-weight: bold;
+}
+
+p{
+  color: #ffffff;
+}
+
+#contact a{
+  background-color: #E50914;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#contact a:hover{
+  background-color: #E50914;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.Icon-bg{
+  background-color: black;
+  color: white;
+}
+
+.Icon-shadow{
+  transition: all 0.5s;
+}
+
+.Icon-shadow:hover{
+  box-shadow: -8px 8px 0px 0px #2A272A; /*shadow effect around frames */
+}
+
+
+#cinema a{
+  color: #00ADAD;
+  transition: all 0.4s ease;
+}
+
+
+#cinema a:hover{
+  color: crimson;
+}
+
+
+mat-form-field{
+  float: right;
+  margin-top: 30px;
+}

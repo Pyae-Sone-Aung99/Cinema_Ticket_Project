@@ -24,5 +24,185 @@
       "password": "123",
       "id": 4
     }
+  ],
+  "cinema": [
+    {
+      "cinemaname": "Mingalar 1",
+      "location": "Yangon",
+      "phoneNo": "09100100100",
+      "bmName": "Kyaw Kyaw",
+      "bmPassword": "123",
+      "id": 1
+    },
+    {
+      "cinemaname": "Mingalar 2",
+      "location": "Mandalay",
+      "phoneNo": "09200200200",
+      "bmName": "Aung Aung",
+      "bmPassword": "123",
+      "id": 2
+    },
+    {
+      "cinemaname": "Mingalar 3",
+      "location": "Yangon",
+      "phoneNo": "09300300300",
+      "bmName": "Pyae Sone",
+      "bmPassword": "123",
+      "id": 3
+    },
+    {
+      "cinemaname": "JCGV 1",
+      "location": "Mandalay",
+      "phoneNo": "09912203444",
+      "bmName": "john doe",
+      "bmPassword": "123",
+      "id": 4
+    },
+    {
+      "cinemaname": "Paradiso",
+      "location": "Maubin",
+      "phoneNo": "09922114555",
+      "bmName": "mary",
+      "bmPassword": "123",
+      "id": 5
+    },
+    {
+      "cinemaname": "Junction Mini ",
+      "location": "NayPyiTaw",
+      "phoneNo": "09711344552",
+      "bmName": "Dean",
+      "bmPassword": "123",
+      "id": 6
+    },
+    {
+      "cinemaname": "Nawady",
+      "location": "Yangon",
+      "phoneNo": "09133454532",
+      "bmName": "Sam",
+      "bmPassword": "winchester",
+      "id": 7
+    },
+    {
+      "cinemaname": "Nawady 2",
+      "location": "Mgway",
+      "phoneNo": "09200113434",
+      "bmName": "Thar sis",
+      "bmPassword": "123",
+      "id": 8
+    }
+  ],
+  "staff": [
+    {
+      "username": "emma",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "username": "john",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "nowshowing": [
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://m.media-amazon.com/images/I/81i9V1jlCsL._AC_SY879_.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "https://youtu.be/mh-KncHB6F4",
+      "cinema": [
+        {
+          "name": "Mingalar",
+          "date": "12-6-2023",
+          "time": "12:30pm",
+          "location": "Yangon",
+          "theater": "Hall No 1"
+        },
+        {
+          "name": "JCGV",
+          "date": "12-6-2023",
+          "time": "12:30pm",
+          "location": "Yangon",
+          "theater": "Hall No 1"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://i.pinimg.com/564x/b0/71/6a/b0716a2fd15059c9c64f2a37eb672384.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 2
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://i.pinimg.com/564x/85/7c/67/857c676105974c7414200dca189f6fe2.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 3
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://c4.wallpaperflare.com/wallpaper/255/311/608/emma-watson-movies-actress-harry-potter-harry-potter-and-the-chamber-of-secrets-hermione-granger-people-actresses-hd-art-wallpaper-preview.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 4
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://i.pinimg.com/564x/a5/0f/b6/a50fb6d4ac2888323353f64d7e15efbd.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 5
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 6
+    },
+    {
+      "title": "Spider Man Noway Home",
+      "poster": "https://e0.pxfuel.com/wallpapers/534/592/desktop-wallpaper-chae-soo-bin-aji-3-korean-actresses-asian-beauty-stunning-girls-i-am-not-a-robot.jpg",
+      "cast": {
+        "male": "Tom Holland",
+        "female": "Zendaya"
+      },
+      "plot": "Spider-Man: No Way Home is a 2021 American superhero film based on the Marvel Comics character Spider-Man",
+      "type": "3D",
+      "trailer": "",
+      "id": 7
+    }
   ]
 }

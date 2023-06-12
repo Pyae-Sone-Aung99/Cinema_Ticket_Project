@@ -1,0 +1,24 @@
+<form class="mt-3 mx-5 my-3" [formGroup]="staffForm" (submit)="onSubmit()">
+  <div class="mb-3">
+    <label for="username" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="username" formControlName="username">
+    <!-- <span
+      *ngIf="cinemaForm.controls['bmName'].invalid && (cinemaForm.controls['bmName'].dirty || cinemaForm.controls['bmName'].touched)">
+      <span class="text-danger" *ngIf="cinemaForm.controls['bmName'].errors?.['required']">
+        Branch Manager name Required!
+      </span>
+    </span> -->
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
+    <!-- <span
+      *ngIf="cinemaForm.controls['bmPassword'].invalid && (cinemaForm.controls['bmPassword'].dirty || cinemaForm.controls['bmPassword'].touched)">
+      <span class="text-danger" *ngIf="cinemaForm.controls['bmPassword'].errors?.['required']">
+        Password Required!
+      </span>
+    </span> -->
+  </div>
+  <button class="btn btn-outline-danger" mat-dialog-close="false">Cancel</button>
+  <button type="submit" class="btn btn-outline-success float-end">Save</button>
+</form>

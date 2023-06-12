@@ -1,0 +1,30 @@
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <div class="card shadow">
+        <div class="card-header d-flex justify-content-between">
+          <h3>Branch Manager List</h3>
+        </div>
+        <div class="card-body">
+          <input type="text" class="my-2 shadow-sm" placeholder="Search Manager Name" [(ngModel)]="enterSearchValue">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Branch Manager</th>
+                <th>Password</th>
+                <th>Cinema Name</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of cinemaList">
+              <tr (click)="branchManager()" *ngIf="enterSearchValue === '' || item.bmName.toLowerCase().includes(enterSearchValue) ">
+                <td > {{item.bmName}} </td>
+                <td> {{item.bmPassword}} </td>
+                <td> {{item.cinemaname}} </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
