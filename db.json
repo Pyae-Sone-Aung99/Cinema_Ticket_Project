@@ -23,6 +23,12 @@
       "username": "nawady",
       "password": "123",
       "id": 4
+    },
+    {
+      "companyName": "Testing Updated",
+      "username": "testing ",
+      "password": "123",
+      "id": 5
     }
   ],
   "cinema": [
@@ -78,7 +84,7 @@
       "cinemaname": "Nawady",
       "location": "Yangon",
       "phoneNo": "09133454532",
-      "bmName": "Sam",
+      "bmName": "Sam Updated",
       "bmPassword": "winchester",
       "id": 7
     },
@@ -203,6 +209,116 @@
       "type": "3D",
       "trailer": "",
       "id": 7
+    }
+  ],
+  "theater": [
+    {
+      "theaterName": "Mingalar 1",
+      "theaterType": "2D",
+      "seatLevels": [
+        {
+          "level": "a",
+          "quantity": 20,
+          "price": 5500
+        },
+        {
+          "level": "b",
+          "quantity": 20,
+          "price": 8000
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "09:00"
+        },
+        {
+          "time": "12:30"
+        },
+        {
+          "time": "15:30"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "theaterName": "Mingalar 2",
+      "theaterType": "3D",
+      "seatLevels": [
+        {
+          "level": "1",
+          "quantity": 30,
+          "price": 5000
+        },
+        {
+          "level": "2",
+          "quantity": 60,
+          "price": 4000
+        },
+        {
+          "level": "3",
+          "quantity": 100,
+          "price": 2000
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "05:22"
+        },
+        {
+          "time": "09:22"
+        },
+        {
+          "time": "18:23"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "theaterName": "Test",
+      "theaterType": "3D",
+      "seatLevels": [
+        {
+          "level": "a",
+          "quantity": 20,
+          "price": 3000
+        },
+        {
+          "level": "b",
+          "quantity": 20,
+          "price": 4000
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "09:09"
+        },
+        {
+          "time": "01:10"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "theaterName": "JCGV",
+      "theaterType": "3D",
+      "seatLevels": [
+        {
+          "level": "Normal",
+          "quantity": 30,
+          "price": 5500
+        },
+        {
+          "level": "Vip",
+          "quantity": 40,
+          "price": 8000
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "09:33"
+        }
+      ],
+      "id": 4
     }
   ]
 }

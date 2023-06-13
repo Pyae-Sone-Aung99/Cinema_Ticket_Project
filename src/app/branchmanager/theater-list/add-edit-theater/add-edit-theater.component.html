@@ -1,0 +1,79 @@
+<form class="mt-3 mx-5 my-3" [formGroup]="theaterForm" (ngSubmit)="onSubmit()">
+
+
+  <div class="mb-3">
+    <label for="theaterName" class="form-label">Theater Name</label>
+    <input type="text" class="form-control" id="theaterName" formControlName="theaterName">
+
+  </div>
+
+
+  <div class="mb-3">
+    <label for="theaterType" class="form-label">Theater Type</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="2D" formControlName="theaterType" id="theaterType1" checked>
+      <label class="form-check-label" for="theaterType1">
+        2D
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" value="3D" formControlName="theaterType" id="theaterType2">
+      <label class="form-check-label" for="theaterType2">
+        3D
+      </label>
+    </div>
+  </div>
+<!-- Seat Start -->
+  <label for="subject" class="form-label">Seat Type</label>
+
+  <div formArrayName="seatLevels">
+    <div class="d-flex" *ngFor="let seatLevel of seatLevels.controls; let i = index" [formGroupName]="i">
+      <div>
+        <label for="level">Level:</label>
+        <input class="form-control" type="text" id="level" formControlName="level">
+      </div>
+
+      <div>
+        <label for="quantity">Quantity:</label>
+        <input class="form-control" type="number" id="quantity" formControlName="quantity">
+      </div>
+
+      <div>
+        <label for="price">Price:</label>
+        <input class="form-control" type="number" id="price" formControlName="price">
+      </div>
+
+      <button type="button" class="btn btn-outline-danger btn-sm" (click)="removeSeatLevel(i)">Remove</button>
+    </div>
+    <button type="button" class="btn btn-outline-primary btn-sm" (click)="addSeatLevel()">Add Seat Level</button>
+  </div>
+<!-- Seat End -->
+
+<!-- Time Start -->
+  <div class="mb-3">
+    <div formArrayName="selectedTimes">
+      <div class="d-flex" *ngFor="let timeGroup of selectedTimes.controls; let i = index" [formGroupName]="i">
+        <input class="form-control" type="time" formControlName="time">
+        <button class="btn btn-outline-danger" (click)="removeTime(i)">Remove</button>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-info" (click)="addTime()">Add Time</button>
+  </div>
+<!-- Time End -->
+
+  <button class="btn btn-outline-danger" mat-dialog-close="false">Cancel</button>
+  <button type="submit" class="btn btn-outline-success float-end"> Next </button>
+</form>
+
+<!-- Time -->
+<!--
+  <div>
+    <label for="selectedTime">Select Time:</label>
+    <select id="selectedTime" formControlName="selectedTime">
+      <option value="">-- Select Time --</option>
+      <option *ngFor="let timeOption of timeOptions" [value]="timeOption">{{ timeOption }}</option>
+    </select>
+  </div>
+
+</form> -->

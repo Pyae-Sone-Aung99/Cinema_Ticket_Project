@@ -1,4 +1,6 @@
 <form class="mt-3 mx-5 my-3" [formGroup]="cinemaForm" (ngSubmit)="onSubmit()">
+
+
   <div class="mb-3">
     <label for="cinemaname" class="form-label">Cinema Name</label>
     <input type="text" class="form-control" id="cinemaname" formControlName="cinemaname">
@@ -9,6 +11,8 @@
       </p>
     </span>
   </div>
+
+
   <div class="mb-3">
     <label for="location" class="form-label">Location</label>
     <input type="text" class="form-control" id="location" formControlName="location">
@@ -19,6 +23,7 @@
       </p>
     </span>
   </div>
+
   <div class="mb-3">
     <label for="phoneNo" class="form-label">Phone Number</label>
     <input type="text" class="form-control" id="phoneNo" formControlName="phoneNo">
