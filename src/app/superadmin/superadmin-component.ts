@@ -24,7 +24,7 @@ export class SuperadminComponent implements OnInit{
     // this is for adding
     openAddEditCMForm(){
       const dialogRef = this._dialog.open(AddEditComponent,{
-        width : '30%'
+        disableClose : true
       })
       dialogRef.afterClosed().subscribe({
         next : (val)=>{
@@ -38,7 +38,7 @@ export class SuperadminComponent implements OnInit{
     // this is for updating data
     openEditCMForm(data:any){
       const dialogRef = this._dialog.open(AddEditComponent,{
-        width : "30%",data //actually here data : data
+        data //actually here data : data
       })
       dialogRef.afterClosed().subscribe({
         next : (val)=>{

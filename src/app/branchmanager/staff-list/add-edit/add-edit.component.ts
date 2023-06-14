@@ -18,8 +18,11 @@ export class AddEditComponent implements OnInit{
   constructor(private _builder:FormBuilder,private _services : BranchManagerServiceService,
     private _dialogRef: MatDialogRef<AddEditComponent>,@Inject(MAT_DIALOG_DATA)public data :any){
     this.staffForm = this._builder.group({
+      staffName : ['',Validators.required],
+      phoneNumber : ['',[Validators.required,Validators.minLength(8)]],
+      email : ['',[Validators.required,Validators.email]],
       username : ['',Validators.required],
-      password : ['',Validators.required]
+      password : ['',[Validators.required,Validators.minLength(4)]]
     })
   }
 

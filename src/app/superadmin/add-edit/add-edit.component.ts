@@ -20,8 +20,10 @@ export class AddEditComponent implements OnInit{
     this.companymanager = this._builder.group({
 
       companyName : ['',Validators.required],
+      email : ['',[Validators.required,Validators.email]],
+      phoneNumber : ['',[Validators.required,Validators.minLength(8)]],
       username: ['',Validators.required],
-      password: ['',Validators.required]
+      password: ['',[Validators.required,Validators.minLength(4)]]
 
     })
   }

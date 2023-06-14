@@ -12,6 +12,9 @@ import { TheaterListComponent } from './theater-list/theater-list.component';
 import { AddEditTheaterComponent } from './theater-list/add-edit-theater/add-edit-theater.component';
 import {MatSelectModule} from '@angular/material/select';
 import { SellSeatComponent } from './sell-seat/sell-seat.component';
+import { NowShowingComponent } from './now-showing/now-showing.component';
+import { AddEditNowShowingComponent } from './now-showing/add-edit-now-showing/add-edit-now-showing.component';
+import { WidgetModule } from '../common/widget/widget.module';
 
 
 @NgModule({
@@ -22,7 +25,9 @@ import { SellSeatComponent } from './sell-seat/sell-seat.component';
     UpcomingMoviesComponent,
     TheaterListComponent,
     AddEditTheaterComponent,
-    SellSeatComponent
+    SellSeatComponent,
+    NowShowingComponent,
+    AddEditNowShowingComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +35,8 @@ import { SellSeatComponent } from './sell-seat/sell-seat.component';
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    WidgetModule
   ]
 })
 export class BranchmanagerModule { }

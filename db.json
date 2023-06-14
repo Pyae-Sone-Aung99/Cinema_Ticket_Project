@@ -1,34 +1,28 @@
 {
   "companymanager": [
     {
-      "companyName": "Mingalar",
-      "username": "mingalar",
-      "password": "123",
+      "companyName": "Mingalar 1",
+      "email": "mingalar@gamil.com",
+      "phoneNumber": "09988581245",
+      "username": "pyaesone",
+      "password": "1234",
       "id": 1
     },
     {
       "companyName": "JCGV",
+      "email": "jcgv@gmail.com",
+      "phoneNumber": "09100100100",
       "username": "jcgv",
-      "password": "1234",
+      "password": "jcgv1234",
       "id": 2
     },
     {
-      "companyName": "Paradiso",
-      "username": "paradiso",
-      "password": "12345",
-      "id": 3
-    },
-    {
       "companyName": "Nawady ",
+      "email": "nawady@gmail.com",
+      "phoneNumber": "09200200200",
       "username": "nawady",
-      "password": "123",
-      "id": 4
-    },
-    {
-      "companyName": "Testing Updated",
-      "username": "testing ",
-      "password": "123",
-      "id": 5
+      "password": "123nawady",
+      "id": 3
     }
   ],
   "cinema": [
@@ -92,21 +86,19 @@
       "cinemaname": "Nawady 2",
       "location": "Mgway",
       "phoneNo": "09200113434",
-      "bmName": "Thar sis",
-      "bmPassword": "123",
+      "bmName": "A wine",
+      "bmPassword": "1234",
       "id": 8
     }
   ],
   "staff": [
     {
-      "username": "emma",
-      "password": "12345",
+      "staffName": "Pyae Sone Aung",
+      "phoneNumber": "09100100100",
+      "email": "pyaesoneaung@gmail.com",
+      "username": "pyaesone",
+      "password": "1234",
       "id": 1
-    },
-    {
-      "username": "john",
-      "password": "123",
-      "id": 2
     }
   ],
   "nowshowing": [
@@ -209,6 +201,39 @@
       "type": "3D",
       "trailer": "",
       "id": 7
+    },
+    {
+      "title": "Testing",
+      "poster": "https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg",
+      "theaterData": "1",
+      "selectedTimes": "[object Object]",
+      "duration": "2hr",
+      "plot": "This is testing ",
+      "type": "2D",
+      "trailer": "https://www.youtube.com/watch?v=HUo7oiZH1_M",
+      "id": 8
+    },
+    {
+      "title": "Testing",
+      "poster": "https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg",
+      "theaterData": "1",
+      "selectedTimes": "[object Object]",
+      "duration": "2hr",
+      "plot": "This is testing ",
+      "type": "2D",
+      "trailer": "https://www.youtube.com/watch?v=HUo7oiZH1_M",
+      "id": 8
+    },
+    {
+      "title": "Testing",
+      "poster": "https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg",
+      "theaterData": "1",
+      "selectedTimes": "[object Object]",
+      "duration": "2hr",
+      "plot": "This is testing ",
+      "type": "2D",
+      "trailer": "https://www.youtube.com/watch?v=HUo7oiZH1_M",
+      "id": 8
     }
   ],
   "theater": [
@@ -319,6 +344,34 @@
         }
       ],
       "id": 4
+    },
+    {
+      "theaterName": "Mingalar 4",
+      "theaterType": "3D",
+      "seatLevels": [
+        {
+          "level": "a",
+          "quantity": 20,
+          "price": 1000
+        },
+        {
+          "level": "b",
+          "quantity": 50,
+          "price": 5000
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "09:00"
+        },
+        {
+          "time": "12:00"
+        },
+        {
+          "time": "15:58"
+        }
+      ],
+      "id": 5
     }
   ]
 }

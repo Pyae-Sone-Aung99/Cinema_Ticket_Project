@@ -1,34 +1,35 @@
-<form class="mt-3 mx-5 my-3" [formGroup]="companymanager" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label for="conname" class="form-label">Company Name</label>
-    <input type="text" class="form-control" id="conname" formControlName="companyName">
-    <span
-      *ngIf="companymanager.controls['companyName'].invalid && (companymanager.controls['companyName'].dirty || companymanager.controls['companyName'].touched)">
-      <p class="text-danger" *ngIf="companymanager.controls['companyName'].errors?.['required']">
-        Company Name Required!
-      </p>
-    </span>
-  </div>
-  <div class="mb-3">
-    <label for="username" class="form-label">Username</label>
-    <input type="text" class="form-control" id="username" formControlName="username">
-    <span
-      *ngIf="companymanager.controls['username'].invalid && (companymanager.controls['username'].dirty || companymanager.controls['username'].touched)">
-      <p class="text-danger" *ngIf="companymanager.controls['username'].errors?.['required']">
-        Username Required!
-      </p>
-    </span>
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
-    <span
-      *ngIf="companymanager.controls['password'].invalid && (companymanager.controls['password'].dirty || companymanager.controls['password'].touched)">
-      <span class="text-danger" *ngIf="companymanager.controls['password'].errors?.['required']">
-        Password Required!
-      </span>
-    </span>
-  </div>
-  <button class="btn btn-outline-danger" mat-dialog-close="false">Cancel</button>
-  <button type="submit" class="btn btn-outline-success float-end"> {{data ? 'Update' : 'Save'}} </button>
-</form>
+<div class="container p-3">
+  <h5 class="text-center mb-3">Add Company Form</h5>
+  <form class="mt-3 mx-5 my-3" [formGroup]="companymanager" (ngSubmit)="onSubmit()">
+
+    <div class="d-flex ">
+      <app-form-group [valid]="companymanager.get('companyName')!.valid" label="Company Name" class="me-3">
+        <input type="text" class="form-control" id="conname" formControlName="companyName">
+      </app-form-group>
+
+      <app-form-group [valid]="companymanager.get('email')!.valid" label="Email">
+        <input type="text" class="form-control" id="email" formControlName="email">
+      </app-form-group>
+    </div>
+
+    <div class="d-flex">
+      <app-form-group [valid]="companymanager.get('phoneNumber')!.valid" label="Phone" class="me-3">
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+      </app-form-group>
+
+      <app-form-group [valid]="companymanager.get('username')!.valid" label="UserName">
+        <input type="text" class="form-control" id="username" formControlName="username">
+      </app-form-group>
+    </div>
+
+    <app-form-group [valid]="companymanager.get('password')!.valid" label="Password">
+      <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
+    </app-form-group>
+
+    <div class="d-flex float-end mb-4">
+      <button class="btn btn-outline-danger float-end me-3" mat-dialog-close="false">Cancel</button>
+      <button type="submit" [class.disabled]="!companymanager.valid" class="btn btn-outline-success float-end"> {{data ? 'Update' : 'Save'}} </button>
+    </div>
+  </form>
+
+</div>

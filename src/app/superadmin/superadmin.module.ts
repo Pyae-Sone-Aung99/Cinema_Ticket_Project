@@ -6,6 +6,7 @@ import { SuperadminComponent } from './superadmin-component';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WidgetModule } from '../common/widget/widget.module';
 
 
 
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SuperadminRoutingModule,
     MatDialogModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    WidgetModule
   ]
 })
 export class SuperadminModule { }

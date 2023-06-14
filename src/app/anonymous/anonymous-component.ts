@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AnonymousServiesService } from '../services/anonymous-servies.service';
+
 
 @Component({
   selector : 'app-anonymous',
@@ -21,7 +22,7 @@ export class AnonymousComponent implements OnInit{
     if(document.body.scrollTop > 0 || document.documentElement.scrollTop > 0)
     {
       this.navbg = {
-        'background-color':'#000000'
+        'background-color':'#AEAFC2'
       }
     }else
     {
@@ -62,4 +63,6 @@ export class AnonymousComponent implements OnInit{
     }
   }
   // Scrolling behaviour to now showing end
+
+
 }

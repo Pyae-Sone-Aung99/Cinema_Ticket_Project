@@ -34,4 +34,6 @@ export class MovieListComponent implements OnInit{
   }
 
   // Routing Movie Detail start
+
+
 }

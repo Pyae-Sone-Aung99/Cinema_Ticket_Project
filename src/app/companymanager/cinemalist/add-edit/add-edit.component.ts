@@ -21,9 +21,9 @@ export class AddEditComponent implements OnInit{
     this.cinemaForm = this._builder.group({
       cinemaname : ['',Validators.required],
       location : ['',Validators.required],
-      phoneNo : ['',Validators.required],
+      phoneNo : ['',[Validators.required,Validators.minLength(8)]],
       bmName : ['',Validators.required],
-      bmPassword : ['',Validators.required]
+      bmPassword : ['',[Validators.required,Validators.minLength(4)]]
     })
   }
 

@@ -3,16 +3,16 @@
     <div class="col-md-8 offset-2">
       <div class="card shadow">
         <div class="card-header d-flex justify-content-between">
-          <h3>Cinema List</h3>
-          <div class="btn btn-outline-primary"  (click)="openAddEditTheaterForm()">Add Cinema</div>
+          <h3>Theater List</h3>
+          <div class="btn btn-outline-primary"  (click)="openAddEditTheaterForm()">Add Theater</div>
         </div>
         <div class="card-body">
-          <input type="text" class="my-2 shadow-sm" placeholder="Search Cinema">
+          <input type="text" class="my-2 shadow-sm" placeholder="Search Theater" [(ngModel)]="enterSearchValue">
           <table class="table table-striped">
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Seat Capacity</th>
+                <th>Seat  Capacity</th>
                 <th>Type</th>
                 <th>Sound System</th>
                 <th>Show Times</th>
@@ -20,7 +20,7 @@
               </tr>
             </thead>
             <tbody *ngFor="let item of theaterData">
-              <tr>
+              <tr  *ngIf="enterSearchValue === '' || item.theaterName.toLowerCase().includes(enterSearchValue) ">
                 <td> {{ item.theaterName }} </td>
 
                 <td > {{ calculateTotalSeat(item.seatLevels)}} </td>

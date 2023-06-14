@@ -9,6 +9,7 @@ import { BranchmanagerComponent } from './branchmanager/branchmanager.component'
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddEditComponent } from './cinemalist/add-edit/add-edit.component';
+import { WidgetModule } from '../common/widget/widget.module';
 
 
 
@@ -26,7 +27,8 @@ import { AddEditComponent } from './cinemalist/add-edit/add-edit.component';
     CompanymanagerRoutingModule,
     MatDialogModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    WidgetModule
   ]
 })
 export class CompanymanagerModule { }

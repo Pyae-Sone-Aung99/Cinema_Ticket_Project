@@ -40,6 +40,27 @@ export class BranchManagerServiceService {
 
   updateTheater(id:number,data:any):Observable<any>{
     return this._http.put(`http://localhost:3000/theater/${id}`,data);
-    // Theater End
+
   }
+  // Theater End
+
+  // Now Showing
+  addNowShowing(data:any):Observable<any>{
+    return this._http.post('http://localhost:3000/nowshowing',data);
+  }
+
+  getNowShowing():Observable<any>{
+    return this._http.get('http://localhost:3000/nowshowing');
+  }
+
+
+  deleteNowShowing(id:number):Observable<any>{
+    return this._http.delete(`http://localhost:3000/nowshowing/${id}`)
+  }
+
+  updateNowShowing(id:number,data:any):Observable<any>{
+    return this._http.put(`http://localhost:3000/nowshowing/${id}`,data);
+  }
+
+  // Now Showing End
 }

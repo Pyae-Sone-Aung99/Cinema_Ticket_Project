@@ -1,24 +1,26 @@
 <form class="mt-3 mx-5 my-3" [formGroup]="staffForm" (submit)="onSubmit()">
-  <div class="mb-3">
-    <label for="username" class="form-label">User Name</label>
+
+  <app-form-group [valid]="staffForm.get('staffName')!.valid" label="Staff Name">
+    <input type="text" class="form-control" id="staffName" formControlName="staffName">
+  </app-form-group>
+
+  <app-form-group [valid]="staffForm.get('phoneNumber')!.valid" label="Phone">
+    <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
+  </app-form-group>
+
+  <app-form-group [valid]="staffForm.get('email')!.valid" label="Email">
+    <input type="text" class="form-control" id="email" formControlName="email">
+  </app-form-group>
+
+
+  <app-form-group [valid]="staffForm.get('username')!.valid" label="UserName">
     <input type="text" class="form-control" id="username" formControlName="username">
-    <!-- <span
-      *ngIf="cinemaForm.controls['bmName'].invalid && (cinemaForm.controls['bmName'].dirty || cinemaForm.controls['bmName'].touched)">
-      <span class="text-danger" *ngIf="cinemaForm.controls['bmName'].errors?.['required']">
-        Branch Manager name Required!
-      </span>
-    </span> -->
-  </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Password</label>
-    <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
-    <!-- <span
-      *ngIf="cinemaForm.controls['bmPassword'].invalid && (cinemaForm.controls['bmPassword'].dirty || cinemaForm.controls['bmPassword'].touched)">
-      <span class="text-danger" *ngIf="cinemaForm.controls['bmPassword'].errors?.['required']">
-        Password Required!
-      </span>
-    </span> -->
-  </div>
+  </app-form-group>
+
+  <app-form-group [valid]="staffForm.get('password')!.valid" label="Password">
+    <input type="password" class="form-control" id="password" formControlName="password" autocomplete="false">
+  </app-form-group>
+
   <button class="btn btn-outline-danger" mat-dialog-close="false">Cancel</button>
-  <button type="submit" class="btn btn-outline-success float-end">Save</button>
+  <button type="submit" [class.disabled]="!staffForm.valid" class="btn btn-outline-success float-end">Save</button>
 </form>

@@ -1,11 +1,10 @@
 <form class="mt-3 mx-5 my-3" [formGroup]="theaterForm" (ngSubmit)="onSubmit()">
 
 
-  <div class="mb-3">
-    <label for="theaterName" class="form-label">Theater Name</label>
+  <app-form-group [valid]="theaterForm.get('theaterName')!.valid" label="Theater Name">
     <input type="text" class="form-control" id="theaterName" formControlName="theaterName">
+  </app-form-group>
 
-  </div>
 
 
   <div class="mb-3">
@@ -63,7 +62,7 @@
 <!-- Time End -->
 
   <button class="btn btn-outline-danger" mat-dialog-close="false">Cancel</button>
-  <button type="submit" class="btn btn-outline-success float-end"> Next </button>
+  <button type="submit" class="btn btn-outline-success float-end"> {{data ? 'Update' : 'Save'}}  </button>
 </form>
 
 <!-- Time -->

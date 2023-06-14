@@ -1,59 +1,100 @@
-// For carousel
+// // For carousel
+// .carousel-inner{
+//   height: 600px;
+// }
+
+// .carousel-inner .carousel-item img{
+//   height: 600px;
+//   object-fit: cover;
+// }
+
+// .carousel-caption h2{
+//   color: #E50914;
+//   font-weight: bold;
+//   font-size: 30px;
+// }
+
+// .carousel-caption p {
+//   color: #ffffff;
+// }
+
+// // For carousel end
+
+// // Now Showing
+// .nowShowingPoster{
+//   display: flex;
+//   overflow-y: hidden;
+//   overflow: scroll;
+// }
+// // for scollbar of overflow
+// .nowShowingPoster::-webkit-scrollbar{
+//   display: none;
+// }
+
+// .nowShowingimg{
+//   max-height: 100px;
+//   object-fit: contain;
+//   width: 100%;
+//   box-sizing: content-box;
+//   transition: transform 450ms;
+//   margin-right: 7px;
+// }
+
+// .nowShowingimg:hover{
+//   transform: scale(1.09);
+//   cursor: pointer;
+// }
+
+// .forLargeImg{
+//   max-height: 300px;
+// }
+
+// .nowShowingPoster p{
+//   color: #ffffff;
+//   font-size: x-small;
+// }
+
+// .card{
+//   background-color: black;
+// }
+// __________________________________________________________________________________________
+
+.container{
+  min-height: 100vh;
+}
+
+.container img{
+  width: 150px;
+  height: auto;
+  min-height: 225px;
+  transition: transform 450ms;
+}
+
+.container img:hover{
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+input{
+  height: 30px;
+  background-color: lavender;
+  color: black;
+  border-bottom: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
 .carousel-inner{
   height: 600px;
+}
+
+#carousel{
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-inner .carousel-item img{
   height: 600px;
   object-fit: cover;
-}
-
-.carousel-caption h2{
-  color: #E50914;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.carousel-caption p {
-  color: #ffffff;
-}
-
-// For carousel end
-
-// Now Showing
-.nowShowingPoster{
-  display: flex;
-  overflow-y: hidden;
-  overflow: scroll;
-}
-// for scollbar of overflow
-.nowShowingPoster::-webkit-scrollbar{
-  display: none;
-}
-
-.nowShowingimg{
-  max-height: 100px;
-  object-fit: contain;
-  width: 100%;
-  box-sizing: content-box;
-  transition: transform 450ms;
-  margin-right: 7px;
-}
-
-.nowShowingimg:hover{
-  transform: scale(1.09);
-  cursor: pointer;
-}
-
-.forLargeImg{
-  max-height: 300px;
-}
-
-.nowShowingPoster p{
-  color: #ffffff;
-  font-size: x-small;
-}
-
-.card{
-  background-color: black;
 }

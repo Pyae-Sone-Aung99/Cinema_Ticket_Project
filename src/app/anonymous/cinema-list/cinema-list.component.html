@@ -1,22 +1,21 @@
 <div class="container mt-5">
+  <div class="mt-5">
+    <select class="form-select" style="width: 200px;" aria-label="Default select example">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
   <div class="row py-5">
-    <div class="col">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Cinema Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Phone Number</th>
-          </tr>
-        </thead>
-        <tbody  *ngFor="let item of cinemaData">
-          <tr (click)="cinemaDetail(item.id)">
-            <td class="text-danger"> {{item.cinemaname}} </td>
-            <td> {{item.location}} </td>
-            <td> {{item.phoneNo}} </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+
     </div>
   </div>
 </div>

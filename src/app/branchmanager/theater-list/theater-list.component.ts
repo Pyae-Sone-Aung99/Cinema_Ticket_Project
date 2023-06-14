@@ -12,6 +12,8 @@ import { BranchManagerServiceService } from 'src/app/services/branch-manager-ser
 export class TheaterListComponent implements OnInit{
 
   theaterData:any
+  enterSearchValue: string =''
+
   ngOnInit(): void {
     this.getTheaterData();
   }

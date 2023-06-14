@@ -5,13 +5,15 @@ import { StaffListComponent } from './staff-list/staff-list.component';
 import { UpcomingMoviesComponent } from './upcoming-movies/upcoming-movies.component';
 import { TheaterListComponent } from './theater-list/theater-list.component';
 import { SellSeatComponent } from './sell-seat/sell-seat.component';
+import { NowShowingComponent } from './now-showing/now-showing.component';
 
 const routes: Routes = [
   {path : '',component : BranchmanagerComponent,children : [
     {path : 'upcoming',component : UpcomingMoviesComponent},
     {path : 'staff',component : StaffListComponent},
     {path : 'theaterlist',component: TheaterListComponent},
-    {path : 'sellSeat',component : SellSeatComponent}
+    {path : 'sellSeat',component : SellSeatComponent},
+    {path : 'nowShowing',component : NowShowingComponent}
   ]}
 ];
 
