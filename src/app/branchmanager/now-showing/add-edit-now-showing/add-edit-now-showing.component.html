@@ -36,8 +36,8 @@
         <input type="text" class="form-control" id="duration" formControlName="duration">
       </app-form-group>
 
-      <app-form-group [valid]="movieForm.get('type')!.valid" label="Type" class="mb-3 me-3"  style="width: 100%;">
-        <input type="text" class="form-control" id="type" formControlName="type">
+      <app-form-group [valid]="movieForm.get('poster')!.valid" label="Poster" class="mb-3 me-3"  style="width: 100%;">
+        <input type="text" class="form-control" id="poster" formControlName="poster">
       </app-form-group>
 
     </div>
@@ -48,9 +48,7 @@
     </div>
 
 
-    <app-form-group [valid]="movieForm.get('poster')!.valid" label="Poster" class="mb-3 me-3"  style="width: 100%;">
-      <input type="text" class="form-control" id="poster" formControlName="poster">
-    </app-form-group>
+
 
     <div class="d-flex float-end mb-4">
       <button class="btn btn-outline-danger me-3" mat-dialog-close="false">Cancel</button>

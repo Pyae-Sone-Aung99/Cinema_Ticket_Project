@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <button class="btn btn-primary">Submit</button>
+      <button (click)="goPayment()" class="btn btn-primary">Submit</button>
 
       <p>Selected Seat Count: {{ selectedSeats.length }}</p>
       <p>Total Price: ${{ calculateTotalPrice() }}</p>

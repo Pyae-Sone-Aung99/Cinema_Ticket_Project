@@ -7,7 +7,7 @@
             <button class="btn btn-outline-primary" (click)="openAddNowShowing()">Add Movies</button>
           </div>
 
-          <input type="text" id="search" class="mb-2 w-100" placeholder="Search Movie">
+          <input type="text" id="search" class="mb-2 w-100" placeholder="Search Movie" [(ngModel)]="enterSearchValue">
 
 
             <table class="table shadow-lg table-hover">
@@ -18,20 +18,18 @@
                   <th>ShowTime</th>
                   <th>Theater</th>
                   <th>duration</th>
-                  <th>Type</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody *ngFor="let item of NowShowingData">
-                <tr>
+                <tr *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
                   <td> {{item.id}} </td>
                   <td> {{item.title}} </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td> {{item.type}} </td>
-                  <td><i class="bi bi-pencil-square me-3 text-info" ></i>
-                    <i class="bi bi-trash3-fill text-danger"></i>
+                  <td> {{item.selectedTimes }} </td>
+                  <td> {{item.theaterData}} </td>
+                  <td> {{item.duration}} </td>
+                  <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateNowShowing(item)"></i>
+                    <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
                   </td>
                 </tr>
               </tbody>

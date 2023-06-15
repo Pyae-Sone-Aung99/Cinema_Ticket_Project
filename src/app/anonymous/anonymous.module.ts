@@ -9,9 +9,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import { CinemaListComponent } from './cinema-list/cinema-list.component';
-import { CinemaDetailComponent } from './cinema-list/cinema-detail/cinema-detail.component';
 import { BookingSeatComponent } from './booking-seat/booking-seat.component';
+import { PaymentComponent } from './payment/payment.component';
+import { VoucherComponent } from './voucher/voucher.component';
 
 
 
@@ -20,9 +20,9 @@ import { BookingSeatComponent } from './booking-seat/booking-seat.component';
     AnonymousComponent,
     MovieListComponent,
     MovieDetailsComponent,
-    CinemaListComponent,
-    CinemaDetailComponent,
-    BookingSeatComponent
+    BookingSeatComponent,
+    PaymentComponent,
+    VoucherComponent
   ],
   imports: [
     CommonModule,

@@ -53,7 +53,12 @@ export class NowShowingComponent implements OnInit{
     })
   }
 
-  onSubmit(){
-
+  deleteCinema(id:number){
+    this._service.deleteNowShowing(id).subscribe({
+      next : ()=>{
+        this.getNowShowingData();
+      }
+    })
   }
+
 }

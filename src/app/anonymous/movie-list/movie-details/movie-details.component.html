@@ -15,7 +15,8 @@
       <span  class="me-2">Tobey Maguire |</span>
       <span  class="me-2">Andrew Garfield |</span>
       <div class="mt-3">
-        <button class="btn btn-outline-danger btn-sm" (click)="goTrailer()">Trailer</button>
+        <button class="btn btn-outline-danger btn-sm" (click)="goTrailer()">{{cinema ?
+           'Trailer' : 'Cinema'}}</button>
       </div>
     </div>
   </div>

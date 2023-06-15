@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class BookingSeatComponent implements OnInit {
 
   }
 
-  constructor(private renderer: Renderer2){}
+  constructor(private renderer: Renderer2,private _route : Router){}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
@@ -67,6 +68,10 @@ export class BookingSeatComponent implements OnInit {
       totalPrice += seat.price;
     }
     return totalPrice;
+  }
+
+  goPayment(){
+    this._route.navigateByUrl("/anonymous/payment")
   }
 
 }

@@ -3,17 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AnonymousComponent } from './anonymous-component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieDetailsComponent } from './movie-list/movie-details/movie-details.component';
-import { CinemaListComponent } from './cinema-list/cinema-list.component';
-import { CinemaDetailComponent } from './cinema-list/cinema-detail/cinema-detail.component';
 import { BookingSeatComponent } from './booking-seat/booking-seat.component';
+import { PaymentComponent } from './payment/payment.component';
+import { VoucherComponent } from './voucher/voucher.component';
 
 const routes: Routes = [
   {path : '',component : AnonymousComponent,children:[
     {path : 'movielist', component : MovieListComponent},
     {path : "movieDetail/:id",component : MovieDetailsComponent},
-    {path : 'cinemalist', component : CinemaListComponent},
-    {path : "cinemaDetail/:id",component : CinemaDetailComponent},
-    {path : "bookingseat",component : BookingSeatComponent}
+    {path : "bookingseat",component : BookingSeatComponent},
+    {path : "payment",component : PaymentComponent},
+    {path : "voucher",component : VoucherComponent}
   ] }
 ];
 

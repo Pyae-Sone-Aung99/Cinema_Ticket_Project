@@ -15,6 +15,7 @@ import { SellSeatComponent } from './sell-seat/sell-seat.component';
 import { NowShowingComponent } from './now-showing/now-showing.component';
 import { AddEditNowShowingComponent } from './now-showing/add-edit-now-showing/add-edit-now-showing.component';
 import { WidgetModule } from '../common/widget/widget.module';
+import { AddEditUpcomingComponent } from './upcoming-movies/add-edit-upcoming/add-edit-upcoming.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { WidgetModule } from '../common/widget/widget.module';
     AddEditTheaterComponent,
     SellSeatComponent,
     NowShowingComponent,
-    AddEditNowShowingComponent
+    AddEditNowShowingComponent,
+    AddEditUpcomingComponent
   ],
   imports: [
     CommonModule,

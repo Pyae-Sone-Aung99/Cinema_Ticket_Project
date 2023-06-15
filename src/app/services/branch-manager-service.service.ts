@@ -63,4 +63,24 @@ export class BranchManagerServiceService {
   }
 
   // Now Showing End
+
+  // Upcoming Start
+  addUpcoming(data:any):Observable<any>{
+    return this._http.post('http://localhost:3000/upcoming',data);
+  }
+
+  getUpcoming():Observable<any>{
+    return this._http.get('http://localhost:3000/upcoming');
+  }
+
+
+  deleteUpcoming(id:number):Observable<any>{
+    return this._http.delete(`http://localhost:3000/upcoming/${id}`)
+  }
+
+  updateUpcoming(id:number,data:any):Observable<any>{
+    return this._http.put(`http://localhost:3000/upcoming/${id}`,data);
+  }
+
+  // Upcoming End
 }

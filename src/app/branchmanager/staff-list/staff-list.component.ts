@@ -21,7 +21,7 @@ export class StaffListComponent implements OnInit{
 
   openAddEditCinemaForm(){
     const dialogRef= this._dialog.open(AddEditComponent,{
-      width : "30%"
+        disableClose : true
     })
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
@@ -41,7 +41,7 @@ export class StaffListComponent implements OnInit{
 
   openUpdateStaffForm(data:any){
     const dialogRef= this._dialog.open(AddEditComponent,{
-      width : "30%",data : data
+      data : data,disableClose : true
     })
     dialogRef.afterClosed().subscribe({
       next : (val)=>{

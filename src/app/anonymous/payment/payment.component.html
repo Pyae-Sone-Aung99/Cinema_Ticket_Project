@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="form-container">
+        <h2>Payment</h2>
+        <br>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Name</label>
+            <input type="text" class="form-control" id="username" name="username" >
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Phone Number</label>
+            <input type="password" class="form-control" id="password" name="password" >
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Email</label>
+            <input type="email" class="form-control" id="password" name="password" >
+          </div>
+          <div class="mb-3">
+            <label for="payment-method" class="form-label">Payment Method</label>
+            <select class="form-select" id="payment-method" name="payment-method" required>
+              <option value="" disabled selected>Select a payment method</option>
+              <option value="credit-card">KPAY</option>
+              <option value="paypal">WAVE PAY</option>
+              <option value="bitcoin">AYA PAY</option>
+            </select>
+          </div>
+
+        </form>
+        <button (click)="goReceipt()" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

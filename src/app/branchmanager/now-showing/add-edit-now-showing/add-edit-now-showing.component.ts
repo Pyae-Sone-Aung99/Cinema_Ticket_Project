@@ -30,7 +30,6 @@ export class AddEditNowShowingComponent implements OnInit{
       selectedTimes : ['',Validators.required],
       duration : ['',Validators.required],
       plot: ['',Validators.required],
-      type : ['',Validators.required],
       trailer : ['',Validators.required]
     })
   }
@@ -54,14 +53,21 @@ export class AddEditNowShowingComponent implements OnInit{
   }
 
   onSubmit(){
-    // this._services.addNowShowing(this.movieForm.value).subscribe({
-    //   next : (valx)=>{
-    //     this._dialogRef.close(true)
-    //   }
-    // })
-
-
-    console.log(this.movieForm.value);
+    if (this.movieForm.valid){
+      if(this.data){
+        this._services.updateNowShowing(this.data.id,this.movieForm.value).subscribe({
+          next : (val : any)=>{
+            this._dialogRef.close(true)
+          }
+        })
+      }else{
+        this._services.addNowShowing(this.movieForm.value).subscribe({
+          next : (val:any)=>{
+            this._dialogRef.close(true)
+          }
+        })
+    }
+    }
 
   }
 
