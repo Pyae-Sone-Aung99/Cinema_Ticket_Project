@@ -1,45 +1,48 @@
-<div class="container mt-5 ">
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <div class="card shadow">
-        <div class="card-header d-flex justify-content-between">
-          <h3>Theater List</h3>
-          <div class="btn btn-outline-primary"  (click)="openAddEditTheaterForm()">Add Theater</div>
-        </div>
-        <div class="card-body">
-          <input type="text" class="my-2 shadow-sm" placeholder="Search Theater" [(ngModel)]="enterSearchValue">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Seat  Capacity</th>
-                <th>Type</th>
-                <th>Sound System</th>
-                <th>Show Times</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let item of theaterData">
-              <tr  *ngIf="enterSearchValue === '' || item.theaterName.toLowerCase().includes(enterSearchValue) ">
-                <td> {{ item.theaterName }} </td>
+<div id="root">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-10 offset-1">
 
-                <td > {{ calculateTotalSeat(item.seatLevels)}} </td>
-
-                <td> {{ item.theaterType }} </td>
-                <td> Dolby Atmos or THX </td>
-                <td >
-                  <ul *ngFor="let times of item.selectedTimes">
-                    <li> {{times.time}} </li>
-                  </ul>
-                </td>
-                <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateCinemaForm(item)"></i>
-                  <i class="bi bi-trash3-fill text-danger" (click)="deleteTheater(item.id)"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="d-flex justify-content-between mb-3">
+          <h3 class="text-uppercase fw-bold">Theater List</h3>
+          <div class="btn btn-outline-primary btn-sm" (click)="openAddEditTheaterForm()">Add Theater</div>
         </div>
+
+        <input type="text" id="search" class="mb-2 w-100" placeholder="Search Theater" [(ngModel)]="enterSearchValue">
+        <table class="table shadow-lg table-hover">
+          <thead class="table-primary">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Seats</th>
+              <th>Type</th>
+              <th>Sound System</th>
+              <th>Show Times</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of theaterData">
+            <tr *ngIf="enterSearchValue === '' || item.theaterName.toLowerCase().includes(enterSearchValue) ">
+              <td> {{item.id}} </td>
+              <td> {{ item.theaterName }} </td>
+
+              <td> {{ calculateTotalSeat(item.seatLevels)}} </td>
+
+              <td> {{ item.theaterType }} </td>
+              <td> {{ item.soundSystem }} </td>
+              <td>
+                <ul class="list-group list-group-horizontal">
+                  <li *ngFor="let times of item.selectedTimes"> {{times.time}} |</li>
+                </ul>
+              </td>
+              <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateCinemaForm(item)"></i>
+                <i class="bi bi-trash3-fill text-danger" (click)="deleteTheater(item.id)"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+
     </div>
   </div>
 </div>

@@ -1,38 +1,39 @@
-<div class="container mt-5 ">
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <div class="card shadow">
-        <div class="card-header d-flex justify-content-between">
-          <h3>Cinema List</h3>
-          <div class="btn btn-outline-primary"  (click)="openAddEditCinemaForm()">Add Cinema</div>
+<div id="root">
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-md-10 offset-1">
+        <div class="d-flex justify-content-between mb-3">
+          <h3 class="text-uppercase fw-bold">Cinemas</h3>
+          <button class="btn btn-outline-primary btn-sm" (click)="openAddEditCinemaForm()">Add Cinema</button>
         </div>
-        <div class="card-body">
-          <input type="text" class="my-2 shadow-sm" placeholder="Search Cinema" [(ngModel)]="enterSearchValue">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Phone Number</th>
-                <th>Branch Manager</th>
-                <th>Password</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody *ngFor="let item of cinemaList">
-              <tr *ngIf="enterSearchValue === '' || item.cinemaname.toLowerCase().includes(enterSearchValue) ">
-                <th> {{item.cinemaname}} </th>
-                <td> {{item.location}} </td>
-                <td> {{item.phoneNo}} </td>
-                <td> {{item.bmName}} </td>
-                <td> {{item.bmPassword}} </td>
-                <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateCinemaForm(item)"></i>
-                  <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+
+        <input type="text" id="search" class="mb-2  w-100" placeholder="Search Cinema" [(ngModel)]="enterSearchValue">
+        <table class="table shadow-lg table-hover">
+          <thead class="table-primary">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Phone Number</th>
+              <th>Branch Manager</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of cinemaList">
+            <tr *ngIf="enterSearchValue === '' || item.cinemaname.toLowerCase().includes(enterSearchValue) ">
+              <td> {{item.id}} </td>
+              <td> {{item.cinemaname}} </td>
+              <td> {{item.location}} </td>
+              <td> {{item.phoneNo}} </td>
+              <td> {{item.bmName}} </td>
+              <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateCinemaForm(item)"></i>
+                <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
     </div>
   </div>

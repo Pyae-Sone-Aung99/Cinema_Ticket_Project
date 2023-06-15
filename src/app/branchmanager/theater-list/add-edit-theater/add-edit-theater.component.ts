@@ -35,6 +35,7 @@ export class AddEditTheaterComponent {
     private _dialogRef:MatDialogRef<AddEditTheaterComponent>,@Inject(MAT_DIALOG_DATA)public data : any) {
     this.theaterForm = this.formBuilder.group({
       theaterName : ['',Validators.required],
+      soundSystem : ['',Validators.required],
       theaterType : ['',Validators.required],
       seatLevels: this.formBuilder.array([]), // Initialize empty FormArray
       selectedTimes: this.formBuilder.array([])

@@ -1,8 +1,25 @@
 <div class="container">
   <div class="row">
     <div class="col" id="testing">
-      <p>Staill Testing</p>
-      <button class="btn btn-outline-danger btn-sm" routerLink="" routerLinkActive="active">Purchase</button>
+
+      <div *ngFor="let seatLevel of seatLevels">
+        <h3>Seat Level {{ seatLevel.level }}</h3>
+        <div class="seat-row">
+        <!-- seats -->
+          <button *ngFor="let seat of generateSeats(seatLevel.count, seatLevel.price)"
+                  [class.selected]="isSeatSelected(seat)"
+                  (click)="selectSeat(seat)"
+                  class="btn btn-outline-primary btn-sm">
+            {{ seat.id }}
+          </button>
+
+        </div>
+      </div>
+
+      <button class="btn btn-primary">Submit</button>
+
+      <p>Selected Seat Count: {{ selectedSeats.length }}</p>
+      <p>Total Price: ${{ calculateTotalPrice() }}</p>
     </div>
   </div>
 </div>

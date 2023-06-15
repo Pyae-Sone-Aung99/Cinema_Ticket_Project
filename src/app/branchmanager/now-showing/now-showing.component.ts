@@ -23,6 +23,7 @@ export class NowShowingComponent implements OnInit{
 
   openAddNowShowing(){
     const dialogRef = this._dialog.open(AddEditNowShowingComponent,{
+      disableClose:true
     })
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
@@ -35,7 +36,7 @@ export class NowShowingComponent implements OnInit{
 
   openUpdateNowShowing(data:any){
     const dialogRef = this._dialog.open(AddEditNowShowingComponent,{
-      data
+      data,disableClose:true
     })
     dialogRef.afterClosed().subscribe({
       next : ()=>{

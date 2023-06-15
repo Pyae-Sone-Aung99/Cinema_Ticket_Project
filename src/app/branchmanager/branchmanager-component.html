@@ -1,51 +1,45 @@
 <div class="container-fluid">
-  <div class="row flex-nowrap">
-    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
-      <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-        <!-- <a routerLink="dashboard"
-          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <span class="fs-5 d-none d-sm-inline">Branch Manager</span>
+  <div class="row">
+    <div class="col-md-3 min-vh-100" id="sidebar">
+      <div class="d-flex pt-5 flex-column align-items-center px-4">
+        <a routerLink="theaterlist" class="pb-3 text-primary text-decoration-none">
+          <span class="fs-4 ms-4 fw-bold"><i class="bi bi-person-circle me-2"></i>Branch Manager</span>
         </a>
-        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-          <li class="nav-item">
-            <a routerLink="dashboard" class="nav-link align-middle px-0">
-              <i class="bi bi-person-gear"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+        <ul class="nav nav-pills flex-column align-items-sm-start">
+          <li class="nav-item mb-1">
+            <a routerLink="theaterlist" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-camera-reels-fill"></i> <span class="ms-1 d-none d-sm-inline">Theaters</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="theaterlist" class="nav-link align-middle px-0">
-              <i class="bi bi-house-gear-fill"></i> <span class="ms-1 d-none d-sm-inline">Theater List</span>
+          <li class="nav-item mb-1">
+            <a routerLink="nowShowing" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-person-workspace me-1"></i> <span class="ms-1 d-none d-sm-inline">Now Showing</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="nowShowing" class="nav-link align-middle px-0">
-              <i class="bi bi-camera-reels-fill"></i> <span class="ms-1 d-none d-sm-inline">Now Showing Movies</span>
+          <li class="nav-item mb-1">
+            <a routerLink="upcoming" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-film me-1"></i><span class="ms-1 d-none d-sm-inline">UpComing</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="upcoming" class="nav-link align-middle px-0">
-              <i class="bi bi-film"></i> <span class="ms-1 d-none d-sm-inline">Up Coming Movies</span>
+          <li class="nav-item mb-1">
+            <a routerLink="sellSeat" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-ticket-perforated me-1"></i> <span class="ms-1 d-none d-sm-inline">Sell Ticket</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="sellSeat" class="nav-link align-middle px-0">
-              <i class="bi bi-ticket"></i> <span class="ms-1 d-none d-sm-inline">Sell Ticket Board</span>
+          <li class="nav-item mb-1">
+            <a routerLink="staff" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-person-bounding-box me-1"></i> <span class="ms-1 d-none d-sm-inline">Staff Account</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="staff" class="nav-link align-middle px-0">
-              <i class="bi bi-person-circle"></i> <span class="ms-1 d-none d-sm-inline">Staff Account List</span>
+          <li class="nav-item mb-1">
+            <a routerLink="" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-box-arrow-left me-1"></i> <span class="ms-1 d-none d-sm-inline">LogOut</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a routerLink="branchmanager" class="nav-link align-middle px-0">
-              <i class="bi bi-box-arrow-left"></i> <span class="ms-1 d-none d-sm-inline">Logout</span>
-            </a>
-          </li>
-        </ul> -->
+        </ul>
       </div>
     </div>
-    <div class="col py-3">
+    <div class="col py-3" id="contact">
       <router-outlet></router-outlet>
     </div>
   </div>

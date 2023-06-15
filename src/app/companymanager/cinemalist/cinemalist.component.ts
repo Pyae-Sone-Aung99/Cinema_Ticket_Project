@@ -24,7 +24,7 @@ export class CinemalistComponent implements OnInit {
 
   openAddEditCinemaForm(){
     const dialogRef = this._dialog.open(AddEditComponent,{
-      width : '30%'
+      disableClose : true
     })
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
@@ -37,7 +37,7 @@ export class CinemalistComponent implements OnInit {
 
   openUpdateCinemaForm(data:any){
     const dialogRef = this._dialog.open(AddEditComponent,{
-      width : "30%",data : data
+      disableClose : true,data : data
     })
 
     dialogRef.afterClosed().subscribe({

@@ -22,6 +22,7 @@ export class TheaterListComponent implements OnInit{
 
   openAddEditTheaterForm(){
     const dialogRef = this._dialog.open(AddEditTheaterComponent,{
+      disableClose : true
     })
     dialogRef.afterClosed().subscribe({
       next : () => {
@@ -32,7 +33,7 @@ export class TheaterListComponent implements OnInit{
 
   openUpdateCinemaForm(data:any){
     const dialogRef = this._dialog.open(AddEditTheaterComponent,{
-      data : data
+      data : data,disableClose : true
     })
 
     dialogRef.afterClosed().subscribe({

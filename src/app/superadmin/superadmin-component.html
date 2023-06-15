@@ -6,9 +6,11 @@
           <h3 class="text-uppercase  fw-bold">companies</h3>
           <button class="btn btn-outline-primary btn-sm" (click)="openAddEditCMForm()">Add Company</button>
         </div>
-        <table class="table shadow-lg ">
-          <thead>
+        <input type="text" id="search" class="mb-2  w-100" placeholder="Search Cinema" [(ngModel)]="enterSearchValue">
+        <table class="table shadow-lg  table-hover">
+          <thead class="table-primary">
             <tr>
+              <th>#</th>
               <th>Company Name</th>
               <th>Email</th>
               <th>Phone No</th>
@@ -19,6 +21,7 @@
           </thead>
           <tbody *ngFor="let item of companymanagerList">
             <tr *ngIf="enterSearchValue === '' || item.companyName.includes(enterSearchValue) ">
+              <td> {{ item.id}} </td>
               <td> {{ item.companyName }} </td>
               <td> {{item.email}} </td>
               <td> {{item.phoneNumber}} </td>

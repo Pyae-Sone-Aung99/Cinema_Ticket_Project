@@ -10,9 +10,19 @@
 
 tbody td{
   padding: 15px 0px 15px 20px;
-
 }
 
 thead th{
   padding: 15px 0px 15px 20px;
 }
+
+#search{
+  border: none;
+  background-color: #F8F8FF;
+  color: black;
+  outline: none;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+

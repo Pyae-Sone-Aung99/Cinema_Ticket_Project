@@ -38,7 +38,7 @@ export class SuperadminComponent implements OnInit{
     // this is for updating data
     openEditCMForm(data:any){
       const dialogRef = this._dialog.open(AddEditComponent,{
-        data //actually here data : data
+        disableClose : true,data //actually here data : data
       })
       dialogRef.afterClosed().subscribe({
         next : (val)=>{
