@@ -7,9 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AnonymousServiesService {
 
+  users = [
+    {
+      name: 'admin'
+    }
+  ]
+
   constructor(private _http:HttpClient) { }
 
-
+  loginUser:any
 
   nowShowingList():Observable<any>{
     return this._http.get("http://localhost:3000/nowshowing");
@@ -21,6 +27,10 @@ export class AnonymousServiesService {
 
   getCinema():Observable<any>{
     return this._http.get("http://localhost:3000/cinema");
+  }
+
+  login(form:any) {
+    this.loginUser = form.value
   }
 
   // addStaff(data:any):Observable<any>{
