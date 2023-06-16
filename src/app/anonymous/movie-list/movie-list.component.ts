@@ -17,7 +17,7 @@ export class MovieListComponent implements OnInit{
   constructor(private _service:AnonymousServiesService,private _route: Router){}
 
   // Getting now showing data start
-  nowShowingData:any
+  nowShowingData?:any
 
   nowShowing(){
     this._service.nowShowingList().subscribe({
@@ -38,7 +38,7 @@ export class MovieListComponent implements OnInit{
   // Routing Movie Detail start
 
   // Upcoming
-  upcomingData:any
+  upcomingData?:any
   upcoming(){
     this._service.getUpcomingList().subscribe({
       next:(resp)=>{

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { AddEditNowShowingComponent } from './add-edit-now-showing/add-edit-now-showing.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-now-showing',
@@ -17,7 +18,7 @@ export class NowShowingComponent implements OnInit{
     this.getNowShowingData();
   }
 
-  constructor(private _service:BranchManagerServiceService,private _dialog:MatDialog) {
+  constructor(private _service:BranchManagerServiceService,private _dialog:MatDialog,private _router:Router) {
 
   }
 

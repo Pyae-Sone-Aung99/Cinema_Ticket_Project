@@ -9,7 +9,7 @@ export class LoginService {
 
   constructor(private _http:HttpClient) { }
 
-  loginStatus : any = false
+  loginStatus : any = true
 
   getCompanyManagerAccount():Observable<any>{
     return this._http.get('http://localhost:3000/companymanager');

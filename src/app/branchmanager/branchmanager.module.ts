@@ -11,7 +11,6 @@ import { UpcomingMoviesComponent } from './upcoming-movies/upcoming-movies.compo
 import { TheaterListComponent } from './theater-list/theater-list.component';
 import { AddEditTheaterComponent } from './theater-list/add-edit-theater/add-edit-theater.component';
 import {MatSelectModule} from '@angular/material/select';
-import { SellSeatComponent } from './sell-seat/sell-seat.component';
 import { NowShowingComponent } from './now-showing/now-showing.component';
 import { AddEditNowShowingComponent } from './now-showing/add-edit-now-showing/add-edit-now-showing.component';
 import { WidgetModule } from '../common/widget/widget.module';
@@ -26,7 +25,6 @@ import { AddEditUpcomingComponent } from './upcoming-movies/add-edit-upcoming/ad
     UpcomingMoviesComponent,
     TheaterListComponent,
     AddEditTheaterComponent,
-    SellSeatComponent,
     NowShowingComponent,
     AddEditNowShowingComponent,
     AddEditUpcomingComponent

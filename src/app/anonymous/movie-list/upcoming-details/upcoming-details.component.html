@@ -1,11 +1,11 @@
 <div class="container ">
   <div class="row ">
     <div class="col-md-2 text-end">
-      <img src="{{upcomingDetails.poster}}" alt="">
+      <img src="{{upcomingDetails?.poster}}" alt="">
     </div>
     <div class="col-md-10 ">
       <div class="d-flex justify-content-between">
-        <h4 class=""> {{upcomingDetails.upcomingname}} </h4>
+        <h4 class=""> {{upcomingDetails?.upcomingname}} </h4>
         <a class="btn btn-outline-danger text-black float-end" routerLink="/anonymous/movielist"><i class="bi bi-arrow-left-circle text-danger"></i></a>
       </div>
       <p class="fw-bold text-danger">{{upcomingDetails?.type}}</p>
@@ -20,14 +20,14 @@
   </div>
   <hr>
 
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-md-6">
       <div class="h-100">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/iaD2f2O9wGk" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>
+        <iframe width="560" height="380" [src]="trailer" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>
       </div>
     </div>
     <div class="col-md-6">
-      <p> {{upcomingDetails.plot}} </p>
+      <p> {{upcomingDetails?.plot}} </p>
     </div>
   </div>
 

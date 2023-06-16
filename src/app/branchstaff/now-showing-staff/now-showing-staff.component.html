@@ -4,7 +4,6 @@
       <div class="col-md-10 offset-1">
           <div class="d-flex justify-content-between mb-3">
             <h3 class="text-uppercase fw-bold">Movie List</h3>
-            <button class="btn btn-outline-primary" (click)="openAddNowShowing()">Add Movies</button>
           </div>
 
           <input type="text" id="search" class="mb-2 w-100" placeholder="Search Movie" [(ngModel)]="enterSearchValue">
@@ -18,19 +17,15 @@
                   <th>ShowTime</th>
                   <th>Theater</th>
                   <th>duration</th>
-                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody *ngFor="let item of NowShowingData">
-                <tr *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
+                <tr (click)="seatbook(item.id)" *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
                   <td> {{item.id}} </td>
                   <td> {{item.title}} </td>
                   <td> {{item.selectedTimes }} </td>
                   <td> {{item.theaterData.cinema}} </td>
                   <td> {{item.duration}} </td>
-                  <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateNowShowing(item)"></i>
-                    <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
-                  </td>
                 </tr>
               </tbody>
             </table>

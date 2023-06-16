@@ -29,5 +29,9 @@ export class AnonymousServiesService {
     return this._http.get(`http://localhost:3000/upComing/${data}`)
   }
 
+  getTheatreById(id:any) {
+    return this._http.get(`http://localhost:3000/theater/${id}`)
+  }
+
 
 }

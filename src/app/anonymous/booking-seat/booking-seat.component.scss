@@ -3,11 +3,13 @@
   margin-top: 100px;
 }
 
-#testing{
-
-  text-align: center;
+.container{
+  min-height: 100vh;
+  margin-top: 100px;
 }
 
-.seat-row {
-
+.btn:hover[type=button] {
+  color: white;
+  background-color: brown;
+  border-color: brown;
 }

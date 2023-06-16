@@ -1,4 +1,28 @@
-<h1>Branch Staff work</h1>
-<button (click)="logout()" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
-  <i class="bi bi-box-arrow-left me-1"></i> <span class="ms-1 d-none d-sm-inline">Logout</span>
-</button>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 min-vh-100" id="sidebar">
+      <div class="d-flex pt-5 flex-column align-items-center px-4">
+        <a routerLink="theaterlist" class="pb-3 text-primary text-decoration-none">
+          <span class="fs-4 fw-bold"><i class="bi bi-person-circle me-2"></i>Staff</span>
+        </a>
+        <ul class="nav nav-pills flex-column align-items-sm-start">
+
+          <li class="nav-item mb-1">
+            <a routerLink="nowshowing" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-person-workspace me-1"></i> <span class="ms-1 d-none d-sm-inline">Now Showing</span>
+            </a>
+          </li>
+
+          <li class="nav-item mb-1">
+            <button (click)="logout()" routerLink="" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+              <i class="bi bi-box-arrow-left me-1"></i> <span class="ms-1 d-none d-sm-inline">LogOut</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col py-3" id="contact">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

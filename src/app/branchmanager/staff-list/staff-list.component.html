@@ -12,6 +12,7 @@
             <table class="table shadow-lg table-hover">
               <thead class="table-primary">
                 <tr>
+                  <th>#</th>
                   <th>Staff Name</th>
                   <th>Phone</th>
                   <th>Email</th>
@@ -21,7 +22,8 @@
                 </tr>
               </thead>
               <tbody *ngFor="let item of staffList">
-                <tr *ngIf="enterSearchValue === '' || item.username.toLowerCase().includes(enterSearchValue)">
+                <tr (click)="goStaff()" *ngIf="enterSearchValue === '' || item.username.toLowerCase().includes(enterSearchValue)">
+                  <td> {{item.id}} </td>
                   <td> {{item.staffName}} </td>
                   <td> {{item.phoneNumber}} </td>
                   <td> {{item.email}} </td>

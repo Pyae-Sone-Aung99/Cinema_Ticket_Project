@@ -14,6 +14,7 @@ export class BranchstaffComponent implements OnInit{
     if(!this._service.loginStatus){
       this._router.navigateByUrl('login')
     }
+    this._router.navigateByUrl('/branchstaff/nowshowing')
   }
 
   constructor(private _service:LoginService,private _router:Router) {

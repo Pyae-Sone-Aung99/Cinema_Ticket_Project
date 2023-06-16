@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-staff-list',
@@ -17,7 +18,8 @@ export class StaffListComponent implements OnInit{
     this.getStaffList();
   }
 
-  constructor(private _dialog:MatDialog,private _services : BranchManagerServiceService){}
+  constructor(private _dialog:MatDialog,private _services : BranchManagerServiceService,
+    private _router:Router){}
 
   openAddEditCinemaForm(){
     const dialogRef= this._dialog.open(AddEditComponent,{
@@ -57,5 +59,9 @@ export class StaffListComponent implements OnInit{
         this.getStaffList()
       }
     })
+  }
+
+  goStaff(){
+    this._router.navigateByUrl("branchstaff/nowshowing")
   }
 }

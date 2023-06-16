@@ -1,24 +1,20 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
 
 declare const bootstrap:any
-
 @Component({
-  selector: 'app-booking-seat',
-  templateUrl: './booking-seat.component.html',
-  styleUrls: ['./booking-seat.component.scss']
+  selector: 'app-seat-booking',
+  templateUrl: './seat-booking.component.html',
+  styleUrls: ['./seat-booking.component.scss']
 })
-export class BookingSeatComponent implements OnInit {
-
+export class SeatBookingComponent {
   theater:any
   selectedSeats:any[] = []
   check:boolean = false
 
   ngOnInit(): void {
 
-    this.renderer.setProperty(document.documentElement, 'scrollTop', 1);
-    window.scrollTo(0, 1);
 
     this.route.queryParamMap.subscribe(param => {
       if(param.get('id')) {
@@ -29,15 +25,8 @@ export class BookingSeatComponent implements OnInit {
     })
   }
 
-  constructor(private renderer: Renderer2, private service:AnonymousServiesService, private route:ActivatedRoute,
+  constructor(private service:AnonymousServiesService, private route:ActivatedRoute,
     private _router:Router){}
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event) {
-    if (window.scrollY === 0) {
-      window.scrollTo(0, 1);
-    }
-  }
 
   selectSeat(seatNo:any, price:any) {
 
