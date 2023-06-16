@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute} from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
 
@@ -12,7 +13,7 @@ export class MovieDetailsComponent implements OnInit{
 
   cinema? = true
   movieDetails:any
-
+  trailer? : any
 
 
 
@@ -24,14 +25,19 @@ export class MovieDetailsComponent implements OnInit{
   }
 
   constructor(private _route:ActivatedRoute,private _services:AnonymousServiesService,
-    private renderer: Renderer2){}
+    private renderer: Renderer2,private _sanitizer: DomSanitizer){}
 
   getMovieDetail(id:any){
     this._services.getMovieDetails(id).subscribe({
       next : (resp)=>{
+        this.trailer = this.sanitizeUrl( resp.trailer)
         this.movieDetails = resp
       }
     })
+  }
+
+  private sanitizeUrl(url: string): SafeResourceUrl {
+    return this._sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   goTrailer(){

@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-md-10 offset-1 mt-5">
         <div class="d-flex justify-content-between mb-3">
-          <h3 class="text-uppercase  fw-bold">companies</h3>
-          <button class="btn btn-outline-primary btn-sm" (click)="openAddEditCMForm()">Add Company</button>
+          <h3 class="text-uppercase  fw-bold"><i class="bi bi-building-fill me-2"></i>companies</h3>
+          <button class="btn btn-outline-primary btn-sm" (click)="openAddEditCMForm()"><i class="bi bi-plus"></i>Add Company</button>
         </div>
         <input type="text" id="search" class="mb-2  w-100" placeholder="Search Cinema" [(ngModel)]="enterSearchValue">
         <table class="table shadow-lg  table-hover">
@@ -20,7 +20,7 @@
             </tr>
           </thead>
           <tbody *ngFor="let item of companymanagerList">
-            <tr *ngIf="enterSearchValue === '' || item.companyName.includes(enterSearchValue) ">
+            <tr *ngIf="enterSearchValue === '' || item.companyName.toLowerCase().includes(enterSearchValue) ">
               <td> {{ item.id}} </td>
               <td> {{ item.companyName }} </td>
               <td> {{item.email}} </td>

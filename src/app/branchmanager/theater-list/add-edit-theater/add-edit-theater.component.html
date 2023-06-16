@@ -14,9 +14,19 @@
 
     <div formArrayName="seatLevels" id="seatAndlevel">
       <div class="d-flex mb-3" *ngFor="let seatLevel of seatLevels.controls; let i = index" [formGroupName]="i">
-        <div>
+        <div class="me-2" id="selectbox">
           <label for="level">Seat Level:</label>
-          <input class="form-control me-2" type="text" id="level" formControlName="level">
+          <select class="form-select" formControlName="level">
+            <option selected>Choose Seat Level :</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+            <option value="H">H</option>
+          </select>
         </div>
 
         <div>
@@ -36,6 +46,20 @@
         Seat</button>
     </div>
 
+    <div class="mb-3">
+      <label for="theaterType" class="form-label">Time</label>
+      <div formArrayName="selectedTimes" >
+        <div class="d-flex" *ngFor="let timeGroup of selectedTimes.controls; let i = index" [formGroupName]="i">
+          <input class="form-control me-2" type="time" formControlName="time">
+          <button class="btn btn-outline-danger" id="inner" (click)="removeTime(i)"><i
+            class="bi bi-trash3"></i></button>
+        </div>
+      </div>
+
+      <div class="  mt-3">
+        <button type="button" class="btn btn-outline-primary btn-sm" (click)="addTime()">Add Time</button>
+      </div>
+    </div>
 
     <div class="my-3">
       <label for="subject" class="form-label">Theater Type</label>
@@ -53,20 +77,6 @@
             3D
           </label>
         </div>
-      </div>
-    </div>
-    <div class="mb-3">
-      <label for="theaterType" class="form-label">Time</label>
-      <div formArrayName="selectedTimes" >
-        <div class="d-flex" *ngFor="let timeGroup of selectedTimes.controls; let i = index" [formGroupName]="i">
-          <input class="form-control me-2" type="time" formControlName="time">
-          <button class="btn btn-outline-danger" id="inner" (click)="removeTime(i)"><i
-            class="bi bi-trash3"></i></button>
-        </div>
-      </div>
-
-      <div class="  mt-3">
-        <button type="button" class="btn btn-outline-primary btn-sm" (click)="addTime()">Add Time</button>
       </div>
     </div>
 

@@ -26,7 +26,8 @@ export class AddEditUpcomingComponent implements OnInit{
       date : ['',Validators.required],
       duration : ['',Validators.required],
       plot : ['',[Validators.required]],
-      type : ['',Validators.required]
+      type : ['',Validators.required],
+      poster : ['',Validators.required]
     })
   }
 

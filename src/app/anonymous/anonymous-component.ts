@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AnonymousServiesService } from '../services/anonymous-servies.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,10 @@ export class AnonymousComponent implements OnInit{
 
   ngOnInit(): void {
     this.showingMoviesData();
+    this._router.navigateByUrl('/anonymous/movielist')
   }
 
-  constructor(private _serviecs : AnonymousServiesService){}
+  constructor(private _serviecs : AnonymousServiesService,private _router:Router){}
 
   // Nav Bar Start (@HostListener allows you to define event handlers directly within your component or directive class.)
   navbg:any;

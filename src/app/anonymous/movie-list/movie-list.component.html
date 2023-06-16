@@ -21,36 +21,20 @@
     </button>
   </div>
 </div>
+
 <div class="container mt-5">
   <div class="row">
     <div class="d-flex justify-content-between">
       <h3 class="fw-bold text-uppercase fs-4 mb-3 ms-4">Now Showing</h3>
-      <input type="text" class="float-end" placeholder="Search Movie Name">
+      <input type="text" class="float-end" placeholder="Search Movie Name" [(ngModel)]="enterSearchValue">
     </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" (click)="movieDetail(1)" class="shadow-lg" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
+    <div class="col-md-2 mb-2 text-center" *ngFor="let item of nowShowingData">
+      <div *ngIf="enterSearchValue === '' || item.title.toLowerCase().includes(enterSearchValue) ">
+        <img src="{{item.poster}}" (click)="movieDetail(item.id)" class="shadow-lg" alt="Movie Poster">
+        <h5 class="fs-6 mt-2"> {{item.title}}</h5>
+      </div>
     </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
+
 
   </div>
   <div class="row mt-5">
@@ -58,29 +42,9 @@
       <h3 class="fw-bold text-uppercase fs-4 mb-3 ms-4">UpComing</h3>
       <input type="text" class="float-end" placeholder="Search Movie Name">
     </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" class="shadow-lg" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="https://wiki.d-addicts.com/images/thumb/7/7c/Chae_Soo_Bin.jpg/720px-Chae_Soo_Bin.jpg" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
-    </div>
-    <div class="col-md-2 mb-2 text-center">
-      <img src="../../../assets/images/movies/captain-marvel.png" alt="Movie Poster">
-      <h5 class="fs-6 mt-2">Captain Marvel</h5>
+    <div class="col-md-2 mb-2 text-center" *ngFor="let item of upcomingData">
+      <img src="{{item.poster}}" (click)="upcomingDetail(item.id)" class="shadow-lg" alt="Movie Poster">
+      <h5 class="fs-6 mt-2"> {{item.upcomingname}} </h5>
     </div>
   </div>
 </div>

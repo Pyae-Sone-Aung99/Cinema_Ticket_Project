@@ -8,8 +8,10 @@ import { AnonymousServiesService } from 'src/app/services/anonymous-servies.serv
   styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit{
+  enterSearchValue : string = ''
   ngOnInit(): void {
     this.nowShowing();
+    this.upcoming();
   }
 
   constructor(private _service:AnonymousServiesService,private _route: Router){}
@@ -35,5 +37,18 @@ export class MovieListComponent implements OnInit{
 
   // Routing Movie Detail start
 
+  // Upcoming
+  upcomingData:any
+  upcoming(){
+    this._service.getUpcomingList().subscribe({
+      next:(resp)=>{
+        this.upcomingData = resp
+      }
+    })
+  }
+
+  upcomingDetail(id:number){
+    this._route.navigateByUrl(`/anonymous/upcomingDetail/${id}`)
+  }
 
 }

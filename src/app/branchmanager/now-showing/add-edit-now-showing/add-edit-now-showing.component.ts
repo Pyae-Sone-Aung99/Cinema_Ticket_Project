@@ -30,6 +30,7 @@ export class AddEditNowShowingComponent implements OnInit{
       selectedTimes : ['',Validators.required],
       duration : ['',Validators.required],
       plot: ['',Validators.required],
+      type : ['',Validators.required],
       trailer : ['',Validators.required]
     })
   }

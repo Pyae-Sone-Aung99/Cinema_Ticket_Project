@@ -12,6 +12,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BookingSeatComponent } from './booking-seat/booking-seat.component';
 import { PaymentComponent } from './payment/payment.component';
 import { VoucherComponent } from './voucher/voucher.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpcomingDetailsComponent } from './movie-list/upcoming-details/upcoming-details.component';
 
 
 
@@ -22,7 +24,8 @@ import { VoucherComponent } from './voucher/voucher.component';
     MovieDetailsComponent,
     BookingSeatComponent,
     PaymentComponent,
-    VoucherComponent
+    VoucherComponent,
+    UpcomingDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,9 @@ import { VoucherComponent } from './voucher/voucher.component';
     MatFormFieldModule,
     MatDatepickerModule,
     MatInputModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AnonymousModule { }

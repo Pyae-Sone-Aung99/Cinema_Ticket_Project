@@ -7,15 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AnonymousServiesService {
 
-  users = [
-    {
-      name: 'admin'
-    }
-  ]
-
   constructor(private _http:HttpClient) { }
-
-  loginUser:any
 
   nowShowingList():Observable<any>{
     return this._http.get("http://localhost:3000/nowshowing");
@@ -29,23 +21,13 @@ export class AnonymousServiesService {
     return this._http.get("http://localhost:3000/cinema");
   }
 
-  login(form:any) {
-    this.loginUser = form.value
+  getUpcomingList():Observable<any>{
+    return this._http.get("http://localhost:3000/upComing");
   }
 
-  // addStaff(data:any):Observable<any>{
-  //   return this._http.post('http://localhost:3000/staff',data);
-  // }
+  getUpcomingDetails(data: any): Observable<any> {
+    return this._http.get(`http://localhost:3000/upComing/${data}`)
+  }
 
-  // getStaff():Observable<any>{
-  //   return this._http.get('http://localhost:3000/staff');
-  // }
 
-  // deleteStaff(id:number):Observable<any>{
-  //   return this._http.delete(`http://localhost:3000/staff/${id}`);
-  // }
-
-  // updateStaff(id:number,data:any):Observable<any>{
-  //   return this._http.put(`http://localhost:3000/staff/${id}`,data);
-  // }
 }

@@ -23,7 +23,8 @@ export class AddEditComponent implements OnInit{
       location : ['',Validators.required],
       phoneNo : ['',[Validators.required,Validators.minLength(8)]],
       bmName : ['',Validators.required],
-      bmPassword : ['',[Validators.required,Validators.minLength(4)]]
+      bmPassword : ['',[Validators.required,Validators.minLength(4)]],
+      role : ['branchmanager']
     })
   }
 

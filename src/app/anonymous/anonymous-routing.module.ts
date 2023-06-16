@@ -6,6 +6,7 @@ import { MovieDetailsComponent } from './movie-list/movie-details/movie-details.
 import { BookingSeatComponent } from './booking-seat/booking-seat.component';
 import { PaymentComponent } from './payment/payment.component';
 import { VoucherComponent } from './voucher/voucher.component';
+import { UpcomingDetailsComponent } from './movie-list/upcoming-details/upcoming-details.component';
 
 const routes: Routes = [
   {path : '',component : AnonymousComponent,children:[
@@ -13,7 +14,9 @@ const routes: Routes = [
     {path : "movieDetail/:id",component : MovieDetailsComponent},
     {path : "bookingseat",component : BookingSeatComponent},
     {path : "payment",component : PaymentComponent},
-    {path : "voucher",component : VoucherComponent}
+    {path : "voucher",component : VoucherComponent},
+    {path : "upcomingDetail/:id",component : UpcomingDetailsComponent},
+    {path : '',pathMatch : 'full',redirectTo : '/movielist'}
   ] }
 ];
 

@@ -1,0 +1,36 @@
+<div class="container ">
+  <div class="row ">
+    <div class="col-md-2 text-end">
+      <img src="{{upcomingDetails.poster}}" alt="">
+    </div>
+    <div class="col-md-10 ">
+      <div class="d-flex justify-content-between">
+        <h4 class=""> {{upcomingDetails.upcomingname}} </h4>
+        <a class="btn btn-outline-danger text-black float-end" routerLink="/anonymous/movielist"><i class="bi bi-arrow-left-circle text-danger"></i></a>
+      </div>
+      <p class="fw-bold text-danger">{{upcomingDetails?.type}}</p>
+      <!-- array change -->
+      <h5 class="fs-6"><i class="bi bi-people"></i>Casts</h5>
+      <span class="me-2">Tom Holland |</span>
+      <span  class="me-2">Zendya |</span>
+      <span  class="me-2">Tobey Maguire |</span>
+      <span  class="me-2">Andrew Garfield |</span>
+
+    </div>
+  </div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="h-100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/iaD2f2O9wGk" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <p> {{upcomingDetails.plot}} </p>
+    </div>
+  </div>
+
+
+
+</div>
