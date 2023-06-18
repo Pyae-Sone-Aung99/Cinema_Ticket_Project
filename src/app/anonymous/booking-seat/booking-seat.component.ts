@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
+import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 
 declare const bootstrap:any
 
@@ -20,16 +21,18 @@ export class BookingSeatComponent implements OnInit {
     this.renderer.setProperty(document.documentElement, 'scrollTop', 1);
     window.scrollTo(0, 1);
 
-    this.route.queryParamMap.subscribe(param => {
-      if(param.get('id')) {
-        this.service.getTheatreById(param.get('id')).subscribe(result => {
-          this.theater = result
+    this._route.queryParams.subscribe(params =>{
+      if(params['id']){
+        const id = Number(params['id'])
+        this._service.getTheatersByMovieId(id).subscribe(result => {
+          this.theater = result.find( (ele:any)=> ele.id == id )
         })
       }
     })
+
   }
 
-  constructor(private renderer: Renderer2, private service:AnonymousServiesService, private route:ActivatedRoute,
+  constructor(private renderer: Renderer2, private _service:BranchManagerServiceService, private _route:ActivatedRoute,
     private _router:Router){}
 
   @HostListener('window:scroll', ['$event'])

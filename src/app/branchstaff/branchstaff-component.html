@@ -8,7 +8,7 @@
         <ul class="nav nav-pills flex-column align-items-sm-start">
 
           <li class="nav-item mb-1">
-            <a routerLink="nowshowing" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+            <a [routerLink]="['/branchstaff/nowshowing']" [queryParams]="{bmId : bmId,staffId : staffId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
               <i class="bi bi-person-workspace me-1"></i> <span class="ms-1 d-none d-sm-inline">Now Showing</span>
             </a>
           </li>

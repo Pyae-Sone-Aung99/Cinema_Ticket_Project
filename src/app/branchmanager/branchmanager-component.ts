@@ -9,14 +9,19 @@ import { Router } from '@angular/router';
 })
 
 export class BranchmanagerComponent implements OnInit{
+  bmManagerId ?: any = this._loginServices.getLoggedInUserId()
+
   ngOnInit(): void {
     if(!this._service.loginStatus){
       this._router.navigateByUrl('login')
+    }else{
+      this._router.navigate(['/branchmanager/theaterlist'],{queryParams : {bmId : this._loginServices.getLoggedInUserId()}})
     }
-    this._router.navigateByUrl("/branchmanager/theaterlist")
+
   }
 
-  constructor(private _service : LoginService,private _router : Router) {
+  constructor(private _service : LoginService,private _router : Router,
+    private _loginServices : LoginService) {
 
   }
 

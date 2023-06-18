@@ -2,17 +2,17 @@
   <div class="row ">
       <div class="col-md-3 min-vh-100" id="sidebar">
           <div class="d-flex pt-5 flex-column align-items-center px-4">
-              <a routerLink="cinemalist" class="pb-3 text-primary text-decoration-none">
+              <a [routerLink]="['/companymanager/cinemalist']" [queryParams]="{cmId : managerId}"  class="pb-3 text-primary text-decoration-none">
                   <span class="fs-4 ms-4 fw-bold"><i class="bi bi-person-circle me-2"></i>Company Manager</span>
               </a>
               <ul class="nav nav-pills flex-column align-items-sm-start">
                   <li class="nav-item">
-                      <a routerLink="cinemalist" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+                      <a [routerLink]="['/companymanager/cinemalist']" [queryParams]="{cmId : managerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
                         <i class="bi bi-buildings me-1"></i> <span class="ms-1 d-none d-sm-inline">Cinemas</span>
                       </a>
                   </li>
                   <li class="nav-item">
-                    <a routerLink="branchmanager" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+                    <a [routerLink]="['/companymanager/branchmanager']" [queryParams]="{cmId : managerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
                       <i class="bi bi-person-workspace me-1"></i> <span class="ms-1 d-none d-sm-inline">Branch Manager</span>
                     </a>
                 </li>

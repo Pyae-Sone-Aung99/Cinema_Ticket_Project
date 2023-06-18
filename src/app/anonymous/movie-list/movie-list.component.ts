@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
+import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -14,13 +15,13 @@ export class MovieListComponent implements OnInit{
     this.upcoming();
   }
 
-  constructor(private _service:AnonymousServiesService,private _route: Router){}
+  constructor(private _service:BranchManagerServiceService,private _route: Router){}
 
   // Getting now showing data start
   nowShowingData?:any
 
   nowShowing(){
-    this._service.nowShowingList().subscribe({
+    this._service.getNowShowing().subscribe({
       next:(resp)=>{
         this.nowShowingData = resp
       }
@@ -40,7 +41,7 @@ export class MovieListComponent implements OnInit{
   // Upcoming
   upcomingData?:any
   upcoming(){
-    this._service.getUpcomingList().subscribe({
+    this._service.getUpcoming().subscribe({
       next:(resp)=>{
         this.upcomingData = resp
       }

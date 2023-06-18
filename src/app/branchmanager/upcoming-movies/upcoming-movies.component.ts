@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { AddEditUpcomingComponent } from './add-edit-upcoming/add-edit-upcoming.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,11 +15,21 @@ export class UpcomingMoviesComponent {
   enterSearchValue : string = ''
 
   ngOnInit(): void {
-    this.getUpcoming();
+    this._route.queryParams.subscribe(params =>{
+      if(params['bmId']){
+        const id = Number(params['bmId'])
+        this.getUpcomingBybmIdData(id)
+      }
+    })
   }
 
-  constructor(private _dialog:MatDialog,private _services : BranchManagerServiceService){}
+  constructor(private _dialog:MatDialog,private _services : BranchManagerServiceService,
+    private _route:ActivatedRoute){}
 
+
+    getUpcomingBybmIdData(id:number){
+      this._services.getUpcomingByBranchManagerId(id).subscribe(data => this.upcominglist = data)
+    }
 
 
   openAddUpcomingForm(){
@@ -28,7 +39,12 @@ export class UpcomingMoviesComponent {
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val){
-          this.getUpcoming();
+          this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getUpcomingBybmIdData(id)
+          }
+    })
         }
       }
     })
@@ -42,24 +58,28 @@ export class UpcomingMoviesComponent {
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val){
-          this.getUpcoming();
+          this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getUpcomingBybmIdData(id)
+          }
+    })
         }
       }
     })
   }
 
-  getUpcoming(){
-    this._services.getUpcoming().subscribe({
-      next : (resp)=>{
-        this.upcominglist = resp
-      }
-    })
-  }
+
 
   deleteUpcoming(id:number){
     this._services.deleteUpcoming(id).subscribe({
       next : ()=>{
-        this.getUpcoming();
+        this._route.queryParams.subscribe(params =>{
+        if(params['bmId']){
+          const id = Number(params['bmId'])
+          this.getUpcomingBybmIdData(id)
+        }
+    })
       }
     })
   }

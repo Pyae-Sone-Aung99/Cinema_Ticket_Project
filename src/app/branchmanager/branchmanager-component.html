@@ -2,27 +2,27 @@
   <div class="row">
     <div class="col-md-3 min-vh-100" id="sidebar">
       <div class="d-flex pt-5 flex-column align-items-center px-4">
-        <a routerLink="theaterlist" class="pb-3 text-primary text-decoration-none">
+        <a [routerLink]="['/branchmanager/theaterlist']" [queryParams]="{bmId : bmManagerId}" class="pb-3 text-primary text-decoration-none">
           <span class="fs-4 ms-4 fw-bold"><i class="bi bi-person-circle me-2"></i>Branch Manager</span>
         </a>
         <ul class="nav nav-pills flex-column align-items-sm-start">
           <li class="nav-item mb-1">
-            <a routerLink="theaterlist" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+            <a [routerLink]="['/branchmanager/theaterlist']" [queryParams]="{bmId : bmManagerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
               <i class="bi bi-camera-reels-fill"></i> <span class="ms-1 d-none d-sm-inline">Theaters</span>
             </a>
           </li>
           <li class="nav-item mb-1">
-            <a routerLink="nowShowing" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+            <a [routerLink]="['/branchmanager/nowShowing']" [queryParams]="{bmId : bmManagerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
               <i class="bi bi-person-workspace me-1"></i> <span class="ms-1 d-none d-sm-inline">Now Showing</span>
             </a>
           </li>
           <li class="nav-item mb-1">
-            <a routerLink="upcoming" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+            <a [routerLink]="['/branchmanager/upcoming']" [queryParams]="{bmId : bmManagerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
               <i class="bi bi-film me-1"></i><span class="ms-1 d-none d-sm-inline">UpComing</span>
             </a>
           </li>
           <li class="nav-item mb-1">
-            <a routerLink="staff" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
+            <a [routerLink]="['/branchmanager/staff']" [queryParams]="{bmId : bmManagerId}" class="nav-link align-middle px-0 text-primary fs-6 fw-bold">
               <i class="bi bi-person-bounding-box me-1"></i> <span class="ms-1 d-none d-sm-inline">Staff Account</span>
             </a>
           </li>

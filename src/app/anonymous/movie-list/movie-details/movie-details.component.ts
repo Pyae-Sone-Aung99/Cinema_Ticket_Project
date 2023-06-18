@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute} from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
+import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { CompanymanagerServicesService } from 'src/app/services/companymanager-services.service';
 
 
 @Component({
@@ -14,7 +16,8 @@ export class MovieDetailsComponent implements OnInit{
   cinema? = true
   movieDetails:any
   trailer? : any
-
+  theaterData : any
+  cinemaData : any
 
 
   ngOnInit(): void {
@@ -25,13 +28,34 @@ export class MovieDetailsComponent implements OnInit{
   }
 
   constructor(private _route:ActivatedRoute,private _services:AnonymousServiesService,
-    private renderer: Renderer2,private _sanitizer: DomSanitizer){}
+    private renderer: Renderer2,private _sanitizer: DomSanitizer,private _bmServices:BranchManagerServiceService,
+    private _cmServices:CompanymanagerServicesService){}
 
   getMovieDetail(id:any){
     this._services.getMovieDetails(id).subscribe({
       next : (resp)=>{
         this.trailer = this.sanitizeUrl( resp.trailer)
         this.movieDetails = resp
+
+        this.getTheaterData(this.movieDetails.theaterData)
+      }
+    })
+  }
+
+  getCinemaDetail(id:number){
+    this._cmServices.getCinemaByBmId(id).subscribe({
+      next : (resp)=>{
+        this.cinemaData = resp.find( (ele:any)=> ele.id == id );
+      }
+    })
+  }
+
+  getTheaterData(id:any){
+    this._bmServices.getTheatersByMovieId(id).subscribe({
+      next : (resp)=>{
+        this.theaterData = resp.find( (ele:any)=> ele.id == id )
+
+        this.getCinemaDetail(this.theaterData.bmId)
       }
     })
   }

@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-add-edit-theater',
@@ -32,13 +33,15 @@ export class AddEditTheaterComponent {
   }
 
   constructor(private formBuilder: FormBuilder,private _services:BranchManagerServiceService,
-    private _dialogRef:MatDialogRef<AddEditTheaterComponent>,@Inject(MAT_DIALOG_DATA)public data : any) {
+    private _dialogRef:MatDialogRef<AddEditTheaterComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
+    private _loginServices : LoginService) {
     this.theaterForm = this.formBuilder.group({
       theaterName : ['',Validators.required],
       soundSystem : ['',Validators.required],
       theaterType : ['',Validators.required],
       seatLevels: this.formBuilder.array([]), // Initialize empty FormArray
-      selectedTimes: this.formBuilder.array([])
+      selectedTimes: this.formBuilder.array([]),
+      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
     });
   }
 

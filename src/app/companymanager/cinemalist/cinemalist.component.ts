@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { CompanymanagerServicesService } from 'src/app/services/companymanager-services.service';
+import { ActivatedRoute } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 
 @Component({
@@ -10,15 +12,24 @@ import { CompanymanagerServicesService } from 'src/app/services/companymanager-s
   styleUrls: ['./cinemalist.component.scss']
 })
 export class CinemalistComponent implements OnInit {
-
-  cinemaList!:any
+  cinemaList :any
   enterSearchValue : string = ''
 
   ngOnInit(): void {
-    this.getCinema();
+    this._route.queryParams.subscribe(params =>{
+      if(params['cmId']){
+        const id = Number(params['cmId'])
+        this.getCinemaById(id)
+      }
+    })
   }
 
-  constructor(private _dialog:MatDialog,private _services : CompanymanagerServicesService){}
+  constructor(private _dialog:MatDialog,private _services : CompanymanagerServicesService,
+    private _route : ActivatedRoute,private _loginServices : LoginService){}
+
+    getCinemaById(id:number){
+      this._services.getCinemalistById(id).subscribe(data => this.cinemaList = data)
+    }
 
 
 
@@ -29,10 +40,16 @@ export class CinemalistComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val){
-          this.getCinema();
+          this._route.queryParams.subscribe(params =>{
+            if(params['cmId']){
+              const id = Number(params['cmId'])
+              this.getCinemaById(id)
+            }
+          })
         }
       }
     })
+
   }
 
   openUpdateCinemaForm(data:any){
@@ -43,24 +60,27 @@ export class CinemalistComponent implements OnInit {
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val){
-          this.getCinema();
+          this._route.queryParams.subscribe(params =>{
+            if(params['cmId']){
+              const id = Number(params['cmId'])
+              this.getCinemaById(id)
+            }
+          })
         }
       }
     })
   }
 
-  getCinema(){
-    this._services.getCinemalist().subscribe({
-      next : (resp)=>{
-        this.cinemaList = resp
-      }
-    })
-  }
 
   deleteCinema(id:number){
     this._services.deleteCinema(id).subscribe({
       next : ()=>{
-        this.getCinema();
+        this._route.queryParams.subscribe(params =>{
+          if(params['cmId']){
+            const id = Number(params['cmId'])
+            this.getCinemaById(id)
+          }
+        })
       }
     })
   }

@@ -1,78 +1,54 @@
 {
   "companymanager": [
     {
-      "companyName": "Mingalar 1",
+      "companyName": "Mingalar Company",
       "email": "mingalar@gamil.com",
       "phoneNumber": "09988581245",
-      "username": "pyaesone",
-      "password": "1234",
+      "username": "mingalar",
+      "password": "mingalar1234",
       "role": "companymanager",
       "id": 1
     },
     {
       "companyName": "JCGV",
       "email": "jcgv@gmail.com",
-      "phoneNumber": "09100100100",
+      "phoneNumber": "099200200200",
       "username": "jcgv",
       "password": "jcgv1234",
       "role": "companymanager",
       "id": 2
-    },
-    {
-      "companyName": "Nawady ",
-      "email": "nawady@gmail.com",
-      "phoneNumber": "09200200200",
-      "username": "nawady",
-      "password": "123nawady",
-      "role": "companymanager",
-      "id": 3
-    },
-    {
-      "companyName": "Paradiso",
-      "email": "paradiso@gmail.com",
-      "phoneNumber": "09200200200",
-      "username": "paradiso",
-      "password": "paradiso",
-      "role": "companymanager",
-      "id": 4
     }
   ],
   "cinema": [
     {
-      "cinemaname": "Mingalar 1 upd",
+      "cinemaname": "Mingalar1",
       "location": "Yangon",
-      "phoneNo": "09100100100",
-      "bmName": "Kyaw Kyaw",
-      "bmPassword": "1234",
+      "phoneNo": "09988581245",
+      "bmName": "aung aung",
+      "bmPassword": "aung1234",
       "role": "branchmanager",
+      "cmId": 1,
       "id": 1
     },
     {
-      "cinemaname": "JCGV 1",
+      "cinemaname": "JCGV Yangon",
+      "location": "Yangon",
+      "phoneNo": "09100200200",
+      "bmName": "kyaw kyaw",
+      "bmPassword": "kyaw1234",
+      "role": "branchmanager",
+      "cmId": 2,
+      "id": 2
+    },
+    {
+      "cinemaname": "Mingalar2",
       "location": "Mandalay",
-      "phoneNo": "09912203444",
-      "bmName": "john doe",
-      "bmPassword": "123",
-      "role": "branchmanager",
-      "id": 4
-    },
-    {
-      "cinemaname": "Nwady",
-      "location": "Yangon",
-      "phoneNo": "09711344552",
-      "bmName": "John",
-      "bmPassword": "12345",
-      "role": "branchmanager",
-      "id": 5
-    },
-    {
-      "cinemaname": "Mingalar 2",
-      "location": "Yangon",
-      "phoneNo": "09200200200",
-      "bmName": "aung aung",
+      "phoneNo": "09400400400",
+      "bmName": "pyae sone",
       "bmPassword": "1234",
       "role": "branchmanager",
-      "id": 6
+      "cmId": 1,
+      "id": 3
     }
   ],
   "staff": [
@@ -83,27 +59,46 @@
       "username": "pyaesone",
       "password": "12345",
       "role": "staff",
+      "bmId": 1,
       "id": 1
     },
     {
-      "staffName": "Testing",
-      "phoneNumber": "09100100100",
-      "email": "pyaesoneaung@gmail.com",
-      "username": "psa",
-      "password": "12345",
+      "staffName": "Pyae Sone 99",
+      "phoneNumber": "09100100300",
+      "email": "pyaesoneaung99@gmail.com",
+      "username": "psaung",
+      "password": "psa1234",
       "role": "staff",
+      "bmId": 2,
       "id": 2
+    },
+    {
+      "staffName": "john",
+      "phoneNumber": "09100100100",
+      "email": "john@gmail.com",
+      "username": "john",
+      "password": "john1234",
+      "role": "staff",
+      "bmId": 1,
+      "id": 3
+    },
+    {
+      "staffName": "dean",
+      "phoneNumber": "09100200300",
+      "email": "winchester@gmail.com",
+      "username": "dean",
+      "password": "dean1234",
+      "role": "staff",
+      "bmId": 2,
+      "id": 4
     }
   ],
   "nowshowing": [
     {
       "title": "Avangers EndGame",
       "poster": "https://cdn.marvel.com/content/2x/MLou2_Payoff_1-Sht_Online_DOM_v7_Sm.jpg",
-      "theaterData": {
-        "cinema" : "Mingalar 1",
-        "theater" : "1",
-        "location" : "Yangon"
-      },
+      "theaterData": "2",
+      "bmId": 2,
       "selectedTimes": "12:00",
       "duration": "2hr",
       "plot": "စောင့်မျှော်နေရတဲ့ Spider-Man : No Way Home ဇာတ်ကားလေးထွက်ရှိလို့လာပါပြီ။IMDb 9.1 ရရှိထားပီး Rotten tomatoes : 94% ရရှိထားပြီး နိုင်ငံတကာမှာ ဝက်ဝက်ကွဲအောင်မြင်နေတယ်ဆိုတာ အကုန်လုံးလည်းသိပြီးသားဖြစ်မှာပါအညွန်းကတော့… Spider-Man : Far From Home အပြီးမှာ ပီတာရဲ့ Identity ကို Mysterioကဖေါ်ထုတ်လိုက်တဲ့ cliffhanger နဲ့အဆုံးသတ်ထားတာကိုတွေ့ရမှာပါ..အခုဇာတ်ကားကလည်း အဲ့နေရာကပဲ စတင်ခဲ့ပြီး ပီတာနဲ့ MJ တို့ ထွက်ပြေးကြရတာပေါ့လူထုရဲ့ရန်သူ နံပါတ် ၁ ဖြစ်လာပီးတဲ့နောက်မှာ ပီတာ တစ်ယောက်အခက်အခဲတွေအများကြီးကြုံတွေ့ပြီးပီတာရဲ့ အနီးကချစ်ရတဲ့သူတွေပါ အကုန်ထိခိုက်ကုန်ပါတော့တယ်..ချစ်သူ မုန်းသူ ရှိစမြဲဆိုပေမယ့်အခက်အခဲက ပိုများနေတာမို့ ပီတာတစ်ယောက် ကြံရာမရဖြစ်ပြီးတော့ ဒေါက်တာထူးဆန်း ဆီကိုအကူအညီတောင်းဖို့သွားပါတော့တယ်..Dr.Strange ကလည်း ပီတာကို ကူညီဖို့အတွက်အန္တရာယ်များတဲ့ Spell တခုကိုလုပ်ဆောင်ရင်း ပီတာရဲ့ ဝင်ရှုပ်မှုကြောင့် spell ဟာ ကပေါက်တိကပေါက်ချာတွေဖြစ်ကုန်ပြီး Multiverse က ဧည့်သည်တွေရောက်လာတဲ့အခါမှာတော့ပီတာ တစ်ယောက်ဘယ်လိုတွေရင်ဆိုင်ရမလဲဆိုတာဆက်လက်ခံစားကြည့်လိုက်ရအောင်။",
@@ -114,11 +109,8 @@
     {
       "title": "Thor LoveAndThunder",
       "poster": "https://pbs.twimg.com/media/FTe6Z_MVEAArAVK?format=jpg&name=4096x4096",
-      "theaterData": {
-        "cinema" : "JCGV 1",
-        "theater" : "1",
-        "location" : "Mandalay"
-      },
+      "theaterData": "1",
+      "bmId": 1,
       "selectedTimes": "09:00",
       "duration": "2hr",
       "plot": "ဒီရုပ်ရှင်ကတော့ စတုတ္ထမြောက် သောရ် ရုပ်ရှင်ပဲ ဖြစ်ပါတယ်။ အရှေ့မှာတော့ Thor, Thor : Dark World, Thor Ragnarok တို့ ထွက်ထားခဲ့ပြီးပါပြီ။ ဒီဇာတ်လမ်းကတော့ Avengers : Endgame အပြီးမှာ Guardians of the Galaxy နဲ့အတူ အာကာသထဲမှာ စွန့်စားခန်းဖွင့်ဖို့ ထွက်လာခဲ့တဲ့ သောရ်ရဲ့အကြောင်းပါပဲ။ဒီတစ်ခါ သောရ်ရင်ဆိုင်ရမှာကတော့ နတ်ဘုရားသတ်သမား ဂေါရ် ဆိုတဲ့ ဗီလိန်ပါပဲ။ ဂေါရ်ဟာ အရင်က နတ်ဘုရားကို ယုံကြည်ကိုးကွယ်ခဲ့သူဖြစ်ပေမဲ့ သူတို့ဂြိုလ်ကြီး အငတ်ဘေးဆိုက်ပြီး နောက်ဆုံး သူ့ရဲ့သမီးလေးပါ သေသွားတာကို နတ်ဘုရားတွေက ပျက်ရယ်ပြုပြီး လျစ်လျူရှုထားတာကိုတွေ့အပြီးမှာ နတ်ဘုရားတွေကိုမုန်းတီးသွားခဲ့ပါတယ်။ အဲဒီအချိန်မှာပဲ နတ်ဘုရားတွေကို သတ်နိုင်တဲ့ ရှေးဟောင်းလက်နက်တစ်ခုဖြစ်တဲ့ ကျိန်စာသင့် နက်ခရိုဓားဟာ ဂေါရ်ရဲ့လက်ထဲကို ရောက်လာခဲ့ပါတယ်။ အဲဒီဓားနဲ့ ဂေါရ်တစ်ယောက် စကြဝဠာတစ်ခွင်က နတ်ဘုရားတွေကို လိုက်သတ်နေရင်း နတ်ဘုရားအားလုံးကို တစ်ချီတည်းနဲ့ အပြီးသတ်သတ်နိုင်မယ့်လမ်းကို ကြိုးစားနေခဲ့ပါတယ်။",
@@ -129,17 +121,62 @@
     {
       "title": "Black Window",
       "poster": "https://pbs.twimg.com/media/E5BVsz8UcAM6mmM.jpg:large",
-      "theaterData": {
-        "cinema" : "Mingalar 2",
-        "theater" : "2",
-        "location" : "Yangon"
-      },
+      "theaterData": "2",
+      "bmId": 2,
       "selectedTimes": "12:00",
       "duration": "2hr",
       "plot": "စောင့်မျှော်နေရတဲ့ Spider-Man : No Way Home ဇာတ်ကားလေးထွက်ရှိလို့လာပါပြီ။IMDb 9.1 ရရှိထားပီး Rotten tomatoes : 94% ရရှိထားပြီး နိုင်ငံတကာမှာ ဝက်ဝက်ကွဲအောင်မြင်နေတယ်ဆိုတာ အကုန်လုံးလည်းသိပြီးသားဖြစ်မှာပါအညွန်းကတော့… Spider-Man : Far From Home အပြီးမှာ ပီတာရဲ့ Identity ကို Mysterioကဖေါ်ထုတ်လိုက်တဲ့ cliffhanger နဲ့အဆုံးသတ်ထားတာကိုတွေ့ရမှာပါ..အခုဇာတ်ကားကလည်း အဲ့နေရာကပဲ စတင်ခဲ့ပြီး ပီတာနဲ့ MJ တို့ ထွက်ပြေးကြရတာပေါ့လူထုရဲ့ရန်သူ နံပါတ် ၁ ဖြစ်လာပီးတဲ့နောက်မှာ ပီတာ တစ်ယောက်အခက်အခဲတွေအများကြီးကြုံတွေ့ပြီးပီတာရဲ့ အနီးကချစ်ရတဲ့သူတွေပါ အကုန်ထိခိုက်ကုန်ပါတော့တယ်..ချစ်သူ မုန်းသူ ရှိစမြဲဆိုပေမယ့်အခက်အခဲက ပိုများနေတာမို့ ပီတာတစ်ယောက် ကြံရာမရဖြစ်ပြီးတော့ ဒေါက်တာထူးဆန်း ဆီကိုအကူအညီတောင်းဖို့သွားပါတော့တယ်..Dr.Strange ကလည်း ပီတာကို ကူညီဖို့အတွက်အန္တရာယ်များတဲ့ Spell တခုကိုလုပ်ဆောင်ရင်း ပီတာရဲ့ ဝင်ရှုပ်မှုကြောင့် spell ဟာ ကပေါက်တိကပေါက်ချာတွေဖြစ်ကုန်ပြီး Multiverse က ဧည့်သည်တွေရောက်လာတဲ့အခါမှာတော့ပီတာ တစ်ယောက်ဘယ်လိုတွေရင်ဆိုင်ရမလဲဆိုတာဆက်လက်ခံစားကြည့်လိုက်ရအောင်။",
       "type": "3D",
       "trailer": "https://www.youtube.com/embed/ybji16u608U",
       "id": 3
+    },
+    {
+      "title": "Extraction 2 (2023)",
+      "poster": "https://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/232099/extraction2-posterart.jpg",
+      "theaterData": "1",
+      "bmId": 1,
+      "selectedTimes": "16:00",
+      "duration": "2hr 30min",
+      "plot": "Extraction (2020) ရဲ့ အဆက် Extraction 2 လာပါပြီ။\nမင်းသားက Chris Hemsworth ပဲဖြစ်သလို ဒါရိုက်တာကလည်း Sam Hargrave ပါပဲ။Extraction (2020) ဟာ အတော်ကောင်းပါတယ်။\nမဖြစ်နိုင်တဲ့ စစ်ဆင်ရေးကို အသေခံပြီး လုပ်သွားတဲ့ ကြေးစားကြီးတစ်ယောက်အကြောင်းပေါ့။\nသေနတ်ဒဏ်ရာ ဗလပွနဲ့ မြစ်ထဲကိုကျသွားတာ မသေစရာတော့မရှိပါဘူး။\nဒါပေမဲ့ မသေပါဘူး။ မသေတော့ အငြိမ်းစားယူသွားပါတယ်။\nအငြိမ်းစားဆိုကတည်းက သေချာပေါက် ပြန်ချရမယ်ဆိုတာ အားလုံးသိပြီးသားပါပဲ။\nအခုလည်း သူ့အငြိမ်းစားဘဝကနေ မငြင်းနိုင်ဘဲ သေချာပေါက်ပြန်လုပ်ခိုင်းနိုင်တဲ့သူ ပေါ်လာပါတယ်။ သူ့မိန်းမပါ။ ဖြစ်တတ်ပါတယ်။\nသူ့မိန်းမရဲ့ ညီမကို ဂျော်ဂျီယာရဲ့ အကြီးဆုံးလူဆိုးဂိုဏ်းကြီးလက်ကနေ သွားကယ်ထုတ်ရတာပါ။\nဒါပေမဲ့ လူဆိုးဂိုဏ်းက ရိုးရိုး သေနတ်နဲ့ကားအဆင့်မဟုတ်ပါဘူး။\nကျည်ကားကား၊ လက်နက်ကြီး၊ ရဟတ်ယာဉ်တွေအထိပါပြီး\nမိုးအဆုံးမြေအဆုံးလိုက်သတ်တာကြောင့် ၂ နာရီစာလောက် မနားတမ်း ချရပါတော့တယ်….ထုံးစံအတိုင်း ဇာတ်လမ်းရော အက်ရှင်ရော ကြည့်လို့ကောင်းပါတယ်။ ကြည့်လိုက်ကြပါ။",
+      "type": "3D",
+      "trailer": "https://www.youtube.com/embed/Y274jZs5s7s",
+      "id": 4
+    },
+    {
+      "title": "Me Before You (2016)",
+      "poster": "https://i.pinimg.com/originals/67/93/df/6793dfc8683fcaed68bcd2a606fb3d68.jpg",
+      "theaterData": "2",
+      "bmId": 2,
+      "selectedTimes": "12:00",
+      "duration": "2hr 30min",
+      "plot": "အသက် ၂၆ နှစ်အရွယ်ရှိ Louisa Clark ဟာ စားပွဲထိုးအလုပ်ကနေ ပြုတ်သွားပြီး အတူနေ မိဘနဲ့ ညီမသားအမိကို ထောက်ပံ့ဖို့ လိုတဲ့အတွက် အလုပ်သစ်တစ်ခု အသည်းအသန်ရှာရတဲ့အခါမှာ မသန်စွမ်းတစ်ယောက်ကို စောင့်ရှောက်ရမယ့် အလုပ်ကို လက်ခံခဲ့ပါတယ်။ သူစောင့်ရှောက်ရတဲ့သူက လွန်ခဲ့တဲ့ နှစ်နှစ်က မော်တော်ဆိုင်ကယ် မတော်တဆမှုမှာ တစ်ကိုယ်လုံးသေ (လက်ချောင်းတစ်ချောင်းနှစ်ချောင်းနဲ့ ခေါင်းလောက်ပဲ လှုပ်နိုင်တော့တဲ့) Will Traynor ပါ။ Will ဟာ မတော်တဆမှု မတိုင်ခင်က အောင်မြင်နေတဲ့ လူငယ် ဘဏ်လုပ်ငန်းရှင်လဲဖြစ်ပြီး ချမ်းသာတဲ့မိဘက ပေါက်ဖွားလာလို့ ရုပ်လဲချော ပညာလဲတတ် ကျားကျားယားယားလဲရှိနဲ့ အရာအားလုံး ပြည့်စုံနေတဲ့သူ ဖြစ်ခဲ့သူပေါ့။ ကို့ယို့ကားယား ကြောင်တောင်ကျားတား ဝတ်စားတတ်ပြီး ပေါ့ပေါ့ပါးပါးနေတတ်သူ Lou နဲ့ အရာရာကို စိတ်အချဉ်ပေါက်ပြီး တစ်ချိန်လုံးဒေါသထွက် လောကကြီးကို မကောင်းမြင်နေတဲ့ Will တို့နှစ်ယောက်ရဲ့ ကံကြမ္မာဟာ သူတို့ထင်ထားတာထက်ပိုပြီး ယှက်နွယ်လာခဲ့ကြပါတယ်။",
+      "type": "3D",
+      "trailer": "https://www.youtube.com/embed/Eh993__rOxA",
+      "id": 5
+    },
+    {
+      "title": "Ride On (2023)",
+      "poster": "https://i.mydramalist.com/RBj8Zx_4f.jpg",
+      "theaterData": "2",
+      "selectedTimes": "09:00",
+      "duration": "2hr 30min",
+      "plot": "မင်းသားကြီး ဂျက်ကီချန်းရဲ့ ရုပ်ရှင်အသစ်လာပါပြီ။ ဂျက်ကီချန်းနဲ့\nအတူ ရှောင်လင် (၂၀၁၁) ရုပ်ရှင်မှာ ပါဝင်ဖူးခဲ့တဲ့ Xing Yu နဲ့ Jing\nWu၊ New Police Story မှာ ပါဝင်ခဲ့တဲ့ Andy On နဲ့ Rongguang\nYu တို့အတူပါဝင်သရုပ်ဆောင်ထားပါတယ်။ ဒီရုပ်ရှင်ကတော့ CGI\nတွေခေတ်မစားခင် ဂျက်ကီချန်းတို့ရဲ့ ဟောင်ကောင်ရုပ်ရှင်ရွှေခေတ်က\nစတန့်သမားတွေကို ဂုဏ်ပြုတဲ့အနေနဲ့ ရိုက်ကူးထားတာလဲဖြစ်ပါ\nတယ်။ စတန့်သမားတွေရဲ့ ဘဝတွေ၊ ခံစားချက်တွေကို ပုံဖော်ပြသ\nထားတာပါ။ဂျက်ကီချန်းဟာ လော့ကျီလုံဆိုတဲ့ စတန့်သမားဟောင်းအဘိုးကြီး\nအနေနဲ့ ပါဝင်ထားပါတယ်။ သူ့မှာ သားအရင်းလိုချစ်ရတဲ့ မြင်းလေး\nဖိုးနီ(ချိထူ)ပဲရှိပြီး သူတို့နှစ်ယောက်တည်း ဆင်းဆင်းရဲရဲနဲ့ အလုပ်\nရှာပြီး အသက်မွေးနေရတာပါ။ သူ့ရဲ့သမီး ရှောင်ပေါင် ကလည်း သူ့ကို\nစိတ်နာစရာတွေရှိတာကြောင့် စကားမပြော အသိအမှတ်မပြုပါဘူး။\nသူ့ရဲ့မြင်းလေးဖိုးနီဟာ သူ့ကို ကုမ္ပဏီပိုင်ရှင်သူဌေးဝမ်က မသေခင်\nလက်ဆောင်ပေးခဲ့တာပါ။ ဒါပေမဲ့အဲဒီသူဌေးရဲ့ ကုမ္ပဏီ ဒေဝါလီခံရပြီး\nနောက်မှာ ကုမ္ပဏီအသစ်က သူ့ရဲ့မြင်းကိုပါ ကုမ္ပဏီပိုင်ပစ္စည်းအနေနဲ့\nသိမ်းဖို့ကြိုးစားလာပါတယ်။ တချိန်တည်းမှာပဲ သူ့ရဲ့အကြွေးရှင်တွေ\nကလည်း မြင်းကို အကြွေးနဲ့သိမ်းဖို့ အတင်းကြိုးစားလာပါတယ်။ အဲဒီ\nအန္တရာယ်တွေကြားမှာ မြင်းလေးကိုကာကွယ်ဖို့ ဘယ်လိုတိုက်ခိုက်ရုန်း\nကန်ရလဲဆိုတာကို ဆက်ကြည့်ရမှာပဲ ဖြစ်ပါတယ်။",
+      "type": "2D",
+      "trailer": "https://www.youtube.com/embed/NvjVFDMIbus",
+      "bmId": 2,
+      "id": 6
+    },
+    {
+      "title": "To Every You I've loved before ",
+      "poster": "https://m.media-amazon.com/images/M/MV5BYWM3ZGZkYzQtZWM3OC00M2Y4LTgxNGQtOWFkMmIwMGY0YTJjXkEyXkFqcGdeQXVyNzI3NjY3NjQ@._V1_.jpg",
+      "theaterData": "3",
+      "selectedTimes": "15:00",
+      "duration": "1hr 30min",
+      "plot": "To all of you that I’ve loved before animeဟာ ၂၀၁၆မှာထွက်ရှိခဲ့တဲ့ ဆရာYomoji Otonoရဲ့ဝတ္ထု၂ပုဒ်ကို ပြန်အသက်သွင်းထားတဲ့ anime films၂ကားထဲက တစ်ကားဖြစ်ပါတယ်။ ​(နောက်တစ်ကားဖြစ်တဲ့ To me, the one who loved youကိုလည်း ထပ်ပြီးတင်ဆက်​ပေးဦးမှာပါ)။ ဝတ္ထုအ​နေနဲ့တုန်းကလည်း ​အောင်မြင်ခဲ့သလို ကာတွန်းရုပ်ရှင်ထွက်လာချိန်မှာလည်း ကြည့်ရှုသူပရိသတ်​တွေကိုစိတ်​ကျေနပ်မှု​ပေးနိုင်ခဲ့တဲ့ ဇာတ်လမ်း​တွေပါ။ အဲ့ဒီဇာတ်လမ်း၂ခုအပြင် ဆရာYomoji Otonoရဲ့တတ်ယ​မြောက် ဝတ္ထု 僕が君の名前を呼ぶから (Boku ga Kimi no Namae o Yobukara, lit. “Because I’m Calling Your Name”)လည်း ၂၀၀၂ခုနှစ်မှာထွက်ရှိခဲ့ပါ​သေးတယ်။ဇာတ်လမ်းက​တော့ အခု​ခေတ်စား​နေတဲ့ အပြိုင်ကမ္ဘာ​တွေအ​ကြောင်းအ​ခြေခံထား​ပေမဲ့ တကယ့်ဇာတ်လမ်းအနှစ်က​တော့ ​ကောင်​လေးတစ်​ယောက်ရဲ့အချစ်ဇာတ်လမ်း​လေးပါ။ အချစ်ဇာတ်လမ်း​လေးကိုလှလှပပ ရယ်​မော​ငို​ကြွေးနိုင်​​အောင်ကိုတင်ဆက်​ပေးသွားနိုင်ခဲ့တာမလို့ ကြည့်​နေရင်းနဲ့ အပြိုင်ကမ္ဘာ​တွေအ​ကြောင်းကိုစိတ်မဝင်စား​တော့ အချစ်ဇာတ်လမ်းထဲမှာ​မျောပါသွားနိုင်တဲ့အထိပါပဲ။ဇာတ်လမ်းအကျဥ်းက​တော့Koyomiဟာ အလယ်တန်း​ကျောင်းသားဘဝမှာပဲ အပြိုင်ကမ္ဘာတစ်ခုကိုshiftလုပ်မိခဲ့ပါတယ်။ အထက်တန်း​ကျောင်းသားဘဝ​ရောက်ချိန်မှာ​တော့ Kazuneဆိုတဲ့​ကောင်မ​လေးတစ်​ယောက်ရဲ့လူမှားနှုတ်ဆတ်တာကိုခံရပြီး ရိုးရှင်းမလိုထင်ရတဲ့အချစ်ဇာတ်လမ်း​လေးတစ်ပုဒ်ဖြစ်တည်လာခဲ့ပါတယ်။ အချစ်ဇာတ်လမ်း​လေးဟာ ​သာယာ​ဖြောင့်ဖြူးမလား၊ ဝမ်းနည်းရမလားက​တော့ ကြည့်ရှုသူအ​ပေါ်မှာပဲ မူတည်ပါလိမ့်မယ်\nSpoilerပါးပါး​လေး​ပြောပါမယ်။ နည်းနည်း​လေး​တောင်spoilမမိချင်ရင် ဆက်မဖတ်ပါနှင့်​တော့။\nဒီဇာတ်လမ်းထဲမှာဇာတ်လမ်း၂ခုပါပါတယ်။\nအစကတည်းက ဇာတ်လမ်း၂ခုရှိတာကိုချပြထား​ပေမဲ့ ဇာတ်လမ်းဆွဲ​ခေါ်သွားပုံက ငြင်သာလွန်းလို့ ပြီးခါနီးမှပဲ သတိထားမိမှာပါ",
+      "type": "3D",
+      "trailer": "https://www.youtube.com/embed/jmu-Pp3saRc",
+      "bmId": 2,
+      "id": 7
     }
   ],
   "theater": [
@@ -147,6 +184,7 @@
       "theaterName": "Mingalar 1",
       "soundSystem": " DSP",
       "theaterType": "2D",
+      "bmId": "1",
       "seatLevels": [
         {
           "level": "Normal",
@@ -324,9 +362,188 @@
       "id": 1
     },
     {
-      "theaterName": "Mingalar 2",
+      "theaterName": "JCGV 1",
       "soundSystem": "BPS",
       "theaterType": "3D",
+      "bmId": "2",
+      "seatLevels": [
+        {
+          "level": "A",
+          "quantity": 20,
+          "price": 5000,
+          "seats": [
+            {
+              "name": "A1",
+              "state": "Available"
+            },
+            {
+              "name": "A2",
+              "state": "Available"
+            },
+            {
+              "name": "A3",
+              "state": "Available"
+            },
+            {
+              "name": "A4",
+              "state": "Purchased"
+            },
+            {
+              "name": "A5",
+              "state": "Available"
+            },
+            {
+              "name": "A6",
+              "state": "Available"
+            },
+            {
+              "name": "A7",
+              "state": "Available"
+            },
+            {
+              "name": "A8",
+              "state": "Available"
+            },
+            {
+              "name": "A9",
+              "state": "Available"
+            },
+            {
+              "name": "A10",
+              "state": "Available"
+            }
+          ]
+        },
+        {
+          "level": "B",
+          "quantity": 30,
+          "price": 6000,
+          "seats": [
+            {
+              "name": "B1",
+              "state": "Available"
+            },
+            {
+              "name": "B2",
+              "state": "Available"
+            },
+            {
+              "name": "B3",
+              "state": "Available"
+            },
+            {
+              "name": "B4",
+              "state": "Available"
+            },
+            {
+              "name": "B5",
+              "state": "Available"
+            },
+            {
+              "name": "B6",
+              "state": "Available"
+            },
+            {
+              "name": "B7",
+              "state": "Available"
+            },
+            {
+              "name": "B8",
+              "state": "Purchased"
+            },
+            {
+              "name": "B9",
+              "state": "Available"
+            },
+            {
+              "name": "B10",
+              "state": "Available"
+            },
+            {
+              "name": "B11",
+              "state": "Available"
+            },
+            {
+              "name": "B12",
+              "state": "Available"
+            },
+            {
+              "name": "B13",
+              "state": "Purchased"
+            },
+            {
+              "name": "B14",
+              "state": "Available"
+            },
+            {
+              "name": "B15",
+              "state": "Available"
+            }
+          ]
+        },
+        {
+          "level": "C",
+          "quantity": 10,
+          "price": 8000,
+          "seats": [
+            {
+              "name": "C1",
+              "state": "Available"
+            },
+            {
+              "name": "C2",
+              "state": "Available"
+            },
+            {
+              "name": "C3",
+              "state": "Available"
+            },
+            {
+              "name": "C4",
+              "state": "Available"
+            },
+            {
+              "name": "C5",
+              "state": "Purchased"
+            },
+            {
+              "name": "C6",
+              "state": "Available"
+            },
+            {
+              "name": "C7",
+              "state": "Available"
+            },
+            {
+              "name": "C8",
+              "state": "Available"
+            },
+            {
+              "name": "C9",
+              "state": "Available"
+            },
+            {
+              "name": "C10",
+              "state": "Available"
+            }
+          ]
+        }
+      ],
+      "selectedTimes": [
+        {
+          "time": "09:00"
+        },
+        {
+          "time": "12:00"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "theaterName": "JCGV 2",
+      "soundSystem": "BPS",
+      "theaterType": "3D",
+      "bmId": "2",
       "seatLevels": [
         {
           "level": "A",
@@ -449,9 +666,12 @@
         },
         {
           "time": "12:00"
+        },
+        {
+          "time": "15:00"
         }
       ],
-      "id": 2
+      "id": 3
     }
   ],
   "upcoming": [
@@ -460,11 +680,12 @@
       "production": "Warner Bros",
       "cast": "test",
       "trailer": "https://www.youtube.com/embed/5NYt1qirBWg",
+      "bmId": 1,
       "date": "2023-06-17",
       "duration": "2hr 30min",
       "plot": "Platform 9¾ ကနေ ပြန်လည် ကြိုဆိုပါတယ်။Hogwarts ရထားကြီးနဲ့ wizarding world ကို အလည်တစ်ခေါက် ထပ်သွားပြီးChapter တစ်ခုချင်းစီကို အစဉ်လိုက် ပြန်အလွမ်းသည်ကြမယ်ဗျာ …ခင်ဗျားက muggle မဟုတ်ရင်တော့အသက်ရှင်ကျန်ခဲ့သူ ကောင်လေးအကြောင်း ကြားဖူးပြီးသားဖြစ်မှာပါ သူ့နာမည်က Harry Potter တဲ့ .. ထင်ရှားတဲ့အမှတ်အသားဆို နဖူးမှာ အမာရွတ်လေးနဲ့ မှန်ကြောင်ကောင်လေးတစ်ယောက်ပါပေါ့ ။ဒီ အမာရွတ်လေး ရခဲ့တဲ့ ညကနေ စလို့ သူဟာသူကိုယ်တိုင် မသိပါဘဲ မှော်လောကမှာ ကျော်ကြားလာခဲ့တယ်…မနာခံသူ မှန်သမျှ အရှင်မထားတတ်တဲ့ မှော်ဆရာကြီး တစ်ယောက်ရဲ့ လက်ကလွတ်မြောက်ခဲ့သူအဖြစ်ပေါ့…မှော်ဆရာကြီးက ဘယ်သူလဲတော့ လာမမေးပါနဲ့ … ကျွန်တော်တို့ သူ့နာမည်ကို ထုတ်မပြောကြဘူး …သိုပေမဲ့ Harry Potter ဆိုတဲ့ မှော်ဆရာလေးကတော့ ငယ်ငယ်ရွယ်ရွယ်နဲ့ရဲစွမ်းသတ္တိအပြည့်မွေးပြီး ရွန်၊ ဟာမွိုင်နီဆိုတဲ့ သူငယ်ချင်း ၂ ယောက်နဲ့အတူဒီမှော်ဆရာကြီးနဲ့ အချိန်အကြာကြီး ရင်ဆိုင်ခဲ့ပါတယ် …အဆိုးနဲ့အကောင်းအမှောင်နဲ့အလင်းအမည်းနဲ့အဖြူလို ဆန့်ကျင်နေတဲ့ ဒီ မှော်ဆရာ ၂ ယောက်ရဲ့ တိုက်ပွဲရှည်ကြီးကိုပြန်လှန်လေ့လာလိုက်ကြပါစို့…မြန်မြန်တက်ကြဗျို့ Hogwarts ရထားကြီး ထွက်တော့မယ် !!",
       "type": "3D",
-      "poster" : "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2011%2F06%2Fit-all-ends_510.jpg&q=60",
+      "poster": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2011%2F06%2Fit-all-ends_510.jpg&q=60",
       "id": 1
     },
     {
@@ -472,12 +693,26 @@
       "production": "Marvel",
       "cast": "Tom Holland Zendya Tobey Maguire Andrew Garfield",
       "trailer": "https://www.youtube.com/embed/JfVOs4VSpmA",
+      "bmId": 2,
       "date": "2023-06-19",
       "duration": "2hr",
       "plot": "စောင့်မျှော်နေရတဲ့ Spider-Man : No Way Home ဇာတ်ကားလေးထွက်ရှိလို့လာပါပြီ။IMDb 9.1 ရရှိထားပီး Rotten tomatoes : 94% ရရှိထားပြီး နိုင်ငံတကာမှာ ဝက်ဝက်ကွဲအောင်မြင်နေတယ်ဆိုတာ အကုန်လုံးလည်းသိပြီးသားဖြစ်မှာပါအညွန်းကတော့… Spider-Man : Far From Home အပြီးမှာ ပီတာရဲ့ Identity ကို Mysterioကဖေါ်ထုတ်လိုက်တဲ့ cliffhanger နဲ့အဆုံးသတ်ထားတာကိုတွေ့ရမှာပါ..အခုဇာတ်ကားကလည်း အဲ့နေရာကပဲ စတင်ခဲ့ပြီး ပီတာနဲ့ MJ တို့ ထွက်ပြေးကြရတာပေါ့လူထုရဲ့ရန်သူ နံပါတ် ၁ ဖြစ်လာပီးတဲ့နောက်မှာ ပီတာ တစ်ယောက်အခက်အခဲတွေအများကြီးကြုံတွေ့ပြီးပီတာရဲ့ အနီးကချစ်ရတဲ့သူတွေပါ အကုန်ထိခိုက်ကုန်ပါတော့တယ်..ချစ်သူ မုန်းသူ ရှိစမြဲဆိုပေမယ့်အခက်အခဲက ပိုများနေတာမို့ ပီတာတစ်ယောက် ကြံရာမရဖြစ်ပြီးတော့ ဒေါက်တာထူးဆန်း ဆီကိုအကူအညီတောင်းဖို့သွားပါတော့တယ်..Dr.Strange ကလည်း ပီတာကို ကူညီဖို့အတွက်အန္တရာယ်များတဲ့ Spell တခုကိုလုပ်ဆောင်ရင်း ပီတာရဲ့ ဝင်ရှုပ်မှုကြောင့် spell ဟာ ကပေါက်တိကပေါက်ချာတွေဖြစ်ကုန်ပြီး Multiverse က ဧည့်သည်တွေရောက်လာတဲ့အခါမှာတော့ပီတာ တစ်ယောက်ဘယ်လိုတွေရင်ဆိုင်ရမလဲဆိုတာဆက်လက်ခံစားကြည့်လိုက်ရအောင်။",
       "type": "3D",
       "poster": "https://pbs.twimg.com/media/Fav5_AcUsAAtaUL.jpg:large",
       "id": 2
+    },
+    {
+      "upcomingname": "Dream (2023)",
+      "production": "Oktober Cinema Co. Ltd.",
+      "cast": "Park Seo-joon ,Lee Ji-eun",
+      "trailer": "https://www.youtube.com/embed/Gxpl5YETHq8",
+      "date": "2023-06-19",
+      "duration": "2hr 30min",
+      "plot": "Dream (2023)အားလုံးမေးနေကြတဲ့ Park Seo Joon နဲ့ IU တို့ရဲ့ ရုပ်ရှင်ထွက်လာပါပြီရှင်\nဇာတ်လမ်းအကျဉ်းကိုပြောရရင် တအားကြိုးစားပေမဲ့ မဖြစ်မြောက်တဲ့ ဘောလုံးသမားယွန်းဟုန်းဒယ်ဟာ\nစိတ်ဆတ်ပြီး ဒေါသမထိန်းနိုင်ရာကနေ အနုပညာထဲဝင်မယ်ဆိုပြီး ဖြစ်လာပါတော့တယ်အဲဒီမှာ ပီဒီအီဆိုမင်းနဲ့တွေ့ပြီး မှတ်တမ်းရုပ်ရှင်ရိုက်ဖို့ အကြောင်းဖန်ရင်းနဲ့\nကြောင်နဲ့ကြွက်လို မတည့်အတူနေ အလုပ်အတူတွဲလုပ်ရပါတယ်သူတို့ရိုက်တဲ့အစီအစဉ်ကလည်း အိမ်ခြေရာမဲ့တွေကို ကမ္ဘာ့ဖလားဝင်ပြိုင်ဖို့အတွက် လေ့ကျင့်ပေးရတဲ့အလုပ်ဆိုတော့\nအခက်အခဲတွေကြားက ရုန်းကန်ပြီး အိပ်မက်တွေကို ဖြည့်ဆည်းသွားကြမှာပါ\nအမျိုးမျိုးကြုံတွေ့ရပြီးမှ ရေစက်လာဆုံကြတဲ့ သူတို့အသင်းက\nနောက်ဆုံးမှာ အောင်မြင်မလား ကျရှုံးမလားဆိုတာကို ကြည့်လိုက်ကြပါဦးနော်အညွှန်းကိုတော့ Joyz က ရေးထားပေးပြိးတော့\nဘာသာပြန်ထားတာကတော့ Joyz and Hmwe ပဲ ဖြစ်ပါတယ်။",
+      "type": "3D",
+      "poster": "https://static-sg.winudf.com/video/image/9d85f443-db67-484c-863d-88808cfb1a42.jpg",
+      "bmId": 1,
+      "id": 3
     }
   ]
 }

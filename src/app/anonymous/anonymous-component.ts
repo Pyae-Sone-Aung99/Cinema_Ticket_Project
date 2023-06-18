@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { AnonymousServiesService } from '../services/anonymous-servies.service';
 import { Router } from '@angular/router';
+import { BranchManagerServiceService } from '../services/branch-manager-service.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AnonymousComponent implements OnInit{
     this._router.navigateByUrl('/anonymous/movielist')
   }
 
-  constructor(private _serviecs : AnonymousServiesService,private _router:Router){}
+  constructor(private _serviecs : BranchManagerServiceService,private _router:Router){}
 
   // Nav Bar Start (@HostListener allows you to define event handlers directly within your component or directive class.)
   navbg:any;
@@ -39,7 +40,7 @@ export class AnonymousComponent implements OnInit{
     showingMovies:any
 
     showingMoviesData(){
-      this._serviecs.nowShowingList().subscribe({
+      this._serviecs.getNowShowing().subscribe({
         next : (resp)=>{
           this.showingMovies = resp
         }
@@ -47,24 +48,6 @@ export class AnonymousComponent implements OnInit{
     }
 
   // Getting Showing movies end
-
-  // Scolling behaviour to upcoming tag start
-  scrollToUpcoming(){
-    const upcoming = document.getElementById('upcoming');
-    if (upcoming) {
-      upcoming.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  // Scolling behaviour to upcoming tag end
-
-  // Scrolling behaviour to now showing start
-  scrollToNowShowing(){
-    const nowshowing = document.getElementById('nowshowing');
-    if (nowshowing) {
-      nowshowing.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  // Scrolling behaviour to now showing end
 
 
 }

@@ -17,7 +17,7 @@
           </thead>
 
           <tbody *ngFor="let item of cinemaList">
-            <tr (click)="branchManager()"
+            <tr
               *ngIf="enterSearchValue === '' || item.bmName.toLowerCase().includes(enterSearchValue) ">
               <td> {{item.id}} </td>
               <td> {{item.bmName}} </td>
@@ -30,3 +30,4 @@
     </div>
   </div>
 </div>
+<!-- (click)="branchManager()" -->

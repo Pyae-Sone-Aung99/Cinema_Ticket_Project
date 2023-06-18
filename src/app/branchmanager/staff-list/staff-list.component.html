@@ -22,7 +22,7 @@
                 </tr>
               </thead>
               <tbody *ngFor="let item of staffList">
-                <tr (click)="goStaff()" *ngIf="enterSearchValue === '' || item.username.toLowerCase().includes(enterSearchValue)">
+                <tr  *ngIf="enterSearchValue === '' || item.username.toLowerCase().includes(enterSearchValue)">
                   <td> {{item.id}} </td>
                   <td> {{item.staffName}} </td>
                   <td> {{item.phoneNumber}} </td>
@@ -40,3 +40,4 @@
   </div>
 
 </div>
+<!-- (click)="goStaff()" -->

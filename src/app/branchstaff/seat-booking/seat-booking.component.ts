@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
+import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 
 declare const bootstrap:any
+interface Movie{
+  id:number;
+  theaterData :string;
+  bmId : number;
+  title : string
+}
 @Component({
   selector: 'app-seat-booking',
   templateUrl: './seat-booking.component.html',
@@ -12,21 +19,41 @@ export class SeatBookingComponent {
   theater:any
   selectedSeats:any[] = []
   check:boolean = false
+  movieData :any
+  movieTitle? : string
 
   ngOnInit(): void {
 
 
     this.route.queryParamMap.subscribe(param => {
       if(param.get('id')) {
-        this.service.getTheatreById(param.get('id')).subscribe(result => {
-          this.theater = result
+        this._service.getNowShowingByMovieId(param.get('id')).subscribe((data:Movie) => {
+            this.movieData = data
+            this.movieData.forEach((element:any) => {
+              this.getTheaterByMovieIdData(element.theaterData)
+              this.movieTitle = element.title
+            });
         })
       }
     })
   }
 
-  constructor(private service:AnonymousServiesService, private route:ActivatedRoute,
+  constructor(private _service:BranchManagerServiceService, private route:ActivatedRoute,
     private _router:Router){}
+
+    getTheaterByMovieIdData(id:number){
+      this._service.getTheatersByMovieId(id).subscribe(data =>{
+        // console.log(data)
+        data.forEach((element:any) => {
+          this.theater = element
+        });
+        // this.theater = data
+        // console.log(this.theater);
+
+      }
+      )
+      // this.theater =
+    }
 
   selectSeat(seatNo:any, price:any) {
 

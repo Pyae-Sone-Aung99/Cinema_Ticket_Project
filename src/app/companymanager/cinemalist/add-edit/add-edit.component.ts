@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { CompanymanagerServicesService } from 'src/app/services/companymanager-services.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-add-edit',
@@ -12,19 +13,24 @@ export class AddEditComponent implements OnInit{
 
   cinemaForm:FormGroup
 
+
   ngOnInit(): void {
     this.cinemaForm.patchValue(this.data)
+
   }
 
   constructor(private _builder:FormBuilder,private _services: CompanymanagerServicesService,
-    private _dialogRef : MatDialogRef<AddEditComponent>,@Inject(MAT_DIALOG_DATA)public data : any){
+    private _dialogRef : MatDialogRef<AddEditComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
+    private _loginServices : LoginService
+   ){
     this.cinemaForm = this._builder.group({
       cinemaname : ['',Validators.required],
       location : ['',Validators.required],
       phoneNo : ['',[Validators.required,Validators.minLength(8)]],
       bmName : ['',Validators.required],
       bmPassword : ['',[Validators.required,Validators.minLength(4)]],
-      role : ['branchmanager']
+      role : ['branchmanager'],
+      cmId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
 
@@ -44,6 +50,7 @@ export class AddEditComponent implements OnInit{
             this._dialogRef.close(true)
           }
         })
+
     }
     }
   }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddEditComponent } from './add-edit/add-edit.component';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-staff-list',
@@ -15,11 +15,21 @@ export class StaffListComponent implements OnInit{
   enterSearchValue:string = ''
 
   ngOnInit(): void {
-    this.getStaffList();
+    this._route.queryParams.subscribe(params =>{
+      if(params['bmId']){
+        const id = Number(params['bmId'])
+        this.getStaffBybmIdData(id)
+      }
+    })
   }
 
   constructor(private _dialog:MatDialog,private _services : BranchManagerServiceService,
-    private _router:Router){}
+    private _router:Router,private _route:ActivatedRoute){}
+
+  getStaffBybmIdData(id:number){
+    this._services.getStaffByBranchManagerId(id).subscribe(data => this.staffList = data)
+  }
+
 
   openAddEditCinemaForm(){
     const dialogRef= this._dialog.open(AddEditComponent,{
@@ -28,18 +38,17 @@ export class StaffListComponent implements OnInit{
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val)
-          this.getStaffList();
+        this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getStaffBybmIdData(id)
+          }
+        })
       }
     })
   }
 
-  getStaffList(){
-    this._services.getStaff().subscribe({
-      next : (resp)=>{
-        this.staffList = resp
-      }
-    })
-  }
+
 
   openUpdateStaffForm(data:any){
     const dialogRef= this._dialog.open(AddEditComponent,{
@@ -48,7 +57,12 @@ export class StaffListComponent implements OnInit{
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val)
-          this.getStaffList();
+        this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getStaffBybmIdData(id)
+          }
+        })
       }
     })
   }
@@ -56,12 +70,17 @@ export class StaffListComponent implements OnInit{
   deleteStaff(id:number){
     this._services.deleteStaff(id).subscribe({
       next:()=>{
-        this.getStaffList()
+        this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getStaffBybmIdData(id)
+          }
+        })
       }
     })
   }
 
-  goStaff(){
-    this._router.navigateByUrl("branchstaff/nowshowing")
-  }
+  // goStaff(){
+  //   this._router.navigateByUrl("branchstaff/nowshowing")
+  // }
 }

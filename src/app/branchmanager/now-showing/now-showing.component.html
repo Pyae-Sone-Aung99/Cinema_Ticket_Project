@@ -26,7 +26,7 @@
                   <td> {{item.id}} </td>
                   <td> {{item.title}} </td>
                   <td> {{item.selectedTimes }} </td>
-                  <td> {{item.theaterData.cinema}} </td>
+                  <td> {{getTheaterName(item.theaterData)}} </td>
                   <td> {{item.duration}} </td>
                   <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateNowShowing(item)"></i>
                     <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>

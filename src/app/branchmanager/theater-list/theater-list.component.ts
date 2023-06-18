@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddEditComponent } from 'src/app/superadmin/add-edit/add-edit.component';
 import { AddEditTheaterComponent } from './add-edit-theater/add-edit-theater.component';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-theater-list',
@@ -15,18 +16,36 @@ export class TheaterListComponent implements OnInit{
   enterSearchValue: string =''
 
   ngOnInit(): void {
-    this.getTheaterData();
+    this._route.queryParams.subscribe(params =>{
+      if(params['bmId']){
+        const id = Number(params['bmId'])
+        this.getTheaterBybmIdData(id)
+      }
+    })
   }
 
-  constructor(private _dialog:MatDialog,private _services:BranchManagerServiceService){}
+  constructor(private _dialog:MatDialog,private _services:BranchManagerServiceService,
+    private _route:ActivatedRoute){}
+
+
+  getTheaterBybmIdData(id:number){
+    this._services.getTheatersById(id).subscribe(data => this.theaterData = data)
+  }
 
   openAddEditTheaterForm(){
     const dialogRef = this._dialog.open(AddEditTheaterComponent,{
       disableClose : true
     })
     dialogRef.afterClosed().subscribe({
-      next : () => {
-        return this.getTheaterData()
+      next : (val) => {
+        if(val){
+          this._route.queryParams.subscribe(params =>{
+            if(params['bmId']){
+              const id = Number(params['bmId'])
+              this.getTheaterBybmIdData(id)
+            }
+          })
+        }
       }
     })
   }
@@ -39,25 +58,29 @@ export class TheaterListComponent implements OnInit{
     dialogRef.afterClosed().subscribe({
       next : (val)=>{
         if(val){
-          this.getTheaterData();
+          this._route.queryParams.subscribe(params =>{
+            if(params['bmId']){
+              const id = Number(params['bmId'])
+              this.getTheaterBybmIdData(id)
+            }
+          })
         }
       }
     })
   }
 
-  getTheaterData(){
-    this._services.getTheater().subscribe({
-      next : (resp)=>{
-        this.theaterData = resp
-      }
-    })
-  }
+
 
 
   deleteTheater(id:number){
     this._services.deleteTheater(id).subscribe({
       next : ()=>{
-        this.getTheaterData();
+        this._route.queryParams.subscribe(params =>{
+          if(params['bmId']){
+            const id = Number(params['bmId'])
+            this.getTheaterBybmIdData(id)
+          }
+        })
       }
     })
   }

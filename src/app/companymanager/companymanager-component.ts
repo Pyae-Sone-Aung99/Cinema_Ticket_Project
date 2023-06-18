@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -11,13 +11,18 @@ import { Router } from '@angular/router';
 
 export class CompanymanagerComponent implements OnInit{
 
+  managerId ?: any = this._loginServices.getLoggedInUserId()
   ngOnInit(): void {
     if(!this._service.loginStatus){
       this._router.navigateByUrl('login')
+    }else{
+      this._router.navigate(['/companymanager/cinemalist'],{queryParams : {cmId : this._loginServices.getLoggedInUserId()}})
     }
+
   }
 
-  constructor(private _service:LoginService,private _router:Router) {
+  constructor(private _service:LoginService,private _router:Router,
+    private _loginServices : LoginService) {
 
   }
 

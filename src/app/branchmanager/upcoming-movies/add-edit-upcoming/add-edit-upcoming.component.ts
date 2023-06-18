@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-add-edit-upcoming',
@@ -17,7 +18,8 @@ export class AddEditUpcomingComponent implements OnInit{
   }
 
   constructor(private _builder:FormBuilder,private _services: BranchManagerServiceService,
-    private _dialogRef : MatDialogRef<AddEditUpcomingComponent>,@Inject(MAT_DIALOG_DATA)public data : any){
+    private _dialogRef : MatDialogRef<AddEditUpcomingComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
+    private _loginServices:LoginService){
     this.upcomingForm = this._builder.group({
       upcomingname : ['',Validators.required],
       production : ['',[Validators.required]],
@@ -27,7 +29,8 @@ export class AddEditUpcomingComponent implements OnInit{
       duration : ['',Validators.required],
       plot : ['',[Validators.required]],
       type : ['',Validators.required],
-      poster : ['',Validators.required]
+      poster : ['',Validators.required],
+      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
 
