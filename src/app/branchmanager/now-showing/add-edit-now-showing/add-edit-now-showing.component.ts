@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -15,12 +15,19 @@ export class AddEditNowShowingComponent implements OnInit{
 
   movieForm:FormGroup
   theaterData:any
-  availableTimes: [] = [];
+  // availableTimes: [] = [];
   bmManagerId ?: any = this._loginServices.getLoggedInUserId()
 
   ngOnInit(): void {
     this.getAvailableTheater(this.bmManagerId)
     this.movieForm.patchValue(this.data);
+    if (this.data) {
+      for (const time of this.data.selectedTimes) {
+        this.addTime();
+      }
+    } else {
+      this.addTime();
+    }
   }
 
   constructor(private _services: BranchManagerServiceService,private _builder:FormBuilder,
@@ -30,11 +37,11 @@ export class AddEditNowShowingComponent implements OnInit{
       title : ['',Validators.required],
       poster : ['',Validators.required],
       theaterData : ['',Validators.required],
-      selectedTimes : ['',Validators.required],
       duration : ['',Validators.required],
       plot: ['',Validators.required],
       type : ['',Validators.required],
       trailer : ['',Validators.required],
+      selectedTimes: this._builder.array([]),
       bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
@@ -46,10 +53,9 @@ export class AddEditNowShowingComponent implements OnInit{
   onChangeTheater() {
     const selectTheaterId = this.movieForm.value.theaterData;
 
-    const time = this.theaterData.filter((t:any) => t.id == selectTheaterId)
-                    .map((t:any) => t.selectedTimes)
-    this.availableTimes = time
-    console.log(this.availableTimes);
+    // const time = this.theaterData.filter((t:any) => t.id == selectTheaterId)
+    //                 .map((t:any) => t.selectedTimes)
+    // this.availableTimes = time
 
   }
 
@@ -68,8 +74,32 @@ export class AddEditNowShowingComponent implements OnInit{
           }
         })
     }
+    // console.log(this.movieForm.value);
+
     }
 
   }
+
+    // Time Operation Start
+
+    get selectedTimes(): FormArray {
+      return this.movieForm.get('selectedTimes') as FormArray;
+    }
+
+    addTime() {
+      const timeGroup = this._builder.group({
+        date: ['',Validators.required],
+        starTime : ['',Validators.required],
+        endTime: ['',Validators.required]
+      });
+
+      this.selectedTimes.push(timeGroup);
+    }
+
+    removeTime(index: number) {
+      this.selectedTimes.removeAt(index);
+    }
+
+    // Time Operation End
 
 }

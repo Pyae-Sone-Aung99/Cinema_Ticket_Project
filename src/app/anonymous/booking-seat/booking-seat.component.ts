@@ -14,7 +14,7 @@ export class BookingSeatComponent implements OnInit {
 
   theater:any
   selectedSeats:any[] = []
-  check:boolean = false
+  // check:boolean = false
 
   ngOnInit(): void {
 
@@ -79,6 +79,7 @@ export class BookingSeatComponent implements OnInit {
       const no = (+((seat.name as string).substring(1)) - 1) + ''
       const letter = (seat.name as string).charAt(0)
       const seatId = letter.concat('seat').concat(no)
+console.log(no,letter,seatId);
 
       new bootstrap.Button(`#${seatId}`).toggle()
     }

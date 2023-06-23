@@ -14,11 +14,9 @@
 
     <div class="col-4">
 
-      <div class="card">
-        <div class="card-header">
-          <h5>Seats</h5>
-        </div>
+      <div class="card shadow-lg">
         <div class="card-body">
+          <h5 class="mb-3">Selected Seats</h5>
           <div class="row mb-2" *ngFor="let seat of selectedSeats">
             <p class="col">{{seat.name}}</p>
             <p class="col-3">{{seat.price | number }}</p>
@@ -29,9 +27,7 @@
             <p class="col-3 text-end" *ngIf="total">{{total | number}}</p>
             <span class="col-2 mx-2"></span>
           </div>
-        </div>
-        <div class="card-footer text-end">
-          <button (click)="goToPayment()" class="btn btn-outline-danger btn-sm">Purchase</button>
+          <button (click)="goToPayment()" class="btn btn-outline-danger btn-sm mt-3 float-end">Purchase</button>
         </div>
       </div>
 

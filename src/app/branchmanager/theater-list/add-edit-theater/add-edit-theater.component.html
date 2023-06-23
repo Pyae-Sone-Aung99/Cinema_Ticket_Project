@@ -17,7 +17,7 @@
         <div class="me-2" id="selectbox">
           <label for="level">Seat Level:</label>
           <select class="form-select" formControlName="level">
-            <option selected>Choose Seat Level :</option>
+            <option value="" selected>Seat Level :</option>
             <option value="A">A</option>
             <option value="B">B</option>
             <option value="C">C</option>
@@ -31,12 +31,12 @@
 
         <div>
           <label for="quantity">Seat Quantity:</label>
-          <input class="form-control me-2" type="number" id="quantity" formControlName="quantity">
+          <input class="form-control me-2" type="number" id="quantity" formControlName="quantity" placeholder="Enter quantity">
         </div>
 
         <div>
           <label for="price">Seat Price:</label>
-          <input class="form-control me-2" type="number" id="price" formControlName="price">
+          <input class="form-control me-2" type="number" id="price" formControlName="price" placeholder="Enter Price">
         </div>
 
         <button type="button" id="inner" class="btn btn-outline-danger align-self-end" (click)="removeSeatLevel(i)"><i
@@ -46,7 +46,7 @@
         Seat</button>
     </div>
 
-    <div class="mb-3">
+    <!-- <div class="mb-3">
       <label for="theaterType" class="form-label">Time</label>
       <div formArrayName="selectedTimes" >
         <div class="d-flex" *ngFor="let timeGroup of selectedTimes.controls; let i = index" [formGroupName]="i">
@@ -59,7 +59,7 @@
       <div class="  mt-3">
         <button type="button" class="btn btn-outline-primary btn-sm" (click)="addTime()">Add Time</button>
       </div>
-    </div>
+    </div> -->
 
     <div class="my-3">
       <label for="subject" class="form-label">Theater Type</label>

@@ -22,13 +22,13 @@ export class AddEditTheaterComponent {
     }else{
       this.addSeatLevel();
     }
-    if(this.data){
-      for(const time of this.data.selectedTimes){
-        this.addTime();
-      }
-    }else{
-      this.addTime();
-    }
+    // if(this.data){
+    //   for(const time of this.data.selectedTimes){
+    //     this.addTime();
+    //   }
+    // }else{
+    //   this.addTime();
+    // }
     this.theaterForm.patchValue(this.data)
   }
 
@@ -40,7 +40,7 @@ export class AddEditTheaterComponent {
       soundSystem : ['',Validators.required],
       theaterType : ['',Validators.required],
       seatLevels: this.formBuilder.array([]), // Initialize empty FormArray
-      selectedTimes: this.formBuilder.array([]),
+      // selectedTimes: this.formBuilder.array([]),
       bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
     });
   }
@@ -67,21 +67,21 @@ export class AddEditTheaterComponent {
 
   // Time Operation Start
 
-  get selectedTimes(): FormArray {
-    return this.theaterForm.get('selectedTimes') as FormArray;
-  }
+  // get selectedTimes(): FormArray {
+  //   return this.theaterForm.get('selectedTimes') as FormArray;
+  // }
 
-  addTime() {
-    const timeGroup = this.formBuilder.group({
-      time: ['']
-    });
+  // addTime() {
+  //   const timeGroup = this.formBuilder.group({
+  //     time: ['']
+  //   });
 
-    this.selectedTimes.push(timeGroup);
-  }
+  //   this.selectedTimes.push(timeGroup);
+  // }
 
-  removeTime(index: number) {
-    this.selectedTimes.removeAt(index);
-  }
+  // removeTime(index: number) {
+  //   this.selectedTimes.removeAt(index);
+  // }
 
   // Time Operation End
   onSubmit() {
