@@ -22,6 +22,8 @@ export class TheaterListComponent implements OnInit{
         this.getTheaterBybmIdData(id)
       }
     })
+
+
   }
 
   constructor(private _dialog:MatDialog,private _services:BranchManagerServiceService,
@@ -29,7 +31,10 @@ export class TheaterListComponent implements OnInit{
 
 
   getTheaterBybmIdData(id:number){
-    this._services.getTheatersById(id).subscribe(data => this.theaterData = data)
+    this._services.getTheatersById(id).subscribe(data => {
+      this.theaterData = data
+    })
+
   }
 
   openAddEditTheaterForm(){

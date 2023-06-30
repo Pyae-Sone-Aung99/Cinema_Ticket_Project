@@ -13,28 +13,20 @@
           <thead class="table-primary">
             <tr>
               <th>#</th>
-              <th>Name</th>
-              <th>Seats</th>
-              <th>Type</th>
+              <th>Theater Name</th>
+              <th>Cinema</th>
+              <th>Location</th>
               <th>Sound System</th>
-              <th>Show Times</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody *ngFor="let item of theaterData">
             <tr *ngIf="enterSearchValue === '' || item.theaterName.toLowerCase().includes(enterSearchValue) ">
               <td> {{item.id}} </td>
-              <td> {{ item.theaterName }} </td>
-
-              <td> {{ calculateTotalSeat(item.seatLevels)}} </td>
-
-              <td> {{ item.theaterType }} </td>
+              <td> {{ item.theatreName }} </td>
+              <td> {{ item.cinema.cinemaName }} </td>
+              <td> {{ item.cinema.location }} </td>
               <td> {{ item.soundSystem }} </td>
-              <td>
-                <ul class="list-group list-group-horizontal">
-                  <li *ngFor="let times of item.selectedTimes"> {{times.time}} |</li>
-                </ul>
-              </td>
               <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateCinemaForm(item)"></i>
                 <i class="bi bi-trash3-fill text-danger" (click)="deleteTheater(item.id)"></i>
               </td>

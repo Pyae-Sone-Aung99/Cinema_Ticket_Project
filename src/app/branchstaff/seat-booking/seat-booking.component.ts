@@ -2,13 +2,17 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { SeatsService } from 'src/app/services/seats.service';
 
 declare const bootstrap:any
 interface Movie{
   id:number;
   theaterData :string;
   bmId : number;
-  title : string
+  title : string;
+  theater : {
+    id:number
+  }
 }
 @Component({
   selector: 'app-seat-booking',
@@ -16,7 +20,7 @@ interface Movie{
   styleUrls: ['./seat-booking.component.scss']
 })
 export class SeatBookingComponent {
-  theater:any
+  seats:any
   selectedSeats:any[] = []
   check:boolean = false
   movieData :any
@@ -27,32 +31,22 @@ export class SeatBookingComponent {
 
     this.route.queryParamMap.subscribe(param => {
       if(param.get('id')) {
-        this._service.getNowShowingByMovieId(param.get('id')).subscribe((data:Movie) => {
+        this._anonymousService.getMovieDetails(param.get('id')).subscribe((data:Movie) => {
             this.movieData = data
-            this.movieData.forEach((element:any) => {
-              this.getTheaterByMovieIdData(element.theaterData)
-              this.movieTitle = element.title
-            });
+            this.getTheaterByMovieIdData(data.theater.id)
         })
       }
     })
   }
 
-  constructor(private _service:BranchManagerServiceService, private route:ActivatedRoute,
-    private _router:Router){}
+  constructor(private _service:SeatsService, private route:ActivatedRoute,
+    private _router:Router,private _anonymousService:AnonymousServiesService){}
 
     getTheaterByMovieIdData(id:number){
-      this._service.getTheatersByMovieId(id).subscribe(data =>{
-        // console.log(data)
-        data.forEach((element:any) => {
-          this.theater = element
-        });
-        // this.theater = data
-        // console.log(this.theater);
-
+      this._service.getSeatByTheaterId(id).subscribe(data =>{
+        this.seats = data
       }
       )
-      // this.theater =
     }
 
   selectSeat(seatNo:any, price:any) {

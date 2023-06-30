@@ -22,6 +22,7 @@ export class NowShowingStaffComponent  implements OnInit{
       }
     })
 
+
   }
 
 
@@ -30,18 +31,21 @@ export class NowShowingStaffComponent  implements OnInit{
 
   }
 
-  getTheaterDataById(id:number){
-    this._service.getTheatersById(id).subscribe((data:any)=> {
-      this.theatersData = data
-    }
-    )
-  }
+  // getTheaterDataById(id:number){
+  //   this._service.getTheatersById(id).subscribe((data:any)=> {
+  //     this.theatersData = data
+  //   }
+  //   )
+  // }
 
   getNowShowinggBybmIdData(id:number){
+
     this._service.getNowShowingByBranchManagerId(id).subscribe(data => {
+
       this.NowShowingData = data;
+
       this.NowShowingData.forEach((element:any) => {
-        this.getTheaterDataById(element.theaterData)
+        // this.getTheaterDataById(element.theaterData)
       })
     })
   }

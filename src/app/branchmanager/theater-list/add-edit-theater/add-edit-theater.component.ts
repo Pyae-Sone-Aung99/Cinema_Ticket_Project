@@ -15,20 +15,14 @@ export class AddEditTheaterComponent {
 
 
   ngOnInit() {
-    if(this.data){
-      for(const seat of this.data.seatLevels){
-        this.addSeatLevel();
-      }
-    }else{
-      this.addSeatLevel();
-    }
     // if(this.data){
-    //   for(const time of this.data.selectedTimes){
-    //     this.addTime();
+    //   for(const seat of this.data.seatLevels){
+    //     this.addSeatLevel();
     //   }
     // }else{
-    //   this.addTime();
+    //   this.addSeatLevel();
     // }
+    this.addSeatLevel();
     this.theaterForm.patchValue(this.data)
   }
 
@@ -36,12 +30,10 @@ export class AddEditTheaterComponent {
     private _dialogRef:MatDialogRef<AddEditTheaterComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
     private _loginServices : LoginService) {
     this.theaterForm = this.formBuilder.group({
-      theaterName : ['',Validators.required],
+      theatreName : ['',Validators.required],
       soundSystem : ['',Validators.required],
-      theaterType : ['',Validators.required],
       seatLevels: this.formBuilder.array([]), // Initialize empty FormArray
-      // selectedTimes: this.formBuilder.array([]),
-      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
+      cinemaId : [this._loginServices.getLoggedInUserId(),Validators.required]
     });
   }
 
@@ -65,25 +57,6 @@ export class AddEditTheaterComponent {
   }
   // Seat Operation End
 
-  // Time Operation Start
-
-  // get selectedTimes(): FormArray {
-  //   return this.theaterForm.get('selectedTimes') as FormArray;
-  // }
-
-  // addTime() {
-  //   const timeGroup = this.formBuilder.group({
-  //     time: ['']
-  //   });
-
-  //   this.selectedTimes.push(timeGroup);
-  // }
-
-  // removeTime(index: number) {
-  //   this.selectedTimes.removeAt(index);
-  // }
-
-  // Time Operation End
   onSubmit() {
     if (this.theaterForm.valid) {
       if(this.data){

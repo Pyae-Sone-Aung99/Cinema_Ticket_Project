@@ -22,7 +22,7 @@ export class AddEditComponent implements OnInit{
       companyName : ['',Validators.required],
       email : ['',[Validators.required,Validators.email]],
       phoneNumber : ['',[Validators.required,Validators.minLength(8)]],
-      username: ['',Validators.required],
+      userName: ['',Validators.required],
       password: ['',[Validators.required,Validators.minLength(4)]],
       role : ['companymanager']
 

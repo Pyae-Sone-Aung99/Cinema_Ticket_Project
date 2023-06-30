@@ -3,8 +3,8 @@
   <form class="mt-3 mx-5 my-3" [formGroup]="upcomingForm" (ngSubmit)="onSubmit()">
 
     <div class="d-flex">
-      <app-form-group [valid]="upcomingForm.get('upcomingname')!.valid" label="Movie Name" class="me-3">
-        <input type="text" class="form-control" id="upcomingname" formControlName="upcomingname">
+      <app-form-group [valid]="upcomingForm.get('movieName')!.valid" label="Movie Name" class="me-3">
+        <input type="text" class="form-control" id="movieName" formControlName="movieName">
       </app-form-group>
       <app-form-group [valid]="upcomingForm.get('production')!.valid" label="production">
         <input type="text" class="form-control" id="production" formControlName="production">
@@ -39,22 +39,6 @@
     <div class="mb-3">
       <label for="plot" class="form-label">Plot</label>
       <textarea type="text" class="form-control" id="plot" formControlName="plot"></textarea>
-    </div>
-
-    <label for="type" class="form-label">Type</label>
-    <div class="d-flex">
-      <div class="form-check me-3">
-        <input class="form-check-input" type="radio" value="2D" formControlName="type" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          2D
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" value="3D" formControlName="type" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          3D
-        </label>
-      </div>
     </div>
 
     <app-form-group [valid]="upcomingForm.get('poster')!.valid" label="Poster">

@@ -13,18 +13,12 @@ export class LoginService {
   loggedInUserId ?: any
   loggedStaffBmId :any
 
-  // getCompanyManagerAccount():Observable<any>{
-  //   return this._http.get('http://localhost:3000/companymanager'); //same with superadmin service
-  // }
-
-  // sure only one api
   getBranchManagerAccount():Observable<any>{
-    return this._http.get('http://localhost:3000/cinema');
+    return this._http.get('http://localhost:8080/cinema');
   }
 
-  // sure only one api
   getStaffAccount():Observable<any>{
-    return this._http.get('http://localhost:3000/staff');
+    return this._http.get('http://localhost:8080/staff');
   }
 
 

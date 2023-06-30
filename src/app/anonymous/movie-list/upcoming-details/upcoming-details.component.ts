@@ -35,6 +35,8 @@ export class UpcomingDetailsComponent implements OnInit{
   getUpcomingDetails(id:any){
     this._services.getUpcomingDetails(id).subscribe({
       next : (resp)=>{
+        console.log(resp);
+
         this.trailer = this.sanitizeUrl( resp.trailer)
         this.upcomingDetails = resp
       }

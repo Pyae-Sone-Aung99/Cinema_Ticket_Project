@@ -16,7 +16,6 @@
               <th>Name</th>
               <th>Date</th>
               <th>Duration</th>
-              <th>Type</th>
               <th>Production</th>
               <th>Actions</th>
             </tr>
@@ -24,10 +23,9 @@
           <tbody  *ngFor="let item of upcominglist">
             <tr  *ngIf="enterSearchValue === '' || item.upcomingname.includes(enterSearchValue) ">
               <td> {{item.id}} </td>
-              <td> {{item.upcomingname}} </td>
+              <td> {{item.movieName}} </td>
               <td> {{item.date}} </td>
               <td> {{item.duration}} </td>
-              <td> {{item.type}} </td>
               <td> {{item.production}} </td>
               <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateUpcomingForm(item)"></i>
                 <i class="bi bi-trash3-fill text-danger"  (click)="deleteUpcoming(item.id)"></i>

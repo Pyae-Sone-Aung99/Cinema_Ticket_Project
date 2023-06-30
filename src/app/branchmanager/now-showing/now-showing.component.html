@@ -15,19 +15,21 @@
                 <tr>
                   <th>#</th>
                   <th>Title</th>
-                  <th>ShowTime</th>
+                  <th>Type</th>
                   <th>Theater</th>
-                  <th>duration</th>
+                  <th>Cast</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody *ngFor="let item of NowShowingData">
-                <tr *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
+                <tr  *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
                   <td> {{item.id}} </td>
                   <td> {{item.title}} </td>
-                  <td> {{item.selectedTimes }} </td>
-                  <td> {{getTheaterName(item.theaterData)}} </td>
-                  <td> {{item.duration}} </td>
+                  <!-- <td *ngFor="let sch of schedules"> {{ sch.date }} </td> -->
+                  <!-- <td *ngFor="let scht of schedules"> {{ scht.startTime }}|{{scht.endTime}} </td> -->
+                  <td> {{item.type }} </td>
+                  <td> {{item.theater.theatreName}} </td>
+                  <td> {{item.cast}} </td>
                   <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateNowShowing(item)"></i>
                     <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
                   </td>

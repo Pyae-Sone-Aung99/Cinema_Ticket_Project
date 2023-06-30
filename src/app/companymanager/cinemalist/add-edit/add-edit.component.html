@@ -3,8 +3,8 @@
   <form class="mt-3 mx-5 my-3" [formGroup]="cinemaForm" (ngSubmit)="onSubmit()">
 
     <div class="d-flex">
-      <app-form-group [valid]="cinemaForm.get('cinemaname')!.valid" label="Cinema Name" class="me-3">
-        <input type="text" class="form-control" formControlName="cinemaname">
+      <app-form-group [valid]="cinemaForm.get('cinemaName')!.valid" label="Cinema Name" class="me-3">
+        <input type="text" class="form-control" formControlName="cinemaName">
       </app-form-group>
       <app-form-group [valid]="cinemaForm.get('location')!.valid" label="Location">
         <input type="text" class="form-control" id="location" formControlName="location">
@@ -13,18 +13,18 @@
 
     <div class="d-flex">
 
-      <app-form-group [valid]="cinemaForm.get('phoneNo')!.valid" label="Phone Number" class="me-3">
-        <input type="text" class="form-control" id="phoneNo" formControlName="phoneNo">
+      <app-form-group [valid]="cinemaForm.get('phoneNumber')!.valid" label="Phone Number" class="me-3">
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber">
       </app-form-group>
 
-      <app-form-group [valid]="cinemaForm.get('bmName')!.valid" label="Branch Manager Name">
-        <input type="text" class="form-control" id="bmName" formControlName="bmName">
+      <app-form-group [valid]="cinemaForm.get('userName')!.valid" label="Branch Manager Name">
+        <input type="text" class="form-control" id="userName" formControlName="userName">
       </app-form-group>
 
     </div>
 
-    <app-form-group [valid]="cinemaForm.get('bmPassword')!.valid" label="Password">
-      <input type="password" class="form-control" id="bmPassword" formControlName="bmPassword" autocomplete="off">
+    <app-form-group [valid]="cinemaForm.get('password')!.valid" label="Password">
+      <input type="password" class="form-control" id="password" formControlName="password" autocomplete="off">
     </app-form-group>
 
     <div class="d-flex float-end mb-4">

@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4> {{movieTitle}} </h4>
-      <h4 class="fw-bold">{{theater?.theaterName}}</h4>
+      <h4>Movie : {{movieData?.title}} </h4>
+      <h4 class="fw-bold">Theater : {{ movieData?.theater.theatreName }} </h4>
 
-      <div class="mt-3" *ngFor="let row of theater?.seatLevels">
+      <!-- <div class="mt-3" *ngFor="let row of theater?.seatLevels">
         <span class="fw-bold me-3">{{row?.level}}</span>
         <button id="{{row?.level}}seat{{no}}" type="button" *ngFor="let seat of row.seats; index as no"
           (click)="selectSeat(seat.name, row.price)" style="width: 40px;" class="me-1"
           [ngClass]="seat?.state == 'Available' ? 'btn btn-outline-primary' : 'btn btn-secondary disabled'"
           data-bs-toggle="button">{{no + 1}}</button>
-      </div>
+      </div> -->
     </div>
 
     <div class="col-4">

@@ -12,10 +12,10 @@ import { SuperadminServicesService } from 'src/app/services/superadmin-services.
 })
 export class LoginComponent implements OnInit{
   loginForm : FormGroup
-  companymanageraccount! : {username:string,password:string,role:string,id:number}[]
-  branchmanageraccount! : {bmName:string,bmPassword:string,role:string,id:number}[]
-  staffaccount! : {username:string,password:string,role:string,id:number,bmId:number}[]
-
+  companymanageraccount! : {userName:string,password:string,role:string,id:number}[]
+  branchmanageraccount! : {userName:string,password:string,role:string,id:number}[]
+  staffaccount! : {userName:string,password:string,role:string,id:number,cinema:{id:number}}[]
+  staffCinemaId!:number
 
   ngOnInit(): void {
     this._superAdminService.getCompanyManagerList().subscribe({
@@ -26,13 +26,23 @@ export class LoginComponent implements OnInit{
     this._services.getBranchManagerAccount().subscribe({
       next : (resp)=>{
         this.branchmanageraccount = resp
+
       }
     })
     this._services.getStaffAccount().subscribe({
       next : (resp)=>{
         this.staffaccount = resp
+
+        resp.find((ele:any) =>{
+
+         this.staffCinemaId = ele.cinema.id
+
+       })
+
       }
     })
+
+
 
   }
 
@@ -51,7 +61,7 @@ export class LoginComponent implements OnInit{
 
   onSubmit() : void {
 
-    const loggedCompanyManager = this.companymanageraccount.find(e => e.username.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
+    const loggedCompanyManager = this.companymanageraccount.find(e => e.userName.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
         this.companymanageraccount.find(e => e.password === this.loginForm.value.password)
     if(loggedCompanyManager && loggedCompanyManager.role === 'companymanager'){
       this._services.loginStatus = true
@@ -59,21 +69,22 @@ export class LoginComponent implements OnInit{
       this.router.navigate(['/companymanager/cinemalist'],{queryParams : {cmId : this._services.getLoggedInUserId()}})
     }
 
-    const loggedBranchManager = this.branchmanageraccount.find(e=> e.bmName.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
-      this.branchmanageraccount.find(e => e.bmPassword === this.loginForm.value.password)
+    const loggedBranchManager = this.branchmanageraccount.find(e=> e.userName.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
+      this.branchmanageraccount.find(e => e.password === this.loginForm.value.password)
     if(loggedBranchManager && loggedBranchManager.role === 'branchmanager'){
       this._services.loginStatus = true
       this._services.loggedInUserId = loggedBranchManager.id
       this.router.navigate(['/branchmanager/theaterlist'],{queryParams : {bmId : this._services.getLoggedInUserId()}})
     }
 
-    const loggedStaff = this.staffaccount.find(e=> e.username.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
+    const loggedStaff = this.staffaccount.find(e=> e.userName.toLowerCase() === this.loginForm.value.username.toLowerCase()) &&
     this.staffaccount.find(e => e.password.toLowerCase() === this.loginForm.value.password.toLowerCase())
     if(loggedStaff && loggedStaff.role === "staff" ){
       this._services.loginStatus = true
       this._services.loggedInUserId = loggedStaff.id
-      this._services.loggedStaffBmId = loggedStaff.bmId
-      this.router.navigate(['/branchstaff/nowshowing'],{queryParams : {bmId : loggedStaff.bmId,staffId : loggedStaff.id}})
+      this._services.loggedStaffBmId = loggedStaff.cinema.id
+
+      this.router.navigate(['/branchstaff/nowshowing'],{queryParams : {bmId : loggedStaff.cinema.id,staffId : loggedStaff.id}})
 
     }
 

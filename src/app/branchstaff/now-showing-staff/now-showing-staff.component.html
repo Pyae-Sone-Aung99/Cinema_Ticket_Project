@@ -14,18 +14,18 @@
                 <tr>
                   <th>#</th>
                   <th>Title</th>
-                  <th>ShowTime</th>
+                  <th>Type</th>
                   <th>Theater</th>
-                  <th>duration</th>
+                  <th>Cast</th>
                 </tr>
               </thead>
               <tbody *ngFor="let item of NowShowingData">
                 <tr (click)="seatbook(item.id)" *ngIf="enterSearchValue === '' || item.title.includes(enterSearchValue) ">
                   <td> {{item.id}} </td>
                   <td> {{item.title}} </td>
-                  <td> {{item.selectedTimes }} </td>
-                  <td> {{getTheaterName(item.theaterData)}} </td>
-                  <td> {{item.duration}} </td>
+                  <td> {{item.type }} </td>
+                  <td> {{item.theater.theatreName}} </td>
+                  <td> {{item.cast}} </td>
                 </tr>
               </tbody>
             </table>

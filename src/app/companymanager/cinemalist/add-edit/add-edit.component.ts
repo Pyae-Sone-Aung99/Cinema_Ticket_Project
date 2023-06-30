@@ -24,13 +24,13 @@ export class AddEditComponent implements OnInit{
     private _loginServices : LoginService
    ){
     this.cinemaForm = this._builder.group({
-      cinemaname : ['',Validators.required],
+      cinemaName : ['',Validators.required],
       location : ['',Validators.required],
-      phoneNo : ['',[Validators.required,Validators.minLength(8)]],
-      bmName : ['',Validators.required],
-      bmPassword : ['',[Validators.required,Validators.minLength(4)]],
+      phoneNumber : ['',[Validators.required,Validators.minLength(8)]],
+      userName : ['',Validators.required],
+      password : ['',[Validators.required,Validators.minLength(4)]],
       role : ['branchmanager'],
-      cmId : [this._loginServices.getLoggedInUserId(),Validators.required]
+      companyId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
 

@@ -11,10 +11,7 @@
       <p class="fw-bold text-danger">{{movieDetails?.type}}</p>
       <!-- array change -->
       <h5 class="fs-6"><i class="bi bi-people"></i>Casts</h5>
-      <span class="me-2">Tom Holland |</span>
-      <span  class="me-2">Zendya |</span>
-      <span  class="me-2">Tobey Maguire |</span>
-      <span  class="me-2">Andrew Garfield |</span>
+      <span class="me-2"> {{ movieDetails?.cast }} </span>
       <div class="mt-3">
         <button class="btn btn-outline-danger btn-sm" (click)="goTrailer()">{{cinema ?
            'Trailer' : 'Cinema'}}</button>
@@ -27,7 +24,7 @@
       <div class="col-md-4">
         <div class="d-flex">
           <h5 class="fs-6 mb-3 me-3"> <i class="bi bi-buildings me-1"></i>Cinema : </h5>
-          <h5 class="fs-6"> {{cinemaData?.cinemaname}} </h5>
+          <h5 class="fs-6"> {{cinemaData?.cinemaName}} </h5>
         </div>
         <div class="d-flex">
           <p class="me-3 fs-6"><i class="bi bi-geo-alt-fill me-1"></i> Location : </p>
@@ -35,12 +32,14 @@
         </div>
         <div class="d-flex">
           <p class="me-3 fs-6"><i class="bi bi-camera-reels-fill"></i> Theater : </p>
-          <p class="fs-6">{{theaterData?.theaterName}}</p>
+          <p class="fs-6">{{theaterData?.theatreName}}</p>
         </div>
       </div>
       <div class="col-md-8">
         <div class="d-flex">
-          <a routerLink="/anonymous/bookingseat" [queryParams]="{id: movieDetails?.theaterData}" routerLinkActive="active" class="btn btn-outline-primary me-3"> {{movieDetails?.selectedTimes}} </a>
+          <a routerLink="/anonymous/bookingseat" [queryParams]="{id: movieDetails?.theater.id}" routerLinkActive="active" class="btn btn-sm btn-outline-primary me-3">
+             <span id="date">{{date}}</span><h5 id="time">{{startTime}} - {{endTime}}</h5>
+          </a>
         </div>
       </div>
     </div>

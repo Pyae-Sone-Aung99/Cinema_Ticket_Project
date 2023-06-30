@@ -36,28 +36,24 @@ export class AddEditNowShowingComponent implements OnInit{
     this.movieForm = this._builder.group({
       title : ['',Validators.required],
       poster : ['',Validators.required],
-      theaterData : ['',Validators.required],
-      duration : ['',Validators.required],
+      theaterId : ['',Validators.required],
       plot: ['',Validators.required],
       type : ['',Validators.required],
       trailer : ['',Validators.required],
-      selectedTimes: this._builder.array([]),
-      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
+      schedules: this._builder.array([]),
+      cinemaId : [this._loginServices.getLoggedInUserId(),Validators.required],
+      cast : ['',Validators.required]
     })
   }
 
   getAvailableTheater(id:number){
-    this._services.getTheatersById(id).subscribe(data=>this.theaterData = data);
+    this._services.getTheatersById(id).subscribe(data=>{
+      this.theaterData = data
+      console.log(this.theaterData);
+
+    });
   }
 
-  onChangeTheater() {
-    const selectTheaterId = this.movieForm.value.theaterData;
-
-    // const time = this.theaterData.filter((t:any) => t.id == selectTheaterId)
-    //                 .map((t:any) => t.selectedTimes)
-    // this.availableTimes = time
-
-  }
 
   onSubmit(){
     if (this.movieForm.valid){
@@ -82,22 +78,22 @@ export class AddEditNowShowingComponent implements OnInit{
 
     // Time Operation Start
 
-    get selectedTimes(): FormArray {
-      return this.movieForm.get('selectedTimes') as FormArray;
+    get schedules(): FormArray {
+      return this.movieForm.get('schedules') as FormArray;
     }
 
     addTime() {
       const timeGroup = this._builder.group({
         date: ['',Validators.required],
-        starTime : ['',Validators.required],
+        startTime : ['',Validators.required],
         endTime: ['',Validators.required]
       });
 
-      this.selectedTimes.push(timeGroup);
+      this.schedules.push(timeGroup);
     }
 
     removeTime(index: number) {
-      this.selectedTimes.removeAt(index);
+      this.schedules.removeAt(index);
     }
 
     // Time Operation End

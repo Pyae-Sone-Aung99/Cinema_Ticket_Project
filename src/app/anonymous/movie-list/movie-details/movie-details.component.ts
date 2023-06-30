@@ -4,6 +4,8 @@ import { ActivatedRoute} from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { CompanymanagerServicesService } from 'src/app/services/companymanager-services.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { SchedulesService } from 'src/app/services/schedules.service';
 
 
 @Component({
@@ -18,6 +20,9 @@ export class MovieDetailsComponent implements OnInit{
   trailer? : any
   theaterData : any
   cinemaData : any
+  date: any
+  startTime : any
+  endTime : any
 
 
   ngOnInit(): void {
@@ -29,7 +34,7 @@ export class MovieDetailsComponent implements OnInit{
 
   constructor(private _route:ActivatedRoute,private _services:AnonymousServiesService,
     private renderer: Renderer2,private _sanitizer: DomSanitizer,private _bmServices:BranchManagerServiceService,
-    private _cmServices:CompanymanagerServicesService){}
+    private _cmServices:CompanymanagerServicesService,private _payment:PaymentService,private _schedule:SchedulesService){}
 
   getMovieDetail(id:any){
     this._services.getMovieDetails(id).subscribe({
@@ -37,7 +42,24 @@ export class MovieDetailsComponent implements OnInit{
         this.trailer = this.sanitizeUrl( resp.trailer)
         this.movieDetails = resp
 
-        this.getTheaterData(this.movieDetails.theaterData)
+        this._schedule.getScheduleByNowShowingMovieId(this.movieDetails.id).subscribe( data => {
+          for(let item of data){
+            this.date = item.date,
+            this.startTime = item.startTime,
+            this.endTime = item.endTime
+          }
+          // data.foreach((ele:any) => {
+          //   this.date = ele.date
+          //   this.startTime = ele.startTime,
+          //   this.endTime = ele.endTime
+          // })
+        }
+        )
+        this._payment.selectedMovie = this.movieDetails.title
+        this._payment.date = this.date
+        this._payment.startTime = this.startTime
+        this._payment.endTime = this.endTime
+        this.getTheaterData(this.movieDetails.theater.id)
       }
     })
   }
@@ -45,7 +67,7 @@ export class MovieDetailsComponent implements OnInit{
   getCinemaDetail(id:number){
     this._cmServices.getCinemaByBmId(id).subscribe({
       next : (resp)=>{
-        this.cinemaData = resp.find( (ele:any)=> ele.id == id );
+        this.cinemaData = resp
       }
     })
   }
@@ -53,9 +75,8 @@ export class MovieDetailsComponent implements OnInit{
   getTheaterData(id:any){
     this._bmServices.getTheatersByMovieId(id).subscribe({
       next : (resp)=>{
-        this.theaterData = resp.find( (ele:any)=> ele.id == id )
-
-        this.getCinemaDetail(this.theaterData.bmId)
+        this.theaterData = resp
+        this.getCinemaDetail(this.theaterData.cinema.id)
       }
     })
   }

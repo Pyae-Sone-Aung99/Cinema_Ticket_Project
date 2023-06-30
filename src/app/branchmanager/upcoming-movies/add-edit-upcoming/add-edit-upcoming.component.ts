@@ -21,16 +21,15 @@ export class AddEditUpcomingComponent implements OnInit{
     private _dialogRef : MatDialogRef<AddEditUpcomingComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
     private _loginServices:LoginService){
     this.upcomingForm = this._builder.group({
-      upcomingname : ['',Validators.required],
+      movieName : ['',Validators.required],
       production : ['',[Validators.required]],
       cast : ['',Validators.required],
       trailer : ['',Validators.required],
       date : ['',Validators.required],
       duration : ['',Validators.required],
       plot : ['',[Validators.required]],
-      type : ['',Validators.required],
       poster : ['',Validators.required],
-      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
+      cinemaId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
 

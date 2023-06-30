@@ -2,6 +2,9 @@ import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AnonymousServiesService } from 'src/app/services/anonymous-servies.service';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { SchedulesService } from 'src/app/services/schedules.service';
+import { SeatsService } from 'src/app/services/seats.service';
 
 declare const bootstrap:any
 
@@ -15,6 +18,7 @@ export class BookingSeatComponent implements OnInit {
   theater:any
   selectedSeats:any[] = []
   // check:boolean = false
+  seats:any
 
   ngOnInit(): void {
 
@@ -25,15 +29,21 @@ export class BookingSeatComponent implements OnInit {
       if(params['id']){
         const id = Number(params['id'])
         this._service.getTheatersByMovieId(id).subscribe(result => {
+          console.log(result);
+          this._schedule.getSeatByTheaterId(result.id).subscribe(result =>{
+            this.seats = result
+            console.log(this.seats);
+
+          })
           this.theater = result.find( (ele:any)=> ele.id == id )
+          this._payment.cinemaName = this.theater.theatreName
         })
       }
     })
-
   }
 
   constructor(private renderer: Renderer2, private _service:BranchManagerServiceService, private _route:ActivatedRoute,
-    private _router:Router){}
+    private _router:Router,private _payment: PaymentService,private _schedule:SeatsService){}
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
@@ -79,7 +89,6 @@ export class BookingSeatComponent implements OnInit {
       const no = (+((seat.name as string).substring(1)) - 1) + ''
       const letter = (seat.name as string).charAt(0)
       const seatId = letter.concat('seat').concat(no)
-console.log(no,letter,seatId);
 
       new bootstrap.Button(`#${seatId}`).toggle()
     }
@@ -90,11 +99,13 @@ console.log(no,letter,seatId);
     let total = 0
     for(let s of this.selectedSeats)
       total += s.price
+    this._payment.totalAmount = total
     return total
   }
 
   goToPayment(){
     console.log(this.selectedSeats);
+    this._payment.seatNo = this.selectedSeats
 
     this._router.navigateByUrl('/anonymous/payment')
   }

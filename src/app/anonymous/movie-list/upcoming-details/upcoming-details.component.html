@@ -5,17 +5,16 @@
     </div>
     <div class="col-md-10 ">
       <div class="d-flex justify-content-between">
-        <h4 class=""> {{upcomingDetails?.upcomingname}} </h4>
+        <h4 class=""> {{upcomingDetails?.movieName}} </h4>
         <a class="btn btn-outline-danger text-black float-end" routerLink="/anonymous/movielist"><i class="bi bi-arrow-left-circle text-danger"></i></a>
       </div>
-      <p class="fw-bold text-danger">{{upcomingDetails?.type}}</p>
+      <p class="fw-bold text-danger">{{upcomingDetails?.production}}</p>
       <!-- array change -->
-      <h5 class="fs-6"><i class="bi bi-people"></i>Casts</h5>
-      <span class="me-2">Tom Holland |</span>
-      <span  class="me-2">Zendya |</span>
-      <span  class="me-2">Tobey Maguire |</span>
-      <span  class="me-2">Andrew Garfield |</span>
-
+      <h5 class="fs-6"><i class="bi bi-people"></i>Casts : {{ upcomingDetails?.cast }} </h5>
+      <!-- <span class="me-2">  </span> -->
+      <h5 class="fs-6">Date : {{ upcomingDetails?.date }} </h5>
+      <h5 class="fs-6">Duration : {{ upcomingDetails?.duration }} </h5>
+      <!-- <h5 class="fs-6"> {{ upcomingDetails?.cinema.cinemaName }} </h5> -->
     </div>
   </div>
   <hr>

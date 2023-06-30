@@ -23,16 +23,18 @@ export class AddEditComponent implements OnInit{
       staffName : ['',Validators.required],
       phoneNumber : ['',[Validators.required,Validators.minLength(8)]],
       email : ['',[Validators.required,Validators.email]],
-      username : ['',Validators.required],
+      userName : ['',Validators.required],
       password : ['',[Validators.required,Validators.minLength(4)]],
       role : ['staff'],
-      bmId : [this._loginServices.getLoggedInUserId(),Validators.required]
+      cinemaId : [this._loginServices.getLoggedInUserId(),Validators.required]
     })
   }
 
   onSubmit(){
     if(this.staffForm.valid){
       if (this.data){
+        console.log(this.data);
+
         this._services.updateStaff(this.data.id,this.staffForm.value).subscribe({
           next : (val)=>{
             this._dialogRef.close(true)

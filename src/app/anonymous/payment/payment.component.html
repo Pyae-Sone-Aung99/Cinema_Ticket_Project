@@ -1,34 +1,33 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="form-container">
+      <div class="form-container card-body shadow-lg px-5 pt-3 pb-5">
         <h2>Payment</h2>
         <br>
-        <form>
+        <form [formGroup]="paymentForm" (submit)="onSubmit()">
           <div class="mb-3">
             <label for="username" class="form-label">Name</label>
-            <input type="text" class="form-control" id="username" name="username" >
+            <input type="text" class="form-control" id="username" name="username" formControlName="name">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Phone Number</label>
-            <input type="password" class="form-control" id="password" name="password" >
+            <input type="password" class="form-control" id="password" name="password" formControlName="phoneNumber">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Email</label>
-            <input type="email" class="form-control" id="password" name="password" >
+            <input type="email" class="form-control" id="password" name="password" formControlName="email">
           </div>
           <div class="mb-3">
             <label for="payment-method" class="form-label">Payment Method</label>
-            <select class="form-select" id="payment-method" name="payment-method" required>
+            <select class="form-select" id="payment-method" name="payment-method" formControlName="paymentMethod" required>
               <option value="" disabled selected>Select a payment method</option>
-              <option value="credit-card">KPAY</option>
-              <option value="paypal">WAVE PAY</option>
-              <option value="bitcoin">AYA PAY</option>
+              <option value="kpay">KPAY</option>
+              <option value="wave">WAVE PAY</option>
+              <option value="ayapay">AYA PAY</option>
             </select>
           </div>
-
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <button (click)="goReceipt()" class="btn btn-primary">Submit</button>
       </div>
     </div>
   </div>

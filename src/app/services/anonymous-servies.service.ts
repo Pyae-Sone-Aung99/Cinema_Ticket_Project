@@ -11,12 +11,12 @@ export class AnonymousServiesService {
 
 
   getMovieDetails(data: any): Observable<any> {
-    return this._http.get(`http://localhost:3000/nowshowing/${data}`)
+    return this._http.get(`http://localhost:8080/nowshowing/details/${data}`)
   }
 
 
   getUpcomingDetails(data: any): Observable<any> {
-    return this._http.get(`http://localhost:3000/upComing/${data}`)
+    return this._http.get(`http://localhost:8080/upcoming/details/${data}`)
   }
 
 

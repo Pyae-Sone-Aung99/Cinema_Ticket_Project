@@ -20,9 +20,9 @@
             <tr
               *ngIf="enterSearchValue === '' || item.bmName.toLowerCase().includes(enterSearchValue) ">
               <td> {{item.id}} </td>
-              <td> {{item.bmName}} </td>
-              <td> {{item.bmPassword}} </td>
-              <td> {{item.cinemaname}} </td>
+              <td> {{item.userName}} </td>
+              <td> {{item.password}} </td>
+              <td> {{item.cinemaName}} </td>
             </tr>
           </tbody>
         </table>
