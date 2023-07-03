@@ -16,8 +16,7 @@
       <div class="mb-3 me-3" style="width: 100%;">
         <label for="selectedTimes" class="form-label">Select Theater</label>
         <select class="form-select form-select-sm" formControlName="theaterId">
-          <option selected>Choose Theater</option>
-          <option *ngFor="let item of theaterData" [value]="item.id"> {{item.theatreName}} </option>
+          <option *ngFor="let item of theaterData" [value]="item.id"> {{item?.theatreName}} </option>
         </select>
       </div>
       <app-form-group [valid]="movieForm.get('cast')!.valid" label="Cast" class="mb-3 me-3" style="width: 100%;">

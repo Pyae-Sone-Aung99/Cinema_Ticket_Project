@@ -12,19 +12,21 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./add-edit-now-showing.component.scss']
 })
 export class AddEditNowShowingComponent implements OnInit{
-
   movieForm:FormGroup
   theaterData:any
   // availableTimes: [] = [];
   bmManagerId ?: any = this._loginServices.getLoggedInUserId()
-
   ngOnInit(): void {
     this.getAvailableTheater(this.bmManagerId)
     this.movieForm.patchValue(this.data);
+    // this.theaterName = this.data.theater.theatreName
+
     if (this.data) {
-      for (const time of this.data.selectedTimes) {
-        this.addTime();
-      }
+      // for (const time of this.data) {
+      //   this.addTime();
+      // }
+      console.log(this.data);
+
     } else {
       this.addTime();
     }
@@ -49,8 +51,6 @@ export class AddEditNowShowingComponent implements OnInit{
   getAvailableTheater(id:number){
     this._services.getTheatersById(id).subscribe(data=>{
       this.theaterData = data
-      console.log(this.theaterData);
-
     });
   }
 
