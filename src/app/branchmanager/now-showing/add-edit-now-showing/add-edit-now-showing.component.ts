@@ -53,7 +53,7 @@ export class AddEditNowShowingComponent implements OnInit{
     private _dialogRef:MatDialogRef<AddEditNowShowingComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
     private _loginServices : LoginService,private _schedulesServices:SchedulesService){
     this.movieForm = this._builder.group({
-      id : this.data.id,
+      // id : [this.data.id],
       title : ['',Validators.required],
       poster : ['',Validators.required],
       theaterId : ['',Validators.required],
@@ -76,9 +76,7 @@ export class AddEditNowShowingComponent implements OnInit{
   onSubmit(){
     if (this.movieForm.valid){
       if(this.data){
-        console.log(this.movieForm.value);
-
-        this._services.updateNowShowing(this.data.id,this.movieForm.value).subscribe({
+        this._services.updateNowShowing(this.data.id,{id :this.data.id,...this.movieForm.value}).subscribe({
           next : (val : any)=>{
             this._dialogRef.close(true)
           }
