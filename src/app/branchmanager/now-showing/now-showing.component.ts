@@ -5,6 +5,21 @@ import { AddEditNowShowingComponent } from './add-edit-now-showing/add-edit-now-
 import { ActivatedRoute, Router } from '@angular/router';
 import { SchedulesService } from 'src/app/services/schedules.service';
 
+interface data{
+  date:string,
+  startTime:string,
+  endTime:string,
+  nowShowingMovies:{
+    id:number,
+    title:string,
+    type:string,
+    cast:string,
+    theater:{
+      theatreName : string
+    }
+  }
+}
+
 @Component({
   selector: 'app-now-showing',
   templateUrl: './now-showing.component.html',
@@ -15,7 +30,7 @@ export class NowShowingComponent implements OnInit{
   NowShowingData:any
   enterSearchValue : string = ''
   theatersData : {theaterName:string,id:number}[] = []
-  schedules:{date:string,startTime:string,endTime:string,nowShowingMovies:{id:number}} [] =[]
+  schedules:data [] =[]
   finalData:{date:string,startTime:string,endTime:string,nowShowingMovies:{id:number}} [] =[]
   ngOnInit(): void {
     this._route.queryParams.subscribe(params =>{
@@ -24,7 +39,7 @@ export class NowShowingComponent implements OnInit{
         this.getNowShowinggBybmIdData(id)
       }
     })
-    console.log(this.NowShowingData);
+    // console.log(this.NowShowingData);
 
   }
 
@@ -43,6 +58,8 @@ export class NowShowingComponent implements OnInit{
   getNowShowinggBybmIdData(id:number){
     this._service.getNowShowingByBranchManagerId(id).subscribe(data => {
       this.NowShowingData = data;
+      // console.log(this.NowShowingData);
+
       this.NowShowingData.forEach((element:any) => {
         // this.getTheaterDataById(element.theaterData)
 

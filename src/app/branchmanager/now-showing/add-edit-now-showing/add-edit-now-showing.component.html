@@ -15,7 +15,8 @@
     <div class="d-flex">
       <div class="mb-3 me-3" style="width: 100%;">
         <label for="selectedTimes" class="form-label">Select Theater</label>
-        <select class="form-select form-select-sm" formControlName="theaterId">
+        <select class="form-select form-select-sm" name="theaterId" formControlName="theaterId">
+          <option value="">Please Select Theater</option>
           <option *ngFor="let item of theaterData" [value]="item.id"> {{item?.theatreName}} </option>
         </select>
       </div>

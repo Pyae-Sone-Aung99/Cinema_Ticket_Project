@@ -1,8 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Data } from '@angular/router';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { LoginService } from 'src/app/services/login.service';
+import { SchedulesService } from 'src/app/services/schedules.service';
 
 
 
@@ -14,19 +16,34 @@ import { LoginService } from 'src/app/services/login.service';
 export class AddEditNowShowingComponent implements OnInit{
   movieForm:FormGroup
   theaterData:any
-  // availableTimes: [] = [];
   bmManagerId ?: any = this._loginServices.getLoggedInUserId()
   ngOnInit(): void {
     this.getAvailableTheater(this.bmManagerId)
-    this.movieForm.patchValue(this.data);
-    // this.theaterName = this.data.theater.theatreName
 
     if (this.data) {
-      // for (const time of this.data) {
-      //   this.addTime();
-      // }
-      console.log(this.data);
+      this._schedulesServices.getScheduleByNowShowingMovieId(this.data.id).subscribe( (data:[]) => {
+        data.forEach((sched:any) => {
+          const timeGroup = this._builder.group({
+            date: sched.date,
+            startTime : sched.startTime,
+            endTime: sched.endTime
+          });
 
+          this.schedules.push(timeGroup);
+        });
+      })
+      this.movieForm.patchValue({
+        id : this.data.id,
+        title : this.data.title,
+        poster : this.data.poster,
+        theaterId : '',
+        plot : this.data.plot,
+        type : this.data.type,
+        trailer : this.data.trailer,
+        cast : this.data.cast,
+        cinemaId : this._loginServices.getLoggedInUserId(),
+        schedules : this.schedules,
+      })
     } else {
       this.addTime();
     }
@@ -34,8 +51,9 @@ export class AddEditNowShowingComponent implements OnInit{
 
   constructor(private _services: BranchManagerServiceService,private _builder:FormBuilder,
     private _dialogRef:MatDialogRef<AddEditNowShowingComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
-    private _loginServices : LoginService){
+    private _loginServices : LoginService,private _schedulesServices:SchedulesService){
     this.movieForm = this._builder.group({
+      id : this.data.id,
       title : ['',Validators.required],
       poster : ['',Validators.required],
       theaterId : ['',Validators.required],
@@ -58,6 +76,8 @@ export class AddEditNowShowingComponent implements OnInit{
   onSubmit(){
     if (this.movieForm.valid){
       if(this.data){
+        console.log(this.movieForm.value);
+
         this._services.updateNowShowing(this.data.id,this.movieForm.value).subscribe({
           next : (val : any)=>{
             this._dialogRef.close(true)
@@ -70,8 +90,6 @@ export class AddEditNowShowingComponent implements OnInit{
           }
         })
     }
-    // console.log(this.movieForm.value);
-
     }
 
   }

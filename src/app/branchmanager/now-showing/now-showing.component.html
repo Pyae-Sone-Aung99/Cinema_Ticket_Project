@@ -28,7 +28,7 @@
                   <!-- <td *ngFor="let sch of schedules"> {{ sch.date }} </td> -->
                   <!-- <td *ngFor="let scht of schedules"> {{ scht.startTime }}|{{scht.endTime}} </td> -->
                   <td> {{item.type }} </td>
-                  <td> {{item.theater.theatreName}} </td>
+                  <td> {{item.theater}} </td>
                   <td> {{item.cast}} </td>
                   <td><i class="bi bi-pencil-square me-3 text-info" (click)="openUpdateNowShowing(item)"></i>
                     <i class="bi bi-trash3-fill text-danger" (click)="deleteCinema(item.id)"></i>
