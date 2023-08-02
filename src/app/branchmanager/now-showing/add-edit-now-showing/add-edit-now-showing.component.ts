@@ -32,18 +32,19 @@ export class AddEditNowShowingComponent implements OnInit{
           this.schedules.push(timeGroup);
         });
       })
-      this.movieForm.patchValue({
-        id : this.data.id,
-        title : this.data.title,
-        poster : this.data.poster,
-        theaterId : '',
-        plot : this.data.plot,
-        type : this.data.type,
-        trailer : this.data.trailer,
-        cast : this.data.cast,
-        cinemaId : this._loginServices.getLoggedInUserId(),
-        schedules : this.schedules,
-      })
+      this.movieForm.patchValue(this.data)
+      // this.movieForm.patchValue({
+      //   id : this.data.id,
+      //   title : this.data.title,
+      //   poster : this.data.poster,
+      //   theaterId : '',
+      //   plot : this.data.plot,
+      //   type : this.data.type,
+      //   trailer : this.data.trailer,
+      //   cast : this.data.cast,
+      //   cinemaId : this._loginServices.getLoggedInUserId(),
+      //   schedules : this.schedules,
+      // })
     } else {
       this.addTime();
     }

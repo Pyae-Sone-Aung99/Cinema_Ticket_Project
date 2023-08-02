@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -27,7 +28,7 @@ import { AddEditUpcomingComponent } from './upcoming-movies/add-edit-upcoming/ad
     AddEditTheaterComponent,
     NowShowingComponent,
     AddEditNowShowingComponent,
-    AddEditUpcomingComponent
+    AddEditUpcomingComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +37,7 @@ import { AddEditUpcomingComponent } from './upcoming-movies/add-edit-upcoming/ad
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    WidgetModule
+    WidgetModule,
   ]
 })
 export class BranchmanagerModule { }

@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { BranchManagerServiceService } from 'src/app/services/branch-manager-service.service';
 import { LoginService } from 'src/app/services/login.service';
+import { SeatLevelService } from 'src/app/services/seat-level.service';
 
 @Component({
   selector: 'app-add-edit-theater',
@@ -15,20 +16,28 @@ export class AddEditTheaterComponent {
 
 
   ngOnInit() {
-    // if(this.data){
-    //   for(const seat of this.data.seatLevels){
-    //     this.addSeatLevel();
-    //   }
-    // }else{
-    //   this.addSeatLevel();
-    // }
-    this.addSeatLevel();
-    this.theaterForm.patchValue(this.data)
+
+    if(this.data){
+      this._seatLevelService.getSeatLevelByTheaterId(this.data.id).subscribe((data:any)=>{
+        data.forEach((sl:any) => {
+          const seatLevel = this.formBuilder.group({
+            level: sl.level,
+            quantity: sl.quantity,
+            price: sl.price
+          });
+
+          this.seatLevels.push(seatLevel);
+        });
+      })
+      this.theaterForm.patchValue(this.data);
+    }else{
+      this.addSeatLevel();
+    }
   }
 
   constructor(private formBuilder: FormBuilder,private _services:BranchManagerServiceService,
     private _dialogRef:MatDialogRef<AddEditTheaterComponent>,@Inject(MAT_DIALOG_DATA)public data : any,
-    private _loginServices : LoginService) {
+    private _loginServices : LoginService,private _seatLevelService:SeatLevelService) {
     this.theaterForm = this.formBuilder.group({
       theatreName : ['',Validators.required],
       soundSystem : ['',Validators.required],

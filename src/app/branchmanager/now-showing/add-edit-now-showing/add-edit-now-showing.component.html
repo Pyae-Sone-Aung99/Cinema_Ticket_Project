@@ -73,7 +73,7 @@
 
     <div class="d-flex float-end mb-4">
       <button class="btn btn-outline-danger me-3" mat-dialog-close="false">Cancel</button>
-      <button type="submit" [class.disable]="!movieForm.valid" class="btn btn-outline-success float-end">{{data ?
+      <button type="submit" [class.disabled]="!movieForm.valid" class="btn btn-outline-success float-end">{{data ?
         'Update' : 'Save'}} </button>
     </div>
 

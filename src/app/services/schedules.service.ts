@@ -12,4 +12,8 @@ export class SchedulesService {
   getScheduleByNowShowingMovieId(id:number):Observable<any>{
     return this._http.get(`http://localhost:8080/schedules/${id}`);
   }
+
+  getAllSchedule():Observable<any>{
+    return this._http.get("http://localhost:8080/schedules/findAll");
+  }
 }
